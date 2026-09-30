@@ -5,12 +5,16 @@ export default function CraftsmanshipBanner({ onStartProject }) {
   return (
     <section className="relative w-full h-[320px] sm:h-[420px] md:h-[500px] overflow-hidden flex items-center justify-center max-w-full">
       {/* Background Image */}
-      <img
-        src="/images/lions-banner.png"
-        alt="Exquisite Marble Lions Masterpiece by Badrinarayan Naresh Kumar Moorti Wala"
-        className="absolute inset-0 w-full h-full object-cover object-center select-none max-w-full"
-        loading="lazy"
-      />
+      <picture className="absolute inset-0 w-full h-full">
+        <source srcSet="/images/lions-banner.webp" type="image/webp" />
+        <img
+          src="/images/lions-banner.png"
+          alt="Exquisite Marble Lions Masterpiece by Badrinarayan Naresh Kumar Moorti Wala"
+          className="w-full h-full object-cover object-center select-none max-w-full"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
 
       {/* Dark overlay for contrast */}
       <div className="absolute inset-0 bg-black/50 backdrop-brightness-90" />

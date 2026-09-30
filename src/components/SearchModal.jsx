@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { X, Search, ArrowRight } from 'lucide-react';
 
 const catalog = [
-  { name: 'Marble Shiva Statue', category: 'Marble God Statues', image: '/images/prod-shiva.png', type: 'product' },
-  { name: 'Marble Cow with Calf Statue', category: 'Marble Animals', image: '/images/prod-cow.png', type: 'product' },
-  { name: 'Marble Buddha Statue', category: 'Marble God Statues', image: '/images/prod-buddha.png', type: 'product' },
-  { name: 'Marble Temple Statue', category: 'Marble Temples', image: '/images/prod-temple.png', type: 'product' },
-  { name: 'Marble Durga Statue', category: 'Marble God Statues', image: '/images/prod-durga.png', type: 'product' },
-  { name: 'Marble God Statues', category: 'Category', image: '/images/cat-gods.png', type: 'category' },
-  { name: 'Marble Temples', category: 'Category', image: '/images/cat-temples.png', type: 'category' },
-  { name: 'Marble Human Bust', category: 'Category', image: '/images/cat-busts.png', type: 'category' },
-  { name: 'Marble Animals', category: 'Category', image: '/images/cat-animals.png', type: 'category' },
-  { name: 'Marble Roman Figures', category: 'Category', image: '/images/cat-roman.png', type: 'category' },
-  { name: 'Marble Home Decor', category: 'Category', image: '/images/cat-decor.png', type: 'category' },
+  { name: 'Marble Shiva Statue', category: 'Marble God Statues', image: '/images/prod-shiva.webp', type: 'product' },
+  { name: 'Marble Cow with Calf Statue', category: 'Marble Animals', image: '/images/prod-cow.webp', type: 'product' },
+  { name: 'Marble Buddha Statue', category: 'Marble God Statues', image: '/images/prod-buddha.webp', type: 'product' },
+  { name: 'Marble Temple Statue', category: 'Marble Temples', image: '/images/prod-temple.webp', type: 'product' },
+  { name: 'Marble Durga Statue', category: 'Marble God Statues', image: '/images/prod-durga.webp', type: 'product' },
+  { name: 'Marble God Statues', category: 'Category', image: '/images/cat-gods.webp', type: 'category' },
+  { name: 'Marble Temples', category: 'Category', image: '/images/cat-temples.webp', type: 'category' },
+  { name: 'Marble Human Bust', category: 'Category', image: '/images/cat-busts.webp', type: 'category' },
+  { name: 'Marble Animals', category: 'Category', image: '/images/cat-animals.webp', type: 'category' },
+  { name: 'Marble Roman Figures', category: 'Category', image: '/images/cat-roman.webp', type: 'category' },
+  { name: 'Marble Home Decor', category: 'Category', image: '/images/cat-decor.webp', type: 'category' },
 ];
 
 export default function SearchModal({ isOpen, onClose, onSelectProduct }) {

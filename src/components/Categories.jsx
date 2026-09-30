@@ -5,32 +5,38 @@ const categories = [
   {
     id: 'god-statues',
     title: 'Marble God Statues',
-    image: '/images/cat-gods.png',
+    image: '/images/cat-gods.webp',
+    fallback: '/images/cat-gods.png',
   },
   {
     id: 'temples',
     title: 'Marble Temples',
-    image: '/images/cat-temples.png',
+    image: '/images/cat-temples.webp',
+    fallback: '/images/cat-temples.png',
   },
   {
     id: 'human-bust',
     title: 'Marble Human Bust',
-    image: '/images/cat-busts.png',
+    image: '/images/cat-busts.webp',
+    fallback: '/images/cat-busts.png',
   },
   {
     id: 'animals',
     title: 'Marble Animals',
-    image: '/images/cat-animals.png',
+    image: '/images/cat-animals.webp',
+    fallback: '/images/cat-animals.png',
   },
   {
     id: 'roman-figures',
     title: 'Marble Roman Figures',
-    image: '/images/cat-roman.png',
+    image: '/images/cat-roman.webp',
+    fallback: '/images/cat-roman.png',
   },
   {
     id: 'home-decor',
     title: 'Marble Home Decor',
-    image: '/images/cat-decor.png',
+    image: '/images/cat-decor.webp',
+    fallback: '/images/cat-decor.png',
   },
 ];
 
@@ -69,12 +75,16 @@ export default function Categories({ onSelectCategory }) {
             >
               {/* Image Container */}
               <div className="w-full aspect-square rounded-lg sm:rounded-xl overflow-hidden bg-white/70 flex items-center justify-center p-1">
-                <img
-                  src={category.image}
-                  alt={category.title}
-                  className="w-full h-full object-cover rounded-md sm:rounded-lg group-hover:scale-105 transition-transform duration-500 ease-out"
-                  loading="lazy"
-                />
+                <picture className="w-full h-full">
+                  <source srcSet={category.image} type="image/webp" />
+                  <img
+                    src={category.fallback}
+                    alt={category.title}
+                    className="w-full h-full object-cover rounded-md sm:rounded-lg group-hover:scale-105 transition-transform duration-500 ease-out"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               {/* Title & Arrow */}

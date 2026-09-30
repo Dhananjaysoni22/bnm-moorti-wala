@@ -5,27 +5,32 @@ const products = [
   {
     id: 'marble-shiva',
     name: 'Marble Shiva Statue',
-    image: '/images/prod-shiva.png',
+    image: '/images/prod-shiva.webp',
+    fallback: '/images/prod-shiva.png',
   },
   {
     id: 'marble-cow-calf',
     name: 'Marble Cow with Calf Statue',
-    image: '/images/prod-cow.png',
+    image: '/images/prod-cow.webp',
+    fallback: '/images/prod-cow.png',
   },
   {
     id: 'marble-buddha',
     name: 'Marble Buddha Statue',
-    image: '/images/prod-buddha.png',
+    image: '/images/prod-buddha.webp',
+    fallback: '/images/prod-buddha.png',
   },
   {
     id: 'marble-temple',
     name: 'Marble Temple Statue',
-    image: '/images/prod-temple.png',
+    image: '/images/prod-temple.webp',
+    fallback: '/images/prod-temple.png',
   },
   {
     id: 'marble-durga',
     name: 'Marble Durga Statue',
-    image: '/images/prod-durga.png',
+    image: '/images/prod-durga.webp',
+    fallback: '/images/prod-durga.png',
   },
 ];
 
@@ -77,12 +82,16 @@ export default function FeaturedProducts({ onRequestPrice }) {
             >
               {/* Product Image Box */}
               <div className="w-full aspect-[4/5] rounded-lg sm:rounded-xl overflow-hidden bg-white flex items-center justify-center p-2 sm:p-3 relative shadow-inner">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
-                  loading="lazy"
-                />
+                <picture className="w-full h-full flex items-center justify-center">
+                  <source srcSet={product.image} type="image/webp" />
+                  <img
+                    src={product.fallback}
+                    alt={product.name}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               {/* Title & Action */}

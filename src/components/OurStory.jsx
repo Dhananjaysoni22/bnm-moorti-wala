@@ -10,12 +10,16 @@ export default function OurStory({ onOpenCustomise }) {
           {/* Left Column: Artisan Image (5 cols) */}
           <div className="lg:col-span-5 flex justify-center w-full">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none rounded-xl sm:rounded-2xl overflow-hidden shadow-card group">
-              <img
-                src="/images/artisan-story.png"
-                alt="Artisan sculpting marble idol by hand at Badrinarayan Naresh Kumar Moorti Wala"
-                className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
-                loading="lazy"
-              />
+              <picture className="w-full h-auto">
+                <source srcSet="/images/artisan-story.webp" type="image/webp" />
+                <img
+                  src="/images/artisan-story.png"
+                  alt="Artisan sculpting marble idol by hand at Badrinarayan Naresh Kumar Moorti Wala"
+                  className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-xl sm:rounded-2xl pointer-events-none" />
             </div>
           </div>
