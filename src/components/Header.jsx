@@ -29,16 +29,16 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
   return (
     <>
       {/* Top micro announcement bar on small screens */}
-      <div className="bg-[#9E6E2D] text-[#FAF6F0] py-1 px-4 text-center text-[10px] sm:text-[11px] font-medium tracking-wide sm:hidden flex items-center justify-center gap-1.5">
-        <Globe className="w-3 h-3 text-[#F5E1BF]" />
-        <span>Worldwide Shipping from Jaipur, India</span>
+      <div className="bg-[#9E6E2D] text-[#FAF6F0] py-1 px-2 text-center text-[10px] sm:text-[11px] font-medium tracking-wide sm:hidden flex items-center justify-center gap-1.5 w-full overflow-hidden">
+        <Globe className="w-3 h-3 text-[#F5E1BF] flex-shrink-0" />
+        <span className="truncate">Worldwide Shipping from Jaipur, India</span>
       </div>
 
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#F0EBE1] transition-all">
-        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 h-18 sm:h-20 md:h-24 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#F0EBE1] w-full overflow-hidden">
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 md:h-24 flex items-center justify-between w-full">
           
           {/* Left: Brand Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 min-w-0">
             <Logo variant="header" />
           </div>
 
@@ -74,12 +74,12 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
           </nav>
 
           {/* Right: Actions & Badges */}
-          <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-5">
+          <div className="flex items-center space-x-1.5 sm:space-x-3 md:space-x-5 flex-shrink-0">
             {/* Search Button */}
             <button
               onClick={onOpenSearch}
               aria-label="Search idols"
-              className="p-2 text-[#3A3530] hover:text-[#9E6E2D] transition-colors rounded-full hover:bg-[#FAF6F0]"
+              className="p-1.5 sm:p-2 text-[#3A3530] hover:text-[#9E6E2D] transition-colors rounded-full hover:bg-[#FAF6F0]"
             >
               <Search className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.75]" />
             </button>
@@ -98,7 +98,7 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
             </a>
 
             {/* Divider (Desktop & Tablet) */}
-            <div className="hidden sm:block h-7 w-[1px] bg-[#E5DFD4]" />
+            <div className="hidden sm:block h-6 sm:h-7 w-[1px] bg-[#E5DFD4]" />
 
             {/* Worldwide Shipping Badge (Desktop & Tablet) */}
             <div className="hidden sm:flex items-center space-x-2 text-[#4A453F]">
@@ -112,29 +112,29 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 text-[#3E3A36] hover:text-[#9E6E2D] rounded-lg transition-colors"
+              className="lg:hidden p-1.5 text-[#3E3A36] hover:text-[#9E6E2D] rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Slide-Over Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-[72px] sm:top-[80px] bg-black/50 backdrop-blur-xs z-50">
-            <div className="bg-[#FAF8F5] border-t border-[#EAE3D6] px-6 py-6 space-y-5 shadow-2xl h-full max-h-[calc(100vh-72px)] overflow-y-auto">
+          <div className="lg:hidden fixed inset-x-0 top-[64px] sm:top-[80px] bottom-0 bg-black/50 backdrop-blur-xs z-50 overflow-hidden">
+            <div className="bg-[#FAF8F5] border-t border-[#EAE3D6] px-5 py-5 space-y-4 shadow-2xl h-full max-h-full overflow-y-auto overflow-x-hidden w-full">
               
               {/* Worldwide Shipping Notice inside Mobile Menu */}
               <div className="flex items-center gap-2 p-3 rounded-xl bg-white border border-[#EBE3D5] text-[#4A453F]">
-                <Globe className="w-5 h-5 text-[#9E6E2D]" />
+                <Globe className="w-4 h-4 text-[#9E6E2D] flex-shrink-0" />
                 <div className="text-xs">
                   <span className="font-semibold text-gray-800">Worldwide Shipping</span> from Jaipur, India
                 </div>
               </div>
 
               {/* Navigation Links */}
-              <nav className="flex flex-col space-y-2">
+              <nav className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
@@ -143,22 +143,22 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
                       setMobileMenuOpen(false);
                       if (link.onClick) link.onClick(e);
                     }}
-                    className="text-lg font-serif py-2.5 text-[#333333] hover:text-[#9E6E2D] border-b border-[#F0EBE1] flex items-center justify-between"
+                    className="text-base font-serif py-2.5 text-[#333333] hover:text-[#9E6E2D] border-b border-[#F0EBE1] flex items-center justify-between"
                     style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                   >
                     <span>{link.name}</span>
-                    <span className="text-[#B88E44] text-sm">→</span>
+                    <span className="text-[#B88E44] text-xs">→</span>
                   </a>
                 ))}
               </nav>
 
               {/* Contact Actions in Mobile Drawer */}
-              <div className="pt-2 flex flex-col gap-2.5">
+              <div className="pt-2 flex flex-col gap-2">
                 <a
                   href="https://wa.me/919460154291"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366] text-white font-medium text-sm shadow-sm"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-[#25D366] text-white font-medium text-xs shadow-xs"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Chat on WhatsApp (+91 9460154291)
@@ -166,7 +166,7 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
 
                 <a
                   href="tel:+919460154291"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-[#9E6E2D] text-[#9E6E2D] font-medium text-sm hover:bg-[#9E6E2D] hover:text-white transition-colors"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-[#9E6E2D] text-[#9E6E2D] font-medium text-xs hover:bg-[#9E6E2D] hover:text-white transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   Call Artisan Workshop

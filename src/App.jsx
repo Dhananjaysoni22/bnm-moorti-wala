@@ -22,7 +22,6 @@ export default function App() {
   };
 
   const handleSelectCategory = (category) => {
-    // Open customize or prompt inquiry for that specific category
     setSelectedProduct({
       name: `${category.title} (Collection Inquiry)`,
       image: category.image,
@@ -31,7 +30,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#2D2A26] flex flex-col font-sans selection:bg-[#9E6E2D] selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#2D2A26] flex flex-col font-sans selection:bg-[#9E6E2D] selection:text-white w-full max-w-full overflow-x-hidden relative">
       {/* 1. Header Navigation Bar */}
       <Header
         onOpenSearch={() => setIsSearchOpen(true)}
@@ -39,7 +38,7 @@ export default function App() {
       />
 
       {/* Main Page Sections */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         {/* 2. Hero Grand Temple Banner */}
         <Hero />
 

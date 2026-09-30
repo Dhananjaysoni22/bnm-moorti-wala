@@ -26,8 +26,8 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-[#FAF8F5]">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 md:py-24 bg-[#FAF8F5] w-full overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
@@ -35,54 +35,56 @@ export default function Testimonials() {
             WHAT OUR CUSTOMERS SAY
           </p>
           <div className="flex items-center justify-center gap-2 sm:gap-4 max-w-lg mx-auto px-2">
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C4A163] to-[#B88E44]" />
+            <div className="hidden sm:block h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C4A163] to-[#B88E44]" />
             <h2 
               className="text-xl sm:text-3xl md:text-4xl text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Loved by Devotees Worldwide
             </h2>
-            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#C4A163] to-[#B88E44]" />
+            <div className="hidden sm:block h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#C4A163] to-[#B88E44]" />
           </div>
+          {/* Subtle mobile divider */}
+          <div className="sm:hidden w-16 h-[1.5px] bg-[#C4A163] mx-auto mt-2 rounded-full" />
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl sm:rounded-2xl border border-[#ECE5D9] p-5 sm:p-7 flex flex-col justify-between shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-300 relative"
+              className="bg-white rounded-xl sm:rounded-2xl border border-[#ECE5D9] p-5 sm:p-7 flex flex-col justify-between shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-300 relative min-w-0 w-full"
             >
-              <div>
+              <div className="min-w-0">
                 {/* Quotation Marks Icon */}
                 <div className="text-[#9E6E2D] font-serif text-3xl sm:text-5xl leading-none mb-1.5 sm:mb-2 select-none opacity-80">
                   “
                 </div>
 
                 {/* Review Text */}
-                <p className="text-xs sm:text-[13px] text-[#554F47] leading-relaxed italic mb-5 sm:mb-6">
+                <p className="text-xs sm:text-[13px] text-[#554F47] leading-relaxed italic mb-5 sm:mb-6 break-words">
                   "{t.review}"
                 </p>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 {/* 5 Golden Stars */}
                 <div className="flex items-center gap-1 mb-2.5 sm:mb-3">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-3.5 h-3.5 fill-[#D99A26] text-[#D99A26]"
+                      className="w-3.5 h-3.5 fill-[#D99A26] text-[#D99A26] flex-shrink-0"
                     />
                   ))}
                 </div>
 
                 {/* Author Name */}
-                <h4 className="text-xs sm:text-sm font-bold text-[#2A2621] uppercase tracking-wide">
+                <h4 className="text-xs sm:text-sm font-bold text-[#2A2621] uppercase tracking-wide truncate">
                   {t.name}
                 </h4>
 
                 {/* Location */}
-                <p className="text-[11px] sm:text-xs text-[#867D72] mt-0.5">
+                <p className="text-[11px] sm:text-xs text-[#867D72] mt-0.5 truncate">
                   {t.location}
                 </p>
               </div>

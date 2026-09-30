@@ -21,10 +21,10 @@ export default function Logo({ variant = 'header', className = '' }) {
   }
 
   return (
-    <a href="#" className={`flex flex-col items-center group transition-opacity hover:opacity-90 ${className}`}>
+    <a href="#" className={`flex flex-col items-center group transition-opacity hover:opacity-90 max-w-[180px] sm:max-w-none ${className}`}>
       {/* Monogram BNM */}
       <div 
-        className={`font-serif text-3xl md:text-4xl font-normal tracking-tight leading-none ${
+        className={`font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight leading-none ${
           isFooter ? 'text-[#F3E5C8]' : 'text-[#B88E44]'
         }`}
         style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
@@ -33,14 +33,14 @@ export default function Logo({ variant = 'header', className = '' }) {
       </div>
       {/* Brand Subtitles */}
       <span 
-        className={`text-[9px] md:text-[10px] uppercase tracking-wider font-medium mt-1 leading-tight text-center ${
+        className={`text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-wider font-medium mt-0.5 sm:mt-1 leading-tight text-center truncate w-full ${
           isFooter ? 'text-[#E8D4B4]' : 'text-[#7D6B58]'
         }`}
       >
         Badrinarayan Naresh Kumar
       </span>
       <span 
-        className={`text-[8px] md:text-[9px] tracking-widest uppercase font-normal text-center ${
+        className={`text-[7px] sm:text-[8px] md:text-[9px] tracking-widest uppercase font-normal text-center ${
           isFooter ? 'text-[#D9BF97]' : 'text-[#96826F]'
         }`}
       >

@@ -50,33 +50,33 @@ const features = [
 
 export default function FeaturesBanner() {
   return (
-    <section className="bg-[#FCFAF7] border-y border-[#ECE6DC] py-10 sm:py-14 md:py-16">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-0">
+    <section className="bg-[#FCFAF7] border-y border-[#ECE6DC] py-10 sm:py-14 md:py-16 w-full overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-0 w-full">
           {features.map((item, idx) => (
             <div
               key={idx}
-              className={`flex flex-col items-center text-center px-2 sm:px-4 ${
+              className={`flex flex-col items-center text-center px-1.5 sm:px-4 min-w-0 w-full ${
                 idx % 2 === 0 ? 'border-r border-[#E8E1D3] lg:border-r' : ''
               } ${
                 idx < features.length - 1 ? 'lg:border-r lg:border-[#E8E1D3]' : ''
               }`}
             >
               {/* Icon */}
-              <div className="mb-2.5 sm:mb-4 flex items-center justify-center p-1 sm:p-2 rounded-full text-[#B88E44]">
+              <div className="mb-2 sm:mb-4 flex items-center justify-center p-1 sm:p-2 rounded-full text-[#B88E44]">
                 {item.icon}
               </div>
 
               {/* Title */}
               <h3 
-                className="text-sm sm:text-base md:text-lg font-serif font-medium text-[#2E2924] leading-snug whitespace-pre-line mb-1 sm:mb-2"
+                className="text-xs sm:text-base md:text-lg font-serif font-medium text-[#2E2924] leading-snug whitespace-pre-line mb-1 sm:mb-2 min-w-0"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[11px] sm:text-[12px] md:text-[13px] text-[#7A7369] leading-relaxed whitespace-pre-line">
+              <p className="text-[10px] sm:text-[12px] md:text-[13px] text-[#7A7369] leading-relaxed whitespace-pre-line break-words min-w-0">
                 {item.description}
               </p>
             </div>

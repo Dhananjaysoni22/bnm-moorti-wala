@@ -31,8 +31,8 @@ const products = [
 
 export default function FeaturedProducts({ onRequestPrice }) {
   return (
-    <section className="py-10 sm:py-16 md:py-20 bg-white border-t border-[#F3EEE6]">
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
+    <section className="py-10 sm:py-16 md:py-20 bg-white border-t border-[#F3EEE6] w-full overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 w-full">
         
         {/* Header with Subtitle, Title, and "View all Products" */}
         <div className="relative mb-8 sm:mb-12 md:mb-14">
@@ -41,15 +41,17 @@ export default function FeaturedProducts({ onRequestPrice }) {
               HANDPICKED COLLECTION
             </p>
             <div className="flex items-center justify-center gap-2 sm:gap-4 max-w-md mx-auto px-2">
-              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C4A163] to-[#B88E44]" />
+              <div className="hidden sm:block h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C4A163] to-[#B88E44]" />
               <h2 
                 className="text-xl sm:text-3xl md:text-4xl text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 Featured Products
               </h2>
-              <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#C4A163] to-[#B88E44]" />
+              <div className="hidden sm:block h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#C4A163] to-[#B88E44]" />
             </div>
+            {/* Subtle mobile divider */}
+            <div className="sm:hidden w-16 h-[1.5px] bg-[#C4A163] mx-auto mt-2 rounded-full" />
           </div>
 
           {/* View All Products Link */}
@@ -65,12 +67,12 @@ export default function FeaturedProducts({ onRequestPrice }) {
         </div>
 
         {/* 5 Product Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 lg:gap-6 w-full">
           {products.map((product, idx) => (
             <div
               key={product.id}
-              className={`group bg-[#FAF7F2] rounded-xl sm:rounded-2xl border border-[#EDE7DD]/60 p-2.5 sm:p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-card hover:-translate-y-1 hover:border-[#DECFAF] ${
-                idx === 4 ? 'col-span-2 sm:col-span-1 max-w-[260px] mx-auto w-full sm:max-w-none' : ''
+              className={`group bg-[#FAF7F2] rounded-xl sm:rounded-2xl border border-[#EDE7DD]/60 p-2 sm:p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-card hover:-translate-y-1 hover:border-[#DECFAF] min-w-0 w-full ${
+                idx === 4 ? 'col-span-2 sm:col-span-1 max-w-[240px] sm:max-w-none mx-auto w-full' : ''
               }`}
             >
               {/* Product Image Box */}
@@ -84,9 +86,9 @@ export default function FeaturedProducts({ onRequestPrice }) {
               </div>
 
               {/* Title & Action */}
-              <div className="pt-3 sm:pt-4 flex flex-col items-center text-center">
+              <div className="pt-2.5 sm:pt-4 flex flex-col items-center text-center w-full min-w-0">
                 <h3 
-                  className="text-[12px] sm:text-[14px] font-medium text-[#2F2B26] mb-2.5 sm:mb-3 line-clamp-1 group-hover:text-[#8B5C24] transition-colors"
+                  className="text-[11px] sm:text-[14px] font-medium text-[#2F2B26] mb-2 sm:mb-3 truncate w-full group-hover:text-[#8B5C24] transition-colors"
                 >
                   {product.name}
                 </h3>
@@ -94,10 +96,10 @@ export default function FeaturedProducts({ onRequestPrice }) {
                 {/* Pill Button: Request price -> */}
                 <button
                   onClick={() => onRequestPrice?.(product)}
-                  className="w-full py-1.5 px-3 rounded-full bg-[#9E6E2D] hover:bg-[#86591F] text-white text-[10px] sm:text-xs font-medium tracking-wide flex items-center justify-center gap-1 sm:gap-1.5 shadow-xs transition-all active:scale-95 group/btn"
+                  className="w-full py-1.5 px-2 sm:px-4 rounded-full bg-[#9E6E2D] hover:bg-[#86591F] text-white text-[10px] sm:text-xs font-medium tracking-wide flex items-center justify-center gap-1 sm:gap-1.5 shadow-xs transition-all active:scale-95 group/btn"
                 >
                   <span>Request price</span>
-                  <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform flex-shrink-0" />
                 </button>
               </div>
             </div>
