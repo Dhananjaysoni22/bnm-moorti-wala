@@ -1,52 +1,67 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Logo({ variant = 'header', className = '' }) {
+/**
+ * Universal Brand Logo Component for Badrinarayan Naresh Kumar Moorti Wala
+ * Uses the official public/logo.svg vector lockup.
+ *
+ * Supported variants:
+ * - 'header' (default): Prominent, elegant navbar presence
+ * - 'footer': High-contrast luminous cream/white lockup for warm ochre footer
+ * - 'about': Grand hero emblem for the About Us story page
+ * - 'customise': Prominent brand emblem above address
+ * - 'watermark': Large right-column accent in Our Story section
+ */
+export default function Logo({ 
+  variant = 'header', 
+  className = '', 
+  link = true 
+}) {
   const isFooter = variant === 'footer';
   const isWatermark = variant === 'watermark';
+  const isAbout = variant === 'about';
+  const isCustomise = variant === 'customise';
 
-  if (isWatermark) {
+  // Refined, elegant responsive scales matching official brand lockup
+  let variantStyles = 'h-9 sm:h-10 md:h-[42px] w-auto object-contain';
+
+  if (isFooter) {
+    variantStyles = 'h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain brightness-0 invert opacity-95 group-hover:opacity-100 transition-opacity duration-200 mx-auto sm:mx-0';
+  } else if (isAbout) {
+    variantStyles = 'h-24 sm:h-32 md:h-36 lg:h-40 w-auto object-contain mx-auto';
+  } else if (isCustomise) {
+    variantStyles = 'h-20 sm:h-24 md:h-28 w-auto object-contain mx-auto';
+  } else if (isWatermark) {
+    variantStyles = 'w-48 sm:w-56 lg:w-64 xl:w-72 h-auto object-contain opacity-85 select-none pointer-events-none';
+  }
+
+  const logoImg = (
+    <img
+      src="/logo.svg"
+      alt="Badrinarayan Naresh Kumar Moorti Wala"
+      className={`${variantStyles} ${className}`}
+      loading="eager"
+      decoding="async"
+    />
+  );
+
+  if (!link || isWatermark) {
     return (
-      <div className={`select-none pointer-events-none text-center ${className}`}>
-        <div className="font-serif text-5xl md:text-7xl font-light tracking-wide text-[#B88E44]/40" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-          BNM
-        </div>
-        <div className="text-sm font-medium tracking-wider text-[#9E6E2D] mt-1" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-          Badrinarayan Naresh Kumar
-        </div>
-        <div className="text-xs tracking-wider text-[#9E6E2D]">
-          Moorti Wala
-        </div>
+      <div className={`inline-flex items-center justify-center ${className}`}>
+        {logoImg}
       </div>
     );
   }
 
   return (
-    <Link to="/" className={`flex flex-col items-center group transition-opacity hover:opacity-90 max-w-[180px] sm:max-w-none ${className}`}>
-      {/* Monogram BNM */}
-      <div 
-        className={`font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight leading-none ${
-          isFooter ? 'text-[#F3E5C8]' : 'text-[#B88E44]'
-        }`}
-        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-      >
-        BNM
-      </div>
-      {/* Brand Subtitles */}
-      <span 
-        className={`text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-wider font-medium mt-0.5 sm:mt-1 leading-tight text-center truncate w-full ${
-          isFooter ? 'text-[#E8D4B4]' : 'text-[#7D6B58]'
-        }`}
-      >
-        Badrinarayan Naresh Kumar
-      </span>
-      <span 
-        className={`text-[7px] sm:text-[8px] md:text-[9px] tracking-widest uppercase font-normal text-center ${
-          isFooter ? 'text-[#D9BF97]' : 'text-[#96826F]'
-        }`}
-      >
-        Moorti Wala
-      </span>
+    <Link
+      to="/"
+      className={`inline-flex items-center justify-center group transition-transform duration-200 hover:scale-[1.02] flex-shrink-0 ${
+        isFooter ? 'mx-auto sm:mx-0' : ''
+      }`}
+      title="Badrinarayan Naresh Kumar Moorti Wala - Home"
+    >
+      {logoImg}
     </Link>
   );
 }

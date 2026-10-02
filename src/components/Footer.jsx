@@ -24,14 +24,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 w-full">
           
           {/* Column 1: Brand Info & Copyright (4 cols) */}
-          <div className="lg:col-span-4 flex flex-col justify-between pr-0 lg:pr-6 min-w-0">
-            <div>
-              <div className="inline-block text-left mb-4 sm:mb-6">
-                <Logo variant="footer" />
-              </div>
+          <div className="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left justify-between pr-0 lg:pr-6 min-w-0">
+            <div className="w-full flex justify-center sm:justify-start mb-6 sm:mb-8">
+              <Logo variant="footer" />
             </div>
 
-            <div className="text-[11px] text-[#E8D6B8] leading-relaxed mt-4 sm:mt-6 lg:mt-12 space-y-1">
+            <div className="hidden lg:block text-[11px] text-[#E8D6B8] leading-relaxed mt-4 sm:mt-6 lg:mt-12 space-y-1">
               <p>© {currentYear} Badrinarayan Naresh Kumar Moorti Wala. All rights reserved.</p>
               <p className="opacity-80">
                 <a href="#" className="hover:underline">Privacy policy</a> | <a href="#" className="hover:underline">Terms & Conditions</a>
@@ -151,6 +149,14 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Mobile Copyright: centered at bottom of footer */}
+          <div className="lg:hidden col-span-1 md:col-span-2 border-t border-[#B88E44]/40 pt-6 mt-2 text-center text-[11px] text-[#E8D6B8] leading-relaxed space-y-1 w-full">
+            <p>© {currentYear} Badrinarayan Naresh Kumar Moorti Wala. All rights reserved.</p>
+            <p className="opacity-80">
+              <a href="#" className="hover:underline">Privacy policy</a> | <a href="#" className="hover:underline">Terms & Conditions</a>
+            </p>
           </div>
 
         </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, CheckCircle2, ChevronDown } from 'lucide-react';
+import Logo from '../components/Logo';
 
 const countryList = [
   'India', 'United States', 'United Kingdom', 'Australia', 'Canada',
@@ -61,21 +62,8 @@ export default function Customise() {
           
           {/* Left Column: Brand, Address & Get Directions */}
           <div className="lg:col-span-5 flex flex-col items-center text-center pt-2 sm:pt-6">
-            {/* BNM Monogram */}
-            <div className="flex flex-col items-center mb-5 sm:mb-6">
-              <div 
-                className="font-serif text-5xl sm:text-6xl font-light text-[#B88E44] tracking-tight leading-none"
-                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-              >
-                BNM
-              </div>
-              <span className="text-[10px] sm:text-[11px] uppercase tracking-wider font-medium text-[#9E6E2D] mt-2 leading-tight">
-                Badrinarayan Naresh Kumar
-              </span>
-              <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-light text-[#9E6E2D]">
-                Moorti Wala
-              </span>
-            </div>
+            {/* BNM Monogram Logo */}
+            <Logo variant="about" link={false} className="h-16 sm:h-20 w-auto mb-5 sm:mb-6" />
 
             {/* Address */}
             <p className="text-xs sm:text-sm text-[#4A453F] leading-relaxed max-w-xs mb-6 sm:mb-8">

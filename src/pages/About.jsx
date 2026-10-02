@@ -34,18 +34,7 @@ export default function About() {
           
           {/* Centered BNM Monogram Emblem */}
           <div className="flex flex-col items-center justify-center mb-8 sm:mb-12">
-            <div 
-              className="font-serif text-5xl sm:text-6xl font-light text-[#B88E44] tracking-tight leading-none"
-              style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-            >
-              BNM
-            </div>
-            <span className="text-[10px] sm:text-[11px] uppercase tracking-wider font-medium text-[#9E6E2D] mt-2 leading-tight">
-              Badrinarayan Naresh Kumar
-            </span>
-            <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-light text-[#9E6E2D]">
-              Moorti Wala
-            </span>
+            <Logo variant="about" link={false} className="h-16 sm:h-20 md:h-24 w-auto" />
           </div>
 
           {/* Story Narrative */}

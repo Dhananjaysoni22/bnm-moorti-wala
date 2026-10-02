@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, PhoneCall } from 'lucide-react';
+import Logo from './Logo';
 
 export default function OurStory({ onOpenCustomise }) {
   return (
@@ -63,20 +64,7 @@ export default function OurStory({ onOpenCustomise }) {
 
           {/* Right Column: BNM Logo Watermark / Accent (2 cols) */}
           <div className="hidden lg:flex lg:col-span-2 items-center justify-center opacity-85">
-            <div className="text-center">
-              <div 
-                className="font-serif text-6xl xl:text-7xl font-light text-[#C4A163]/70 leading-none"
-                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-              >
-                BNM
-              </div>
-              <div className="text-xs uppercase font-medium text-[#9E6E2D] tracking-wider mt-2">
-                Badrinarayan Naresh Kumar
-              </div>
-              <div className="text-[10px] uppercase font-light text-[#9E6E2D] tracking-widest">
-                Moorti Wala
-              </div>
-            </div>
+            <Logo variant="watermark" className="w-32 xl:w-40 h-auto" />
           </div>
 
         </div>

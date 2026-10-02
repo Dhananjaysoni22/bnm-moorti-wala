@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
 export default function CraftsmanshipBanner({ onStartProject }) {
   return (
@@ -17,19 +17,22 @@ export default function CraftsmanshipBanner({ onStartProject }) {
       </picture>
 
       {/* Dark overlay for contrast */}
-      <div className="absolute inset-0 bg-black/50 backdrop-brightness-90" />
+      <div className="absolute inset-0 bg-black/10 backdrop-brightness-90" />
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center text-white flex flex-col items-center w-full min-w-0">
-        <h2 
+        <h2
           className="text-2xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal leading-tight tracking-wide mb-3 sm:mb-4 text-white drop-shadow-md"
           style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
-          Your Vision.<br />Our Craftsmanship.
+          Your Vision.
+          <br />
+          Our Craftsmanship.
         </h2>
 
         <p className="text-xs sm:text-sm md:text-base text-white/90 max-w-2xl font-light leading-relaxed mb-6 sm:mb-8 drop-shadow px-2 break-words">
-          Creating exquisite stone masterpieces that embody beauty, tradition, and timeless elegance
+          Creating exquisite stone masterpieces that embody beauty, tradition,
+          and timeless elegance
         </p>
 
         <button
