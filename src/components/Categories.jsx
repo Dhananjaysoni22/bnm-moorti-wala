@@ -72,32 +72,32 @@ export default function Categories({ onSelectCategory }) {
           </div>
         </div>
 
-        {/* 6 Category Cards Grid */}
+        {/* 6 Category Cards Grid - Edge to Edge Image without Padding Frame */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-5 w-full">
           {categories.map((category) => (
             <div
               key={category.id}
               onClick={() => onSelectCategory?.(category)}
-              className="group cursor-pointer bg-[#FAF6F0] hover:bg-[#F5F0E6] rounded-2xl overflow-hidden p-2.5 sm:p-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between min-w-0 w-full"
+              className="group cursor-pointer bg-[#FAF6F0] hover:bg-[#F5F0E6] rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between min-w-0 w-full"
             >
-              {/* Image Container with rounded corners - no white border */}
-              <div className="w-full aspect-square rounded-xl overflow-hidden">
+              {/* Full Width Edge-to-Edge Image with zero padding and rounded top */}
+              <div className="w-full aspect-square overflow-hidden">
                 <picture className="w-full h-full">
                   <source srcSet={category.image} type="image/webp" />
                   <img
                     src={category.fallback}
                     alt={category.title}
-                    className="w-full h-full object-cover rounded-xl group-hover:scale-104 transition-transform duration-500 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
                     loading="lazy"
                     decoding="async"
                   />
                 </picture>
               </div>
 
-              {/* Title & Arrow Button */}
-              <div className="pt-3 pb-1 px-1 flex items-center justify-between gap-1.5 min-w-0">
+              {/* Bottom Details Bar */}
+              <div className="py-3 px-3 sm:px-3.5 flex items-center justify-between gap-1.5 min-w-0">
                 <h3 
-                  className="text-[13px] sm:text-[14px] xl:text-[15px] font-semibold text-[#8B5C24] leading-snug group-hover:text-[#6F4619] transition-colors line-clamp-1 min-w-0"
+                  className="text-[13px] sm:text-[14px] xl:text-[14px] font-semibold text-[#8B5C24] leading-snug group-hover:text-[#6F4619] transition-colors line-clamp-1 min-w-0"
                   style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                 >
                   {category.title}
