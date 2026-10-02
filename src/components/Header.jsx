@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 import { Search, Globe, Menu, X, MessageCircle, Phone } from 'lucide-react';
 
-export default function Header({ onOpenSearch, onOpenCustomise }) {
+export default function Header({ onOpenSearch }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
     { name: 'Home', path: '/', isRoute: true },
     { name: 'Our Collection', sectionId: 'collection', isSection: true },
     { name: 'About Us', path: '/about', isRoute: true },
-    { name: 'Customise your order', action: onOpenCustomise, isAction: true },
+    { name: 'Customise your order', path: '/customise', isRoute: true },
     { name: 'Contact Us', sectionId: 'contact', isSection: true },
   ];
 
@@ -88,19 +88,6 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
                   <button
                     key={item.name}
                     onClick={() => handleSectionClick(item.sectionId)}
-                    className="relative text-[15px] font-serif tracking-wide transition-colors py-1 text-[#3E3A36] hover:text-[#9E6E2D] cursor-pointer"
-                    style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-                  >
-                    {item.name}
-                  </button>
-                );
-              }
-
-              if (item.isAction) {
-                return (
-                  <button
-                    key={item.name}
-                    onClick={item.action}
                     className="relative text-[15px] font-serif tracking-wide transition-colors py-1 text-[#3E3A36] hover:text-[#9E6E2D] cursor-pointer"
                     style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                   >
@@ -200,23 +187,6 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
                       <button
                         key={item.name}
                         onClick={() => handleSectionClick(item.sectionId)}
-                        className="text-base font-serif py-2.5 text-[#333333] hover:text-[#9E6E2D] border-b border-[#F0EBE1] flex items-center justify-between w-full text-left"
-                        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-                      >
-                        <span>{item.name}</span>
-                        <span className="text-[#B88E44] text-xs">→</span>
-                      </button>
-                    );
-                  }
-
-                  if (item.isAction) {
-                    return (
-                      <button
-                        key={item.name}
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          item.action?.();
-                        }}
                         className="text-base font-serif py-2.5 text-[#333333] hover:text-[#9E6E2D] border-b border-[#F0EBE1] flex items-center justify-between w-full text-left"
                         style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                       >

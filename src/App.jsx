@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
+import Customise from './pages/Customise';
 import PriceModal from './components/PriceModal';
 import SearchModal from './components/SearchModal';
 import CustomiseModal from './components/CustomiseModal';
@@ -51,6 +52,8 @@ export default function App() {
               }
             />
             <Route path="/about" element={<About />} />
+            <Route path="/customise" element={<Customise />} />
+            <Route path="/customize" element={<Customise />} />
           </Routes>
         </main>
 

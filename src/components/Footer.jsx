@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 
-export default function Footer({ onOpenCustomise }) {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -60,12 +60,7 @@ export default function Footer({ onOpenCustomise }) {
                   <Link to="/about" className="hover:text-white transition-colors block truncate">About Us</Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={onOpenCustomise}
-                    className="hover:text-white transition-colors text-left block truncate w-full cursor-pointer"
-                  >
-                    Customise your order
-                  </button>
+                  <Link to="/customise" className="hover:text-white transition-colors block truncate">Customise your order</Link>
                 </li>
                 <li>
                   <a href="/#contact" className="hover:text-white transition-colors block truncate">Contact Us</a>
