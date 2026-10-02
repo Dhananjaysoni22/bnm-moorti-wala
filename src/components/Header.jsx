@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 import { Search, Globe, Menu, X, MessageCircle, Phone } from 'lucide-react';
 
 export default function Header({ onOpenSearch, onOpenCustomise }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState('Home');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
@@ -18,12 +20,26 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
     };
   }, [mobileMenuOpen]);
 
-  const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Our Collection', href: '#collection' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Customise your order', href: '#customise', onClick: (e) => { e.preventDefault(); onOpenCustomise?.(); } },
-    { name: 'Contact Us', href: '#contact' },
+  const handleSectionClick = (sectionId) => {
+    setMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate(`/#${sectionId}`);
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navItems = [
+    { name: 'Home', path: '/', isRoute: true },
+    { name: 'Our Collection', sectionId: 'collection', isSection: true },
+    { name: 'About Us', path: '/about', isRoute: true },
+    { name: 'Customise your order', action: onOpenCustomise, isAction: true },
+    { name: 'Contact Us', sectionId: 'contact', isSection: true },
   ];
 
   return (
@@ -44,32 +60,56 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
 
           {/* Center: Navigation Links (Desktop) */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-9">
-            {navLinks.map((link) => {
-              const isActive = activeNav === link.name;
-              return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    if (link.onClick) {
-                      link.onClick(e);
-                    } else {
-                      setActiveNav(link.name);
-                    }
-                  }}
-                  className={`relative text-[15px] font-serif tracking-wide transition-colors py-1 ${
-                    isActive
-                      ? 'text-[#9E6E2D] font-semibold'
-                      : 'text-[#3E3A36] hover:text-[#9E6E2D]'
-                  }`}
-                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-                >
-                  {link.name}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#9E6E2D] rounded-full" />
-                  )}
-                </a>
-              );
+            {navItems.map((item) => {
+              const isActive = item.isRoute && location.pathname === item.path;
+
+              if (item.isRoute) {
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`relative text-[15px] font-serif tracking-wide transition-colors py-1 ${
+                      isActive
+                        ? 'text-[#9E6E2D] font-semibold'
+                        : 'text-[#3E3A36] hover:text-[#9E6E2D]'
+                    }`}
+                    style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                  >
+                    {item.name}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#9E6E2D] rounded-full animate-fade-in" />
+                    )}
+                  </Link>
+                );
+              }
+
+              if (item.isSection) {
+                return (
+                  <button
+                    key={item.name}
+                    onClick={() => handleSectionClick(item.sectionId)}
+                    className="relative text-[15px] font-serif tracking-wide transition-colors py-1 text-[#3E3A36] hover:text-[#9E6E2D] cursor-pointer"
+                    style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                  >
+                    {item.name}
+                  </button>
+                );
+              }
+
+              if (item.isAction) {
+                return (
+                  <button
+                    key={item.name}
+                    onClick={item.action}
+                    className="relative text-[15px] font-serif tracking-wide transition-colors py-1 text-[#3E3A36] hover:text-[#9E6E2D] cursor-pointer"
+                    style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                  >
+                    {item.name}
+                  </button>
+                );
+              }
+
+              return null;
             })}
           </nav>
 
@@ -135,21 +175,59 @@ export default function Header({ onOpenSearch, onOpenCustomise }) {
 
               {/* Navigation Links */}
               <nav className="flex flex-col space-y-1">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={(e) => {
-                      setMobileMenuOpen(false);
-                      if (link.onClick) link.onClick(e);
-                    }}
-                    className="text-base font-serif py-2.5 text-[#333333] hover:text-[#9E6E2D] border-b border-[#F0EBE1] flex items-center justify-between"
-                    style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-                  >
-                    <span>{link.name}</span>
-                    <span className="text-[#B88E44] text-xs">→</span>
-                  </a>
-                ))}
+                {navItems.map((item) => {
+                  const isActive = item.isRoute && location.pathname === item.path;
+
+                  if (item.isRoute) {
+                    return (
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`text-base font-serif py-2.5 border-b border-[#F0EBE1] flex items-center justify-between ${
+                          isActive ? 'text-[#9E6E2D] font-semibold' : 'text-[#333333]'
+                        }`}
+                        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                      >
+                        <span>{item.name}</span>
+                        <span className="text-[#B88E44] text-xs">→</span>
+                      </Link>
+                    );
+                  }
+
+                  if (item.isSection) {
+                    return (
+                      <button
+                        key={item.name}
+                        onClick={() => handleSectionClick(item.sectionId)}
+                        className="text-base font-serif py-2.5 text-[#333333] hover:text-[#9E6E2D] border-b border-[#F0EBE1] flex items-center justify-between w-full text-left"
+                        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                      >
+                        <span>{item.name}</span>
+                        <span className="text-[#B88E44] text-xs">→</span>
+                      </button>
+                    );
+                  }
+
+                  if (item.isAction) {
+                    return (
+                      <button
+                        key={item.name}
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          item.action?.();
+                        }}
+                        className="text-base font-serif py-2.5 text-[#333333] hover:text-[#9E6E2D] border-b border-[#F0EBE1] flex items-center justify-between w-full text-left"
+                        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                      >
+                        <span>{item.name}</span>
+                        <span className="text-[#B88E44] text-xs">→</span>
+                      </button>
+                    );
+                  }
+
+                  return null;
+                })}
               </nav>
 
               {/* Contact Actions in Mobile Drawer */}

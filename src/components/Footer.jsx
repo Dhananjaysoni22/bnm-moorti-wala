@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 
@@ -50,24 +51,24 @@ export default function Footer({ onOpenCustomise }) {
               </h3>
               <ul className="space-y-2 sm:space-y-2.5 text-xs text-[#EFE4D2]">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors block truncate">Home</a>
+                  <Link to="/" className="hover:text-white transition-colors block truncate">Home</Link>
                 </li>
                 <li>
-                  <a href="#collection" className="hover:text-white transition-colors block truncate">Our Collection</a>
+                  <a href="/#collection" className="hover:text-white transition-colors block truncate">Our Collection</a>
                 </li>
                 <li>
-                  <a href="#about" className="hover:text-white transition-colors block truncate">About Us</a>
+                  <Link to="/about" className="hover:text-white transition-colors block truncate">About Us</Link>
                 </li>
                 <li>
                   <button 
                     onClick={onOpenCustomise}
-                    className="hover:text-white transition-colors text-left block truncate w-full"
+                    className="hover:text-white transition-colors text-left block truncate w-full cursor-pointer"
                   >
                     Customise your order
                   </button>
                 </li>
                 <li>
-                  <a href="#contact" className="hover:text-white transition-colors block truncate">Contact Us</a>
+                  <a href="/#contact" className="hover:text-white transition-colors block truncate">Contact Us</a>
                 </li>
               </ul>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Logo({ variant = 'header', className = '' }) {
   const isFooter = variant === 'footer';
@@ -21,7 +22,7 @@ export default function Logo({ variant = 'header', className = '' }) {
   }
 
   return (
-    <a href="#" className={`flex flex-col items-center group transition-opacity hover:opacity-90 max-w-[180px] sm:max-w-none ${className}`}>
+    <Link to="/" className={`flex flex-col items-center group transition-opacity hover:opacity-90 max-w-[180px] sm:max-w-none ${className}`}>
       {/* Monogram BNM */}
       <div 
         className={`font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight leading-none ${
@@ -46,6 +47,6 @@ export default function Logo({ variant = 'header', className = '' }) {
       >
         Moorti Wala
       </span>
-    </a>
+    </Link>
   );
 }
