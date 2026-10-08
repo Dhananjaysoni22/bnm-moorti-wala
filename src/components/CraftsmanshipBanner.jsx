@@ -8,7 +8,7 @@ export default function CraftsmanshipBanner({ onStartProject }) {
       <picture className="absolute inset-0 w-full h-full">
         <source srcSet="/images/lions-banner.webp" type="image/webp" />
         <img
-          src="/images/lions-banner.png"
+          src="/images/lions-banner.webp"
           alt="Exquisite Marble Lions Masterpiece by Badrinarayan Naresh Kumar Moorti Wala"
           className="w-full h-full object-cover object-center select-none max-w-full"
           loading="lazy"

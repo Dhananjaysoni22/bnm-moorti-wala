@@ -14,7 +14,7 @@ export default function OurStory({ onOpenCustomise }) {
               <picture className="w-full h-auto">
                 <source srcSet="/images/artisan-story.webp" type="image/webp" />
                 <img
-                  src="/images/artisan-story.png"
+                  src="/images/artisan-story.webp"
                   alt="Artisan sculpting marble idol by hand at Badrinarayan Naresh Kumar Moorti Wala"
                   className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
                   loading="lazy"

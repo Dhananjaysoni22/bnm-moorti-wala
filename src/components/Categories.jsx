@@ -7,37 +7,37 @@ const categories = [
     id: 'god-statues',
     title: 'Marble God Statues',
     image: '/images/cat-gods.webp',
-    fallback: '/images/cat-gods.png',
+    fallback: '/images/cat-gods.webp',
   },
   {
     id: 'temples',
     title: 'Marble Temples',
     image: '/images/cat-temples.webp',
-    fallback: '/images/cat-temples.png',
+    fallback: '/images/cat-temples.webp',
   },
   {
     id: 'human-bust',
     title: 'Marble Human Bust',
     image: '/images/cat-busts.webp',
-    fallback: '/images/cat-busts.png',
+    fallback: '/images/cat-busts.webp',
   },
   {
     id: 'animals',
     title: 'Marble Animals',
     image: '/images/cat-animals.webp',
-    fallback: '/images/cat-animals.png',
+    fallback: '/images/cat-animals.webp',
   },
   {
     id: 'roman-figures',
     title: 'Marble Roman Figures',
     image: '/images/cat-roman.webp',
-    fallback: '/images/cat-roman.png',
+    fallback: '/images/cat-roman.webp',
   },
   {
     id: 'home-decor',
     title: 'Marble Home Decor',
     image: '/images/cat-decor.webp',
-    fallback: '/images/cat-decor.png',
+    fallback: '/images/cat-decor.webp',
   },
 ];
 

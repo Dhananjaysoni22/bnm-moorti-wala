@@ -7,7 +7,7 @@ export default function Hero() {
         <picture>
           <source srcSet="/images/hero-temple.webp" type="image/webp" />
           <img
-            src="/images/hero-temple.png"
+            src="/images/hero-temple.webp"
             alt="Badrinarayan Naresh Kumar Moorti Wala Sacred Marble Idols in Grand Temple Sanctum"
             className="w-full h-auto block select-none"
             loading="eager"

@@ -7,31 +7,31 @@ const products = [
     id: 'marble-shiva',
     name: 'Marble Shiva Statue',
     image: '/images/prod-shiva.webp',
-    fallback: '/images/prod-shiva.png',
+    fallback: '/images/prod-shiva.webp',
   },
   {
     id: 'marble-cow-calf',
     name: 'Marble Cow with Calf Statue',
     image: '/images/prod-cow.webp',
-    fallback: '/images/prod-cow.png',
+    fallback: '/images/prod-cow.webp',
   },
   {
     id: 'marble-buddha',
     name: 'Marble Buddha Statue',
     image: '/images/prod-buddha.webp',
-    fallback: '/images/prod-buddha.png',
+    fallback: '/images/prod-buddha.webp',
   },
   {
     id: 'marble-temple',
     name: 'Marble Temple Statue',
     image: '/images/prod-temple.webp',
-    fallback: '/images/prod-temple.png',
+    fallback: '/images/prod-temple.webp',
   },
   {
     id: 'marble-durga',
     name: 'Marble Durga Statue',
     image: '/images/prod-durga.webp',
-    fallback: '/images/prod-durga.png',
+    fallback: '/images/prod-durga.webp',
   },
 ];
 
