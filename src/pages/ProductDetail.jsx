@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import React, { useState, useMemo } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import {
   ChevronDown,
   Share2,
@@ -8,13 +8,13 @@ import {
   Check,
   MessageCircle,
   ShieldCheck,
-} from 'lucide-react';
-import { CATEGORIES, PRODUCTS } from '../data/collectionData';
+} from "lucide-react";
+import { CATEGORIES, PRODUCTS } from "../data/collectionData";
 
 export default function ProductDetail({ onRequestPrice }) {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('description');
+  const [activeTab, setActiveTab] = useState("description");
   const [copied, setCopied] = useState(false);
 
   // Dynamic product lookup with fuzzy fallback
@@ -29,13 +29,13 @@ export default function ProductDetail({ onRequestPrice }) {
       (p) =>
         p.id.toLowerCase().includes(normalized) ||
         normalized.includes(p.id.toLowerCase()) ||
-        p.name.toLowerCase().includes(normalized.replace(/-/g, ' '))
+        p.name.toLowerCase().includes(normalized.replace(/-/g, " ")),
     );
     return match || PRODUCTS[0];
   }, [id]);
 
   // Active category for top bar highlight
-  const activeCategoryId = product.category || 'god-statues';
+  const activeCategoryId = product.category || "god-statues";
 
   const handleCategoryClick = (catId) => {
     navigate(`/collection?category=${catId}`);
@@ -44,7 +44,10 @@ export default function ProductDetail({ onRequestPrice }) {
   // WhatsApp direct inquiry
   const handleWhatsAppInquiry = (prod) => {
     const text = `Namaste! I would like to inquire about the price and customization for "${prod.name}" from Badrinarayan Naresh Kumar Moorti Wala.\n\nLink: ${window.location.href}`;
-    window.open(`https://wa.me/919460154291?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(
+      `https://wa.me/919460154291?text=${encodeURIComponent(text)}`,
+      "_blank",
+    );
   };
 
   // Native share or clipboard
@@ -67,7 +70,10 @@ export default function ProductDetail({ onRequestPrice }) {
   // WhatsApp share
   const handleWhatsAppShare = () => {
     const shareText = `Check out this divine ${product.name} at Badrinarayan Naresh Kumar Moorti Wala: ${window.location.href}`;
-    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`, '_blank');
+    window.open(
+      `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`,
+      "_blank",
+    );
   };
 
   // Copy link with tooltip
@@ -93,19 +99,23 @@ export default function ProductDetail({ onRequestPrice }) {
                   onClick={() => handleCategoryClick(cat.id)}
                   className={`flex items-center gap-1 font-serif text-[14px] sm:text-[15px] lg:text-[16px] whitespace-nowrap transition-colors py-1 relative cursor-pointer group ${
                     isActive
-                      ? 'text-[#BD9A5D] font-medium'
-                      : 'text-[#4A453F] hover:text-[#BD9A5D]'
+                      ? "text-[#BD9A5D] font-medium"
+                      : "text-[#4A453F] hover:text-[#BD9A5D]"
                   }`}
                 >
-                  <span style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+                  <span
+                    style={{
+                      fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    }}
+                  >
                     {cat.name}
                   </span>
                   {cat.hasDropdown && (
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-colors ${
                         isActive
-                          ? 'text-[#BD9A5D]'
-                          : 'text-[#8E8478] group-hover:text-[#BD9A5D]'
+                          ? "text-[#BD9A5D]"
+                          : "text-[#8E8478] group-hover:text-[#BD9A5D]"
                       }`}
                     />
                   )}
@@ -123,7 +133,6 @@ export default function ProductDetail({ onRequestPrice }) {
       <section className="w-full py-8 sm:py-12 lg:py-16">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
-            
             {/* Left Column: Product Image */}
             <div className="lg:col-span-6 flex justify-center">
               <div className="w-full max-w-[500px] aspect-square rounded-2xl sm:rounded-3xl overflow-hidden bg-[#F6F1E9] border border-[#ECE7DE] shadow-[0_4px_24px_rgba(0,0,0,0.06)] relative group">
@@ -154,52 +163,67 @@ export default function ProductDetail({ onRequestPrice }) {
               {/* 5 Bullet Points with bold lead-ins (Exact copy from mockup) */}
               <ul className="space-y-4 mb-8 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
                   <span>
                     <strong className="font-semibold text-[#222222]">
                       Handcrafted by Skilled Artisans
-                    </strong>{' '}
-                    using traditional techniques of Murtikala passed down through generations.
+                    </strong>{" "}
+                    using traditional techniques of Murtikala passed down
+                    through generations.
                   </span>
                 </li>
 
                 <li className="flex items-start gap-2">
-                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
                   <span>
                     <strong className="font-semibold text-[#222222]">
                       Authentic & Original Craftsmanship,
-                    </strong>{' '}
-                    carefully carved to preserve the natural beauty and character of the material.
+                    </strong>{" "}
+                    carefully carved to preserve the natural beauty and
+                    character of the material.
                   </span>
                 </li>
 
                 <li className="flex items-start gap-2">
-                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
                   <span>
                     <strong className="font-semibold text-[#222222]">
                       Made with Fine-Quality Marble,
-                    </strong>{' '}
-                    selected for its smooth finish, durability, and timeless appeal.
+                    </strong>{" "}
+                    selected for its smooth finish, durability, and timeless
+                    appeal.
                   </span>
                 </li>
 
                 <li className="flex items-start gap-2">
-                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
                   <span>
                     <strong className="font-semibold text-[#222222]">
                       Every Murti is Unique,
-                    </strong>{' '}
-                    with subtle handmade variations that reflect its artisanal character.
+                    </strong>{" "}
+                    with subtle handmade variations that reflect its artisanal
+                    character.
                   </span>
                 </li>
 
                 <li className="flex items-start gap-2">
-                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
                   <span>
                     <strong className="font-semibold text-[#222222]">
                       Crafted with Devotion & Precision,
-                    </strong>{' '}
-                    making it a meaningful choice for temples, homes, gifting, and spiritual spaces.
+                    </strong>{" "}
+                    making it a meaningful choice for temples, homes, gifting,
+                    and spiritual spaces.
                   </span>
                 </li>
               </ul>
@@ -272,7 +296,6 @@ export default function ProductDetail({ onRequestPrice }) {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -281,11 +304,11 @@ export default function ProductDetail({ onRequestPrice }) {
             {/* Centered Tab Headers */}
             <div className="flex items-center justify-center gap-10 sm:gap-14 mb-8 sm:mb-10">
               <button
-                onClick={() => setActiveTab('description')}
+                onClick={() => setActiveTab("description")}
                 className={`text-base sm:text-lg tracking-wide transition-colors cursor-pointer relative pb-1 ${
-                  activeTab === 'description'
-                    ? 'text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]'
-                    : 'text-[#666666] hover:text-[#A77620] font-normal'
+                  activeTab === "description"
+                    ? "text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]"
+                    : "text-[#666666] hover:text-[#A77620] font-normal"
                 }`}
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
@@ -293,11 +316,11 @@ export default function ProductDetail({ onRequestPrice }) {
               </button>
 
               <button
-                onClick={() => setActiveTab('care')}
+                onClick={() => setActiveTab("care")}
                 className={`text-base sm:text-lg tracking-wide transition-colors cursor-pointer relative pb-1 ${
-                  activeTab === 'care'
-                    ? 'text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]'
-                    : 'text-[#666666] hover:text-[#A77620] font-normal'
+                  activeTab === "care"
+                    ? "text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]"
+                    : "text-[#666666] hover:text-[#A77620] font-normal"
                 }`}
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
@@ -307,90 +330,155 @@ export default function ProductDetail({ onRequestPrice }) {
 
             {/* Tab Contents */}
             <div className="max-w-3xl mx-auto px-2">
-              {activeTab === 'description' ? (
+              {activeTab === "description" ? (
                 <ul className="space-y-4 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed">
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                      •
+                    </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
                         Handcrafted by Skilled Artisans
-                      </strong>{' '}
-                      using traditional techniques of Murtikala passed down through generations.
+                      </strong>{" "}
+                      using traditional techniques of Murtikala passed down
+                      through generations.
                     </span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                      •
+                    </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
                         Authentic & Original Craftsmanship,
-                      </strong>{' '}
-                      carefully carved to preserve the natural beauty and character of the material.
+                      </strong>{" "}
+                      carefully carved to preserve the natural beauty and
+                      character of the material.
                     </span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                      •
+                    </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
                         Made with Fine-Quality Marble,
-                      </strong>{' '}
-                      selected for its smooth finish, durability, and timeless appeal.
+                      </strong>{" "}
+                      selected for its smooth finish, durability, and timeless
+                      appeal.
                     </span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                      •
+                    </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
                         Every Murti is Unique,
-                      </strong>{' '}
-                      with subtle handmade variations that reflect its artisanal character.
+                      </strong>{" "}
+                      with subtle handmade variations that reflect its artisanal
+                      character.
                     </span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">•</span>
+                    <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                      •
+                    </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
                         Crafted with Devotion & Precision,
-                      </strong>{' '}
-                      making it a meaningful choice for temples, homes, gifting, and spiritual spaces.
+                      </strong>{" "}
+                      making it a meaningful choice for temples, homes, gifting,
+                      and spiritual spaces.
                     </span>
                   </li>
                 </ul>
               ) : (
-                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#ECE7DE] shadow-xs">
-                  <h3
-                    className="font-serif text-lg text-[#A77620] mb-4 flex items-center gap-2"
-                    style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-                  >
-                    <ShieldCheck className="w-5 h-5 text-[#A77620]" />
-                    <span>Preserving Sacred Marble Radiance</span>
-                  </h3>
-                  <ul className="space-y-3.5 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed">
+                <div className="space-y-6">
+                  {/* Centered Intro Paragraph */}
+                  <p className="text-center text-[#4A453F] text-xs sm:text-[13.5px] max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8">
+                    Each marble idol from{" "}
+                    <strong className="font-semibold text-[#222222]">
+                      Badrinarayan Nareshkumar Moorti Wala
+                    </strong>{" "}
+                    is a reflection of traditional craftsmanship, devotion, and
+                    meticulous detailing. With proper care, your idol can retain
+                    its beauty, finish, and character for generations.
+                  </p>
+
+                  {/* 5 Product Care Points */}
+                  <ul className="space-y-4 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed">
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#A77620] font-bold">•</span>
+                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                        •
+                      </span>
                       <span>
-                        <strong className="font-semibold text-[#222222]">Gentle Cleaning:</strong> Wipe with a soft, clean microfibre cloth or dry cotton duster regularly to keep dust away.
+                        <strong className="font-semibold text-[#222222]">
+                          Dust gently:
+                        </strong>{" "}
+                        Use a soft-bristled brush or a clean, soft cloth to
+                        remove dust. Avoid vigorous rubbing, especially on
+                        painted or gilded details.
                       </span>
                     </li>
+
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#A77620] font-bold">•</span>
+                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                        •
+                      </span>
                       <span>
-                        <strong className="font-semibold text-[#222222]">Avoid Harsh Chemicals:</strong> Do not use lemon, vinegar, bathroom cleaners, or acidic liquids on natural Makrana and Vietnam marble as they will dull the polish.
+                        <strong className="font-semibold text-[#222222]">
+                          Clean with care:
+                        </strong>{" "}
+                        If required, lightly wipe the surface with a soft, damp
+                        cloth and allow the idol to dry naturally.
                       </span>
                     </li>
+
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#A77620] font-bold">•</span>
+                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                        •
+                      </span>
                       <span>
-                        <strong className="font-semibold text-[#222222]">Abhishek & Puja Care:</strong> After Jalabhishek, milk, or chandan offering, gently pat dry with a soft dry cotton towel immediately.
+                        <strong className="font-semibold text-[#222222]">
+                          Protect from stains:
+                        </strong>{" "}
+                        Puja materials such as milk, honey, kumkum, turmeric,
+                        sandalwood paste, saffron, flowers, ghee, and other
+                        offerings may leave marks on Vietnam marble. Use them
+                        carefully and clean any residue promptly.
                       </span>
                     </li>
+
                     <li className="flex items-start gap-2.5">
-                      <span className="text-[#A77620] font-bold">•</span>
+                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                        •
+                      </span>
                       <span>
-                        <strong className="font-semibold text-[#222222]">Safe Handling:</strong> When moving the murti, always lift supportively by the solid pedestal base rather than delicate hands, crown, or attributes.
+                        <strong className="font-semibold text-[#222222]">
+                          Keep away from direct heat:
+                        </strong>{" "}
+                        Place the idol away from diyas, incense sticks,
+                        agarbatti, dhoop
+                      </span>
+                    </li>
+
+                    <li className="flex items-start gap-2.5">
+                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                        •
+                      </span>
+                      <span>
+                        <strong className="font-semibold text-[#222222]">
+                          Handle with care:
+                        </strong>{" "}
+                        Avoid moving the idol unnecessarily. When relocating it,
+                        support the base and body securely rather than holding
+                        delicate elements such as hands, ornaments, or
+                        decorative parts.
                       </span>
                     </li>
                   </ul>
@@ -398,7 +486,6 @@ export default function ProductDetail({ onRequestPrice }) {
               )}
             </div>
           </div>
-
         </div>
       </section>
     </div>
