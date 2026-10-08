@@ -21,36 +21,35 @@ export default function Contact() {
       <section className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Interactive Map Card (Matching Reference Mockup) */}
+          {/* Left Column: Interactive Google Map Iframe */}
           <div className="lg:col-span-6 flex justify-center lg:justify-end">
-            <div className="w-full max-w-[500px] aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-[#ECE7DE] shadow-[0_4px_24px_rgba(0,0,0,0.06)] relative group">
-              <a
-                href={googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full h-full block cursor-pointer"
-                title="Open location in Google Maps"
-              >
-                <picture className="w-full h-full block">
-                  <source srcSet="/images/contact-map.webp" type="image/webp" />
-                  <img
-                    src="/images/contact-map.png"
-                    alt="Badrinarayan Nareshkumar Moortiwala Map Location"
-                    className="w-full h-full object-cover scale-[1.01] group-hover:scale-103 transition-transform duration-500 ease-out"
-                    loading="eager"
-                  />
-                </picture>
+            <div className="w-full max-w-[500px] aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#F2EDE4] border border-[#ECE7DE] shadow-[0_4px_24px_rgba(0,0,0,0.06)] relative group">
+              <iframe
+                title="Badrinarayan Nareshkumar Moortiwala Location"
+                src="https://maps.google.com/maps?q=Badrinarayan%20Nareshkumar%20Moortiwala%2C%20Khejron%20ka%20rasta%2C%20Chandpole%20Bazar%2C%20Jaipur%2C%20Rajasthan&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full block"
+              />
 
-                {/* Floating "GET DIRECTIONS" Pill Button at Bottom Right */}
-                <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 z-10">
-                  <div className="bg-[#B99353] hover:bg-[#A37D3D] text-white text-[10px] sm:text-[11px] font-medium tracking-wider uppercase px-3.5 py-1.5 sm:py-2 rounded-lg flex items-center gap-1.5 shadow-md transition-all group-hover:shadow-lg">
-                    <span className="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center">
-                      <Navigation className="w-2.5 h-2.5 fill-current text-white -rotate-45" />
-                    </span>
-                    <span>GET DIRECTIONS</span>
-                  </div>
-                </div>
-              </a>
+              {/* Floating "GET DIRECTIONS" Pill Button at Bottom Right */}
+              <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 z-10">
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#B99353] hover:bg-[#A37D3D] text-white text-[10px] sm:text-[11px] font-medium tracking-wider uppercase px-3.5 py-1.5 sm:py-2 rounded-lg flex items-center gap-1.5 shadow-md hover:shadow-lg transition-all active:scale-95 inline-flex"
+                >
+                  <span className="w-3.5 h-3.5 rounded-full bg-white/20 flex items-center justify-center">
+                    <Navigation className="w-2.5 h-2.5 fill-current text-white -rotate-45" />
+                  </span>
+                  <span>GET DIRECTIONS</span>
+                </a>
+              </div>
             </div>
           </div>
 
