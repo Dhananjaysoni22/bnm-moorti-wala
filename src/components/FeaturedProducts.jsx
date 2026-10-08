@@ -88,7 +88,10 @@ export default function FeaturedProducts({ onRequestPrice }) {
               className="group bg-white rounded-2xl border border-[#E7E1D4] overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-card hover:-translate-y-1 min-w-0 w-full"
             >
               {/* Top Image Area: Soft Cream/Beige Background */}
-              <div className="w-full aspect-[4/4.2] sm:aspect-square bg-[#FAF6F0] flex items-center justify-center p-4 sm:p-5 relative overflow-hidden">
+              <Link
+                to={`/product/${product.id}`}
+                className="w-full aspect-[4/4.2] sm:aspect-square bg-[#FAF6F0] flex items-center justify-center p-4 sm:p-5 relative overflow-hidden block cursor-pointer"
+              >
                 <picture className="w-full h-full flex items-center justify-center">
                   <source srcSet={product.image} type="image/webp" />
                   <img
@@ -99,15 +102,16 @@ export default function FeaturedProducts({ onRequestPrice }) {
                     decoding="async"
                   />
                 </picture>
-              </div>
+              </Link>
 
               {/* Bottom White Area: Title & Pill Button */}
               <div className="bg-white p-4 sm:p-5 flex flex-col items-center text-center w-full min-w-0">
-                <h3 
-                  className="text-[13px] sm:text-[14px] font-medium text-[#222222] mb-3 sm:mb-3.5 line-clamp-1 w-full"
+                <Link
+                  to={`/product/${product.id}`}
+                  className="text-[13px] sm:text-[14px] font-medium text-[#222222] hover:text-[#9E6E2D] mb-3 sm:mb-3.5 line-clamp-1 w-full transition-colors cursor-pointer"
                 >
                   {product.name}
-                </h3>
+                </Link>
 
                 {/* Pill Button: Request price -> */}
                 <button

@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Collection from './pages/Collection';
 import About from './pages/About';
 import Customise from './pages/Customise';
+import ProductDetail from './pages/ProductDetail';
 import PriceModal from './components/PriceModal';
 import SearchModal from './components/SearchModal';
 import CustomiseModal from './components/CustomiseModal';
@@ -63,6 +64,10 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/customise" element={<Customise />} />
             <Route path="/customize" element={<Customise />} />
+            <Route
+              path="/product/:id"
+              element={<ProductDetail onRequestPrice={handleRequestPrice} />}
+            />
           </Routes>
         </main>
 

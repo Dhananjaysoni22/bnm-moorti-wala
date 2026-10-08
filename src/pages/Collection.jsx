@@ -1,52 +1,61 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { ChevronDown, Check, Filter, X, SlidersHorizontal, MessageCircle } from 'lucide-react';
-import { CATEGORIES, PRODUCTS } from '../data/collectionData';
+import React, { useState, useMemo, useEffect } from "react";
+import { useSearchParams, Link } from "react-router-dom";
+import {
+  ChevronDown,
+  Check,
+  Filter,
+  X,
+  SlidersHorizontal,
+  MessageCircle,
+} from "lucide-react";
+import { CATEGORIES, PRODUCTS } from "../data/collectionData";
 
 export default function Collection({ onRequestPrice }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  
-  // Read category and subcategory from query params if present
-  const paramCategory = searchParams.get('category');
-  const paramSub = searchParams.get('sub');
 
-  const [selectedCategory, setSelectedCategory] = useState(paramCategory || 'god-statues');
+  // Read category and subcategory from query params if present
+  const paramCategory = searchParams.get("category");
+  const paramSub = searchParams.get("sub");
+
+  const [selectedCategory, setSelectedCategory] = useState(
+    paramCategory || "god-statues",
+  );
   const [selectedSubCategories, setSelectedSubCategories] = useState(
-    paramSub ? [paramSub.toUpperCase()] : ['ALL']
+    paramSub ? [paramSub.toUpperCase()] : ["ALL"],
   );
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
   // Sync with URL query parameter changes
   useEffect(() => {
-    if (paramCategory && CATEGORIES.some(c => c.id === paramCategory)) {
+    if (paramCategory && CATEGORIES.some((c) => c.id === paramCategory)) {
       setSelectedCategory(paramCategory);
       if (paramSub) {
         setSelectedSubCategories([paramSub.toUpperCase()]);
       } else {
-        setSelectedSubCategories(['ALL']);
+        setSelectedSubCategories(["ALL"]);
       }
     }
   }, [paramCategory, paramSub]);
 
   // Current category configuration
   const currentCategoryObj = useMemo(() => {
-    return CATEGORIES.find(c => c.id === selectedCategory) || CATEGORIES[0];
+    return CATEGORIES.find((c) => c.id === selectedCategory) || CATEGORIES[0];
   }, [selectedCategory]);
 
   // All products in the active category
   const categoryProducts = useMemo(() => {
-    return PRODUCTS.filter(p => p.category === selectedCategory);
+    return PRODUCTS.filter((p) => p.category === selectedCategory);
   }, [selectedCategory]);
 
   // Subcategories available for active category
   const availableSubCategories = useMemo(() => {
-    return currentCategoryObj.subCategories || [{ id: 'ALL', name: 'ALL' }];
+    return currentCategoryObj.subCategories || [{ id: "ALL", name: "ALL" }];
   }, [currentCategoryObj]);
 
   // Calculate product counts per subcategory
   const subCategoryCounts = useMemo(() => {
     const counts = { ALL: categoryProducts.length };
-    categoryProducts.forEach(p => {
+    categoryProducts.forEach((p) => {
       const sub = p.subCategory;
       if (sub) {
         counts[sub] = (counts[sub] || 0) + 1;
@@ -58,30 +67,32 @@ export default function Collection({ onRequestPrice }) {
   // Handle category switch
   const handleCategorySelect = (categoryId) => {
     setSelectedCategory(categoryId);
-    setSelectedSubCategories(['ALL']);
+    setSelectedSubCategories(["ALL"]);
     setSearchParams({ category: categoryId });
   };
 
   // Handle subcategory checkbox toggle
   const handleSubCategoryToggle = (subId) => {
-    if (subId === 'ALL') {
-      setSelectedSubCategories(['ALL']);
+    if (subId === "ALL") {
+      setSelectedSubCategories(["ALL"]);
       setSearchParams({ category: selectedCategory });
       return;
     }
 
     let updated;
     if (selectedSubCategories.includes(subId)) {
-      updated = selectedSubCategories.filter(id => id !== subId);
+      updated = selectedSubCategories.filter((id) => id !== subId);
       if (updated.length === 0) {
-        updated = ['ALL'];
+        updated = ["ALL"];
       }
     } else {
-      updated = selectedSubCategories.filter(id => id !== 'ALL').concat(subId);
+      updated = selectedSubCategories
+        .filter((id) => id !== "ALL")
+        .concat(subId);
     }
-    
+
     setSelectedSubCategories(updated);
-    if (updated.length === 1 && updated[0] !== 'ALL') {
+    if (updated.length === 1 && updated[0] !== "ALL") {
       setSearchParams({ category: selectedCategory, sub: updated[0] });
     } else {
       setSearchParams({ category: selectedCategory });
@@ -90,15 +101,23 @@ export default function Collection({ onRequestPrice }) {
 
   // Filtered products to display
   const filteredProducts = useMemo(() => {
-    if (selectedSubCategories.includes('ALL') || selectedSubCategories.length === 0) {
+    if (
+      selectedSubCategories.includes("ALL") ||
+      selectedSubCategories.length === 0
+    ) {
       return categoryProducts;
     }
-    return categoryProducts.filter(p => selectedSubCategories.includes(p.subCategory));
+    return categoryProducts.filter((p) =>
+      selectedSubCategories.includes(p.subCategory),
+    );
   }, [categoryProducts, selectedSubCategories]);
 
   // Dynamic sidebar heading
   const sidebarHeading = useMemo(() => {
-    if (selectedSubCategories.length === 1 && selectedSubCategories[0] !== 'ALL') {
+    if (
+      selectedSubCategories.length === 1 &&
+      selectedSubCategories[0] !== "ALL"
+    ) {
       return `MARBLE ${selectedSubCategories[0]} STATUE`;
     }
     return currentCategoryObj.name.toUpperCase();
@@ -107,14 +126,16 @@ export default function Collection({ onRequestPrice }) {
   // WhatsApp inquiry fallback
   const handleWhatsAppInquiry = (product) => {
     const text = `Namaste! I would like to inquire about the price and customization for "${product.name}" from Badrinarayan Naresh Kumar Moorti Wala.`;
-    window.open(`https://wa.me/919460154291?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(
+      `https://wa.me/919460154291?text=${encodeURIComponent(text)}`,
+      "_blank",
+    );
   };
 
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen flex flex-col overflow-x-hidden">
-      
       {/* 1. TOP CATEGORY FILTER BAR (Matches reference screenshot) */}
-      <section className="w-full border-b border-[#EFEBE3] bg-white sticky top-16 sm:top-[64px] md:top-[68px] z-30 shadow-xs">
+      <section className="w-full border-b border-[#EFEBE3] bg-white sticky z-30 shadow-xs">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-start md:justify-center overflow-x-auto no-scrollbar py-3.5 sm:py-4 gap-6 sm:gap-8 lg:gap-11">
             {CATEGORIES.map((cat) => {
@@ -125,8 +146,8 @@ export default function Collection({ onRequestPrice }) {
                   onClick={() => handleCategorySelect(cat.id)}
                   className={`flex items-center gap-1 font-serif text-[14px] sm:text-[15px] lg:text-[16px] whitespace-nowrap transition-colors py-1 relative cursor-pointer group ${
                     isActive
-                      ? 'text-[#BD9A5D] font-medium'
-                      : 'text-[#4A453F] hover:text-[#BD9A5D]'
+                      ? "text-[#BD9A5D] font-medium"
+                      : "text-[#4A453F] hover:text-[#BD9A5D]"
                   }`}
                   style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                 >
@@ -134,7 +155,9 @@ export default function Collection({ onRequestPrice }) {
                   {cat.hasDropdown && (
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        isActive ? 'text-[#BD9A5D]' : 'text-[#8C8275] group-hover:text-[#BD9A5D]'
+                        isActive
+                          ? "text-[#BD9A5D]"
+                          : "text-[#8C8275] group-hover:text-[#BD9A5D]"
                       }`}
                     />
                   )}
@@ -150,7 +173,6 @@ export default function Collection({ onRequestPrice }) {
 
       {/* 2. MAIN CONTENT AREA: Left Sidebar Filters + Product Grid */}
       <section className="flex-1 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
-        
         {/* Mobile Filter Toggle Header */}
         <div className="lg:hidden flex items-center justify-between mb-6 pb-3 border-b border-[#EFEBE3]">
           <div>
@@ -158,17 +180,18 @@ export default function Collection({ onRequestPrice }) {
               {sidebarHeading}
             </h2>
             <p className="text-xs text-[#7A7165] mt-0.5">
-              Showing {filteredProducts.length} of {categoryProducts.length} items
+              Showing {filteredProducts.length} of {categoryProducts.length}{" "}
+              items
             </p>
           </div>
-          
+
           <button
             onClick={() => setMobileFilterOpen(true)}
             className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-[#BD9A5D] bg-white text-[#9E6E2D] text-xs font-medium shadow-xs"
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Filters</span>
-            {!selectedSubCategories.includes('ALL') && (
+            {!selectedSubCategories.includes("ALL") && (
               <span className="w-4 h-4 rounded-full bg-[#9E6E2D] text-white text-[10px] flex items-center justify-center font-bold">
                 {selectedSubCategories.length}
               </span>
@@ -177,11 +200,9 @@ export default function Collection({ onRequestPrice }) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
           {/* DESKTOP SIDEBAR FILTERS (Left 3 columns) */}
           <aside className="hidden lg:block lg:col-span-3 sticky top-20 self-start pr-4">
             <div className="bg-white/80 rounded-2xl p-5 border border-[#EFEBE3] shadow-xs">
-              
               {/* Category / Subcategory Title */}
               <h2 className="text-[13px] font-bold tracking-[0.08em] uppercase text-[#222222] mb-5 border-b border-[#F0EBE1] pb-3">
                 {sidebarHeading}
@@ -192,9 +213,9 @@ export default function Collection({ onRequestPrice }) {
                 {availableSubCategories.map((sub) => {
                   const isChecked = selectedSubCategories.includes(sub.id);
                   const count = subCategoryCounts[sub.id] || 0;
-                  
+
                   // Hide zero-count subcategories if not ALL
-                  if (sub.id !== 'ALL' && count === 0) return null;
+                  if (sub.id !== "ALL" && count === 0) return null;
 
                   return (
                     <label
@@ -211,17 +232,19 @@ export default function Collection({ onRequestPrice }) {
                         <div
                           className={`w-4 h-4 rounded-[3px] border flex items-center justify-center transition-all ${
                             isChecked
-                              ? 'bg-[#A87B32] border-[#A87B32] text-white shadow-xs'
-                              : 'border-[#C8BFB0] group-hover:border-[#A87B32] bg-white'
+                              ? "bg-[#A87B32] border-[#A87B32] text-white shadow-xs"
+                              : "border-[#C8BFB0] group-hover:border-[#A87B32] bg-white"
                           }`}
                         >
-                          {isChecked && <Check className="w-3 h-3 stroke-[3]" />}
+                          {isChecked && (
+                            <Check className="w-3 h-3 stroke-[3]" />
+                          )}
                         </div>
                         <span
                           className={`text-xs uppercase tracking-wider transition-colors ${
                             isChecked
-                              ? 'text-[#222222] font-semibold'
-                              : 'text-[#5C554E] group-hover:text-[#222222] font-normal'
+                              ? "text-[#222222] font-semibold"
+                              : "text-[#5C554E] group-hover:text-[#222222] font-normal"
                           }`}
                         >
                           {sub.name}
@@ -237,9 +260,9 @@ export default function Collection({ onRequestPrice }) {
               </div>
 
               {/* Reset Filters Shortcut */}
-              {!selectedSubCategories.includes('ALL') && (
+              {!selectedSubCategories.includes("ALL") && (
                 <button
-                  onClick={() => setSelectedSubCategories(['ALL'])}
+                  onClick={() => setSelectedSubCategories(["ALL"])}
                   className="mt-6 w-full py-2 text-center text-xs text-[#9E6E2D] hover:text-[#7A5018] font-medium border-t border-[#F0EBE1] pt-3 transition-colors cursor-pointer"
                 >
                   Reset all filters
@@ -252,14 +275,17 @@ export default function Collection({ onRequestPrice }) {
           <main className="lg:col-span-9 w-full min-w-0">
             {filteredProducts.length === 0 ? (
               <div className="bg-white rounded-2xl border border-[#EFEBE3] p-12 text-center my-8">
-                <p className="font-serif text-2xl text-[#3A3530] mb-2" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+                <p
+                  className="font-serif text-2xl text-[#3A3530] mb-2"
+                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                >
                   No Statues Found
                 </p>
                 <p className="text-xs text-[#7A7165] mb-6">
                   No products matched your selected filters in this category.
                 </p>
                 <button
-                  onClick={() => setSelectedSubCategories(['ALL'])}
+                  onClick={() => setSelectedSubCategories(["ALL"])}
                   className="px-6 py-2.5 rounded-lg bg-[#A87B32] text-white text-xs font-medium hover:bg-[#8F6626] transition-colors"
                 >
                   Show All {currentCategoryObj.name}
@@ -273,7 +299,10 @@ export default function Collection({ onRequestPrice }) {
                     className="bg-white rounded-2xl overflow-hidden border border-[#ECE7DE] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col group"
                   >
                     {/* Top Image Container: Edge-to-Edge with Card Rounded Corners */}
-                    <div className="relative aspect-square w-full overflow-hidden rounded-t-2xl bg-[#F6F1E9]">
+                    <Link
+                      to={`/product/${product.id}`}
+                      className="relative aspect-square w-full overflow-hidden rounded-t-2xl bg-[#F6F1E9] block cursor-pointer"
+                    >
                       <picture className="w-full h-full block overflow-hidden rounded-t-2xl">
                         <source srcSet={product.imageWebp} type="image/webp" />
                         <img
@@ -284,16 +313,17 @@ export default function Collection({ onRequestPrice }) {
                           className="w-full h-full object-cover scale-[1.05] group-hover:scale-110 transition-transform duration-500 ease-out"
                         />
                       </picture>
-                    </div>
+                    </Link>
 
                     {/* Bottom Card Content: Title & Request Price Button */}
                     <div className="pt-4 pb-6 px-4 flex flex-col items-center text-center justify-between flex-1 bg-white">
-                      <h3
-                        className="font-sans font-semibold text-[15px] sm:text-[16px] text-[#4A453F] text-center tracking-normal leading-snug line-clamp-1 mb-3.5"
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="font-sans font-semibold text-[15px] sm:text-[16px] text-[#4A453F] hover:text-[#A77620] text-center tracking-normal leading-snug line-clamp-1 mb-3.5 transition-colors cursor-pointer"
                         title={product.name}
                       >
                         {product.name}
-                      </h3>
+                      </Link>
 
                       <button
                         onClick={() =>
@@ -311,7 +341,6 @@ export default function Collection({ onRequestPrice }) {
               </div>
             )}
           </main>
-
         </div>
       </section>
 
@@ -342,7 +371,7 @@ export default function Collection({ onRequestPrice }) {
               {availableSubCategories.map((sub) => {
                 const isChecked = selectedSubCategories.includes(sub.id);
                 const count = subCategoryCounts[sub.id] || 0;
-                if (sub.id !== 'ALL' && count === 0) return null;
+                if (sub.id !== "ALL" && count === 0) return null;
 
                 return (
                   <label
@@ -359,17 +388,19 @@ export default function Collection({ onRequestPrice }) {
                       <div
                         className={`w-5 h-5 rounded-[4px] border flex items-center justify-center transition-all ${
                           isChecked
-                            ? 'bg-[#A87B32] border-[#A87B32] text-white shadow-xs'
-                            : 'border-[#C8BFB0] bg-white'
+                            ? "bg-[#A87B32] border-[#A87B32] text-white shadow-xs"
+                            : "border-[#C8BFB0] bg-white"
                         }`}
                       >
-                        {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                        {isChecked && (
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                        )}
                       </div>
                       <span
                         className={`text-sm uppercase tracking-wide ${
                           isChecked
-                            ? 'text-[#222222] font-semibold'
-                            : 'text-[#5C554E] font-normal'
+                            ? "text-[#222222] font-semibold"
+                            : "text-[#5C554E] font-normal"
                         }`}
                       >
                         {sub.name}
@@ -387,7 +418,7 @@ export default function Collection({ onRequestPrice }) {
             {/* Bottom Apply Bar */}
             <div className="p-4 border-t border-[#EFEBE3] bg-[#FAF8F5] flex gap-3">
               <button
-                onClick={() => setSelectedSubCategories(['ALL'])}
+                onClick={() => setSelectedSubCategories(["ALL"])}
                 className="flex-1 py-3 rounded-xl border border-[#D5CABB] text-xs font-medium text-[#5C554E] bg-white"
               >
                 Reset All
@@ -402,7 +433,6 @@ export default function Collection({ onRequestPrice }) {
           </div>
         </div>
       )}
-
     </div>
   );
 }
