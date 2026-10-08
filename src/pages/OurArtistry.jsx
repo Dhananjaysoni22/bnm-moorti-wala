@@ -89,67 +89,71 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
   };
 
   return (
-    <div className="w-full bg-[#FAF8F5] min-h-screen text-[#2D2A26] flex flex-col">
-      {/* 1. Page Header & Introduction */}
-      <section className="pt-10 sm:pt-14 md:pt-16 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
-        <h1 
-          className="text-3xl sm:text-4xl md:text-[44px] text-[#A77620] font-normal tracking-normal mb-4 sm:mb-5"
-          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-        >
-          Our Artistry
-        </h1>
+    <div className="w-full bg-white text-[#2D2A26] flex flex-col">
+      {/* 1. Page Header & Introduction with distinct background color matching design */}
+      <section className="w-full bg-[#FAF7F4] border-b border-[#F0EBE1] pt-12 sm:pt-16 md:pt-20 pb-10 sm:pb-14 md:pb-16 px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 
+            className="text-3xl sm:text-4xl md:text-[44px] text-[#A77620] font-normal tracking-normal mb-4 sm:mb-5"
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+          >
+            Our Artistry
+          </h1>
 
-        <p className="text-xs sm:text-sm md:text-[15px] text-[#4A453F] leading-relaxed max-w-3xl mx-auto font-sans">
-          A showcase of creations shaped by skilled hands and inspired by timeless traditions.{' '}
-          <strong className="font-semibold text-[#1A1816]">
-            Badrinarayan Nareshkumar Moortiwala has done 1000+
-          </strong>{' '}
-          statues delivered worldwide, our marble creations bring Indian artistry, devotion, and
-          craftsmanship to homes, temples, and spaces across the globe. Every piece reflects our
-          passion for stone, attention to detail, and commitment to creating timeless works that
-          last.
-        </p>
+          <p className="text-xs sm:text-sm md:text-[15px] text-[#4A453F] leading-relaxed max-w-3xl mx-auto font-sans">
+            A showcase of creations shaped by skilled hands and inspired by timeless traditions.{' '}
+            <strong className="font-semibold text-[#1A1816]">
+              Badrinarayan Nareshkumar Moortiwala has done 1000+
+            </strong>{' '}
+            statues delivered worldwide, our marble creations bring Indian artistry, devotion, and
+            craftsmanship to homes, temples, and spaces across the globe. Every piece reflects our
+            passion for stone, attention to detail, and commitment to creating timeless works that
+            last.
+          </p>
+        </div>
       </section>
 
-      {/* 2. Gallery Grid of 8 Handcrafted Pieces */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pb-6 w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-          {ARTISTRY_ITEMS.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => handleCardClick(item)}
-              className="group relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-[#E8E2D7] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
-            >
-              {/* Statue Image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+      {/* 2. Gallery Grid of 8 Handcrafted Pieces on Pure White Background */}
+      <section className="w-full bg-white pt-10 sm:pt-14 pb-8 sm:pb-12">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+            {ARTISTRY_ITEMS.map((item) => (
+              <div
+                key={item.id}
+                onClick={() => handleCardClick(item)}
+                className="group relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-[#E8E2D7] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+              >
+                {/* Statue Image */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
 
-              {/* Bottom-right info badge */}
-              <div className="absolute bottom-3 right-3 sm:bottom-3.5 sm:right-3.5 max-w-[90%] bg-black/45 backdrop-blur-md rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2 text-left border border-white/10 shadow-sm pointer-events-none">
-                <p className="text-white font-medium text-[11px] sm:text-[12.5px] leading-tight drop-shadow-sm font-sans">
-                  {item.title}
-                </p>
-                <p className="text-[#E7E2DA] text-[10px] sm:text-[11px] leading-tight mt-0.5 font-sans">
-                  {item.material}
-                </p>
-                <p className="text-[#F3ECE1] text-[9.5px] sm:text-[10.5px] leading-tight mt-0.5 flex items-center gap-1 font-sans">
-                  <span>📍</span>
-                  <span>{item.location}</span>
-                </p>
+                {/* Bottom-right info badge */}
+                <div className="absolute bottom-3 right-3 sm:bottom-3.5 sm:right-3.5 max-w-[90%] bg-black/45 backdrop-blur-md rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2 text-left border border-white/10 shadow-sm pointer-events-none">
+                  <p className="text-white font-medium text-[11px] sm:text-[12.5px] leading-tight drop-shadow-sm font-sans">
+                    {item.title}
+                  </p>
+                  <p className="text-[#E7E2DA] text-[10px] sm:text-[11px] leading-tight mt-0.5 font-sans">
+                    {item.material}
+                  </p>
+                  <p className="text-[#F3ECE1] text-[9.5px] sm:text-[10.5px] leading-tight mt-0.5 flex items-center gap-1 font-sans">
+                    <span>📍</span>
+                    <span>{item.location}</span>
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* 3. Centered Divider Indicator: AND MANY MORE */}
-        <div className="py-10 sm:py-14 text-center">
-          <p className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-[#333333] uppercase font-sans">
-            AND MANY MORE
-          </p>
+          {/* 3. Centered Divider Indicator: AND MANY MORE */}
+          <div className="pt-10 sm:pt-14 text-center">
+            <p className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-[#333333] uppercase font-sans">
+              AND MANY MORE
+            </p>
+          </div>
         </div>
       </section>
 
@@ -190,6 +194,9 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
           </button>
         </div>
       </section>
+
+      {/* 5. Clean White Spacing between Banner and Footer (Matches reference mockup) */}
+      <div className="w-full h-12 sm:h-16 md:h-20 lg:h-24 bg-white" />
     </div>
   );
 }
