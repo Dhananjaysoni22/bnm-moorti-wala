@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const categories = [
@@ -41,6 +42,22 @@ const categories = [
 ];
 
 export default function Categories({ onSelectCategory }) {
+  const navigate = useNavigate();
+
+  const categoryMap = {
+    'god-statues': 'god-statues',
+    'temples': 'temples',
+    'human-bust': 'bust',
+    'animals': 'animals',
+    'roman-figures': 'roman',
+    'home-decor': 'home-decor',
+  };
+
+  const handleCardClick = (category) => {
+    const catSlug = categoryMap[category.id] || category.id;
+    navigate(`/collection?category=${catSlug}`);
+  };
+
   return (
     <section id="collection" className="py-12 sm:py-16 md:py-20 bg-white w-full overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -77,7 +94,7 @@ export default function Categories({ onSelectCategory }) {
           {categories.map((category) => (
             <div
               key={category.id}
-              onClick={() => onSelectCategory?.(category)}
+              onClick={() => handleCardClick(category)}
               className="group cursor-pointer bg-[#FAF6F0] hover:bg-[#F5F0E6] rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between min-w-0 w-full"
             >
               {/* Full Width Edge-to-Edge Image with zero padding and rounded top */}

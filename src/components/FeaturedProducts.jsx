@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const products = [
@@ -69,13 +70,13 @@ export default function FeaturedProducts({ onRequestPrice }) {
 
           {/* View All Products Link (Top Right on desktop) */}
           <div className="mt-4 md:mt-0 md:absolute md:right-0 md:bottom-1 text-center md:text-right">
-            <a
-              href="#collection"
+            <Link
+              to="/collection"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#8B5C24] hover:text-[#6E4417] transition-colors group"
             >
               <span>View all Products</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
         </div>
 

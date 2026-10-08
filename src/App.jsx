@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
+import Collection from './pages/Collection';
 import About from './pages/About';
 import Customise from './pages/Customise';
 import PriceModal from './components/PriceModal';
@@ -50,6 +51,14 @@ export default function App() {
                   onOpenCustomise={() => setIsCustomiseOpen(true)}
                 />
               }
+            />
+            <Route
+              path="/collection"
+              element={<Collection onRequestPrice={handleRequestPrice} />}
+            />
+            <Route
+              path="/our-collection"
+              element={<Collection onRequestPrice={handleRequestPrice} />}
             />
             <Route path="/about" element={<About />} />
             <Route path="/customise" element={<Customise />} />

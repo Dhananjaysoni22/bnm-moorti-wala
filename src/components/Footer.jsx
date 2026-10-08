@@ -52,7 +52,7 @@ export default function Footer() {
                   <Link to="/" className="hover:text-white transition-colors block truncate">Home</Link>
                 </li>
                 <li>
-                  <a href="/#collection" className="hover:text-white transition-colors block truncate">Our Collection</a>
+                  <Link to="/collection" className="hover:text-white transition-colors block truncate">Our Collection</Link>
                 </li>
                 <li>
                   <Link to="/about" className="hover:text-white transition-colors block truncate">About Us</Link>

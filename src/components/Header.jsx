@@ -36,7 +36,7 @@ export default function Header({ onOpenSearch }) {
 
   const navItems = [
     { name: "Home", path: "/", isRoute: true },
-    { name: "Our Collection", sectionId: "collection", isSection: true },
+    { name: "Our Collection", path: "/collection", isRoute: true },
     { name: "About Us", path: "/about", isRoute: true },
     { name: "Customise your order", path: "/customise", isRoute: true },
     { name: "Contact Us", sectionId: "contact", isSection: true },
@@ -58,7 +58,7 @@ export default function Header({ onOpenSearch }) {
           </div>
 
           {/* Center: Navigation Links (Desktop) */}
-          <nav className="hidden lg:flex items-center space-x-7 lg:space-x-8 xl:space-x-10">
+          <nav className="hidden lg:flex lg:pl-[150px] items-center space-x-7 lg:space-x-8 xl:space-x-10">
             {navItems.map((item) => {
               const isActive = item.isRoute && location.pathname === item.path;
 

@@ -1,24 +1,28 @@
-import React from 'react';
-import { Star } from 'lucide-react';
+import React from "react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    review: "Very professional people we have had moorties delivered to Melbourne Australia. It was amazing experience. All the statues were securely sent and all the relevant documentation was up to date And we have been happy from customer service to quality of statues.",
+    review:
+      "Very professional people we have had moorties delivered to Melbourne Australia. It was amazing experience. All the statues were securely sent and all the relevant documentation was up to date And we have been happy from customer service to quality of statues.",
     name: "Gandhi Bhattara",
     location: "Melbourne, Australia",
   },
   {
-    review: "I would thank the team and members who made the murti of maa chamunda ,Ganpati and Hanuman the murti was made with so much efforts and perfectly that it feels like the murti is alive .Thank you so much",
+    review:
+      "I would thank the team and members who made the murti of maa chamunda ,Ganpati and Hanuman the murti was made with so much efforts and perfectly that it feels like the murti is alive .Thank you so much",
     name: "RAYFINEOFFICE NEEDS",
     location: "Gujrat, India",
   },
   {
-    review: "I've been purchasing religious marble murtis for the past five years they are well carve the staff and people are extremely honest and courteous willing to make all her work professional my kuteys is in Trinidad and her shipping company was efficient and reliable the prices was the best",
+    review:
+      "I've been purchasing religious marble murtis for the past five years they are well carve the staff and people are extremely honest and courteous willing to make all her work professional my kuteys is in Trinidad and her shipping company was efficient and reliable the prices was the best",
     name: "SAVITRI POOTOOLAL",
     location: "TRINIDAD & TOBAGO",
   },
   {
-    review: "I would like thanks Badrinarayan Nareshkumar Moortiwala for their performance in quality,vssmanship,design,devotion and reasonable quotation. I would like to keep ordering my requirement from them.",
+    review:
+      "I would like thanks Badrinarayan Nareshkumar Moortiwala for their performance in quality,vssmanship,design,devotion and reasonable quotation. I would like to keep ordering my requirement from them.",
     name: "Ramesh Khusul",
     location: "Importer from Mauritius",
   },
@@ -28,15 +32,14 @@ export default function Testimonials() {
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-[#FAF8F5] w-full overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] sm:tracking-[0.25em] text-[#9E6E2D] mb-1.5 sm:mb-2 font-sans">
             WHAT OUR CUSTOMERS SAY
           </p>
-          <div className="flex items-center justify-center gap-2 sm:gap-4 max-w-lg mx-auto px-2">
+          <div className="flex items-center justify-center gap-2 sm:gap-4 max-w-2xl mx-auto px-2">
             <div className="hidden sm:block h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C4A163] to-[#B88E44]" />
-            <h2 
+            <h2
               className="text-xl sm:text-3xl md:text-4xl text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
@@ -91,7 +94,6 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
