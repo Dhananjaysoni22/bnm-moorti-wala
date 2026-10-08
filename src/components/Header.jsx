@@ -38,7 +38,7 @@ export default function Header({ onOpenSearch }) {
     { name: "Home", path: "/", isRoute: true },
     { name: "Our Collection", path: "/collection", isRoute: true },
     { name: "About Us", path: "/about", isRoute: true },
-    { name: "Our Artistry", sectionId: "artistry", isSection: true },
+    { name: "Our Artistry", path: "/our-artistry", isRoute: true },
     { name: "Customise your order", path: "/customise", isRoute: true },
     { name: "Contact Us", path: "/contact", isRoute: true },
   ];
@@ -61,7 +61,14 @@ export default function Header({ onOpenSearch }) {
           {/* Center: Navigation Links (Desktop) */}
           <nav className="hidden lg:flex lg:pl-[150px] items-center space-x-7 lg:space-x-8 xl:space-x-10">
             {navItems.map((item) => {
-              const isActive = item.isRoute && location.pathname === item.path;
+              const isActive =
+                item.isRoute &&
+                (location.pathname === item.path ||
+                  (item.path === "/our-artistry" &&
+                    location.pathname === "/artistry") ||
+                  (item.path === "/collection" &&
+                    (location.pathname === "/our-collection" ||
+                      location.pathname.startsWith("/product/"))));
 
               if (item.isRoute) {
                 return (
@@ -191,7 +198,13 @@ export default function Header({ onOpenSearch }) {
             <nav className="flex flex-col space-y-1 bg-white rounded-2xl border border-[#EBE3D5] p-2 shadow-xs">
               {navItems.map((item) => {
                 const isActive =
-                  item.isRoute && location.pathname === item.path;
+                  item.isRoute &&
+                  (location.pathname === item.path ||
+                    (item.path === "/our-artistry" &&
+                      location.pathname === "/artistry") ||
+                    (item.path === "/collection" &&
+                      (location.pathname === "/our-collection" ||
+                        location.pathname.startsWith("/product/"))));
 
                 if (item.isRoute) {
                   return (

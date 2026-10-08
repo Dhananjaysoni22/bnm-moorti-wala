@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Collection from './pages/Collection';
 import About from './pages/About';
 import Customise from './pages/Customise';
+import OurArtistry from './pages/OurArtistry';
 import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
 import PriceModal from './components/PriceModal';
@@ -63,6 +64,24 @@ export default function App() {
               element={<Collection onRequestPrice={handleRequestPrice} />}
             />
             <Route path="/about" element={<About />} />
+            <Route
+              path="/our-artistry"
+              element={
+                <OurArtistry
+                  onRequestPrice={handleRequestPrice}
+                  onOpenCustomise={() => setIsCustomiseOpen(true)}
+                />
+              }
+            />
+            <Route
+              path="/artistry"
+              element={
+                <OurArtistry
+                  onRequestPrice={handleRequestPrice}
+                  onOpenCustomise={() => setIsCustomiseOpen(true)}
+                />
+              }
+            />
             <Route path="/customise" element={<Customise />} />
             <Route path="/customize" element={<Customise />} />
             <Route
