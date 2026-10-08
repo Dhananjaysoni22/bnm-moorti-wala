@@ -61,7 +61,7 @@ export default function Footer() {
                   <Link to="/customise" className="hover:text-white transition-colors block truncate">Customise your order</Link>
                 </li>
                 <li>
-                  <a href="/#contact" className="hover:text-white transition-colors block truncate">Contact Us</a>
+                  <Link to="/contact" className="hover:text-white transition-colors block truncate">Contact Us</Link>
                 </li>
               </ul>
             </div>

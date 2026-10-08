@@ -38,8 +38,9 @@ export default function Header({ onOpenSearch }) {
     { name: "Home", path: "/", isRoute: true },
     { name: "Our Collection", path: "/collection", isRoute: true },
     { name: "About Us", path: "/about", isRoute: true },
+    { name: "Our Artistry", sectionId: "artistry", isSection: true },
     { name: "Customise your order", path: "/customise", isRoute: true },
-    { name: "Contact Us", sectionId: "contact", isSection: true },
+    { name: "Contact Us", path: "/contact", isRoute: true },
   ];
 
   return (

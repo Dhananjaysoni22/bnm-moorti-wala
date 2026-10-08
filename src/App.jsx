@@ -8,6 +8,7 @@ import Collection from './pages/Collection';
 import About from './pages/About';
 import Customise from './pages/Customise';
 import ProductDetail from './pages/ProductDetail';
+import Contact from './pages/Contact';
 import PriceModal from './components/PriceModal';
 import SearchModal from './components/SearchModal';
 import CustomiseModal from './components/CustomiseModal';
@@ -68,6 +69,8 @@ export default function App() {
               path="/product/:id"
               element={<ProductDetail onRequestPrice={handleRequestPrice} />}
             />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact-us" element={<Contact />} />
           </Routes>
         </main>
 
