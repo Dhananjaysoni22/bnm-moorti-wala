@@ -71,7 +71,7 @@ export default function Collection({ onRequestPrice }) {
     setSearchParams({ category: categoryId });
   };
 
-  // Handle subcategory checkbox toggle
+  // Handle subcategory selection / toggle
   const handleSubCategoryToggle = (subId) => {
     if (subId === "ALL") {
       setSelectedSubCategories(["ALL"]);
@@ -79,23 +79,14 @@ export default function Collection({ onRequestPrice }) {
       return;
     }
 
-    let updated;
-    if (selectedSubCategories.includes(subId)) {
-      updated = selectedSubCategories.filter((id) => id !== subId);
-      if (updated.length === 0) {
-        updated = ["ALL"];
-      }
-    } else {
-      updated = selectedSubCategories
-        .filter((id) => id !== "ALL")
-        .concat(subId);
-    }
-
-    setSelectedSubCategories(updated);
-    if (updated.length === 1 && updated[0] !== "ALL") {
-      setSearchParams({ category: selectedCategory, sub: updated[0] });
-    } else {
+    // If currently selected, clicking it again toggles back to ALL
+    if (selectedSubCategories.length === 1 && selectedSubCategories[0] === subId) {
+      setSelectedSubCategories(["ALL"]);
       setSearchParams({ category: selectedCategory });
+    } else {
+      // Switch directly to the clicked subcategory (e.g., from GANESH to RADHA KRISHNA)
+      setSelectedSubCategories([subId]);
+      setSearchParams({ category: selectedCategory, sub: subId });
     }
   };
 
@@ -262,7 +253,7 @@ export default function Collection({ onRequestPrice }) {
               {/* Reset Filters Shortcut */}
               {!selectedSubCategories.includes("ALL") && (
                 <button
-                  onClick={() => setSelectedSubCategories(["ALL"])}
+                  onClick={() => handleSubCategoryToggle("ALL")}
                   className="mt-6 w-full py-2 text-center text-xs text-[#9E6E2D] hover:text-[#7A5018] font-medium border-t border-[#F0EBE1] pt-3 transition-colors cursor-pointer"
                 >
                   Reset all filters
@@ -285,7 +276,7 @@ export default function Collection({ onRequestPrice }) {
                   No products matched your selected filters in this category.
                 </p>
                 <button
-                  onClick={() => setSelectedSubCategories(["ALL"])}
+                  onClick={() => handleSubCategoryToggle("ALL")}
                   className="px-6 py-2.5 rounded-lg bg-[#A87B32] text-white text-xs font-medium hover:bg-[#8F6626] transition-colors"
                 >
                   Show All {currentCategoryObj.name}
@@ -418,7 +409,7 @@ export default function Collection({ onRequestPrice }) {
             {/* Bottom Apply Bar */}
             <div className="p-4 border-t border-[#EFEBE3] bg-[#FAF8F5] flex gap-3">
               <button
-                onClick={() => setSelectedSubCategories(["ALL"])}
+                onClick={() => handleSubCategoryToggle("ALL")}
                 className="flex-1 py-3 rounded-xl border border-[#D5CABB] text-xs font-medium text-[#5C554E] bg-white"
               >
                 Reset All
