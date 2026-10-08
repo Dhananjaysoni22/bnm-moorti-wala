@@ -27,4 +27,4 @@ dist-ssr
 .vercel
 
 # Raw uncompressed source assets
-Images/
+/Images/
