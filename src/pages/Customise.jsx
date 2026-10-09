@@ -32,14 +32,36 @@ export default function Customise() {
     notes: ''
   });
 
+  const getWhatsAppUrl = () => {
+    const lines = [
+      `*New Custom Order Inquiry* - Badrinarayan Naresh Kumar Moorti Wala`,
+      ``,
+      `👤 *Full Name:* ${formData.fullName.trim()}`,
+      `📞 *Contact Number:* ${formData.countryCode} ${formData.phone.trim()}`,
+      `✉️ *Email ID:* ${formData.email.trim()}`,
+      `🌍 *Country:* ${formData.country || 'Not specified'}`,
+      `🛕 *Product / Category:* ${formData.product || 'Custom Marble Statue'}`,
+    ];
+    if (formData.notes && formData.notes.trim()) {
+      lines.push(`📝 *Specifications & Notes:* ${formData.notes.trim()}`);
+    }
+    lines.push(``);
+    lines.push(`Sent via Website Custom Order Form`);
+
+    return `https://wa.me/919460154291?text=${encodeURIComponent(lines.join('\n'))}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    // Automatic WhatsApp redirect with all details forward-filled
+    const url = getWhatsAppUrl();
+    window.open(url, '_blank');
   };
 
   const handleWhatsApp = () => {
-    const text = `Namaste! I would like to customize an order at Badrinarayan Naresh Kumar Moorti Wala.%0A%0A*Name:* ${formData.fullName}%0A*Contact:* ${formData.countryCode} ${formData.phone}%0A*Email:* ${formData.email}%0A*Country:* ${formData.country}%0A*Product:* ${formData.product}%0A*Notes:* ${formData.notes || 'None'}`;
-    window.open(`https://wa.me/919460154291?text=${text}`, '_blank');
+    const url = getWhatsAppUrl();
+    window.open(url, '_blank');
   };
 
   return (

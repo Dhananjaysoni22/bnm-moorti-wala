@@ -12,14 +12,34 @@ export default function CustomiseModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
+  const getWhatsAppUrl = () => {
+    const lines = [
+      `*Custom Marble Idol Project Inquiry* - Badrinarayan Naresh Kumar Moorti Wala`,
+      ``,
+      `👤 *Name:* ${formData.name.trim() || 'Devotee'}`,
+      `📞 *Phone / WhatsApp:* ${formData.phone.trim() || 'N/A'}`,
+      `🏛️ *Marble Preference:* ${formData.marbleType}`,
+    ];
+    if (formData.description && formData.description.trim()) {
+      lines.push(`📝 *Requirements & Description:* ${formData.description.trim()}`);
+    }
+    lines.push(``);
+    lines.push(`Sent via Website Customise Modal`);
+
+    return `https://wa.me/919460154291?text=${encodeURIComponent(lines.join('\n'))}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    // Automatic WhatsApp redirect with all details forward-filled
+    const url = getWhatsAppUrl();
+    window.open(url, '_blank');
   };
 
   const handleWhatsApp = () => {
-    const text = `Namaste! I would like to consult with master artisans for a custom marble idol project. %0A*Name:* ${formData.name || 'Devotee'}%0A*Phone:* ${formData.phone || 'N/A'}%0A*Marble:* ${formData.marbleType}%0A*Requirements:* ${formData.description || 'Bespoke marble idol creation'}`;
-    window.open(`https://wa.me/919460154291?text=${text}`, '_blank');
+    const url = getWhatsAppUrl();
+    window.open(url, '_blank');
   };
 
   return (

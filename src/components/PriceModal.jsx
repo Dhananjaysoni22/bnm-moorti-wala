@@ -13,14 +13,36 @@ export default function PriceModal({ product, onClose }) {
 
   if (!product) return null;
 
+  const getWhatsAppUrl = () => {
+    const lines = [
+      `*Price & Quotation Request* - Badrinarayan Naresh Kumar Moorti Wala`,
+      ``,
+      `🛕 *Product:* ${product.name}`,
+      `👤 *Customer Name:* ${formData.name.trim() || 'Devotee'}`,
+      `📞 *Phone / WhatsApp:* ${formData.phone.trim() || 'N/A'}`,
+      `📏 *Preferred Size:* ${formData.size}`,
+      `📍 *Delivery City / Country:* ${formData.city.trim() || 'Not specified'}`,
+    ];
+    if (formData.notes && formData.notes.trim()) {
+      lines.push(`📝 *Customization Requirements:* ${formData.notes.trim()}`);
+    }
+    lines.push(``);
+    lines.push(`Sent via Website Price Request`);
+
+    return `https://wa.me/919460154291?text=${encodeURIComponent(lines.join('\n'))}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    // Automatic WhatsApp redirect with all details forward-filled
+    const url = getWhatsAppUrl();
+    window.open(url, '_blank');
   };
 
   const handleWhatsApp = () => {
-    const text = `Namaste! I want to inquire about the price and details of "${product.name}". %0A%0A*Name:* ${formData.name || 'Devotee'}%0A*Phone:* ${formData.phone || 'N/A'}%0A*Preferred Size:* ${formData.size}%0A*City/Country:* ${formData.city || 'N/A'}`;
-    window.open(`https://wa.me/919460154291?text=${text}`, '_blank');
+    const url = getWhatsAppUrl();
+    window.open(url, '_blank');
   };
 
   return (
