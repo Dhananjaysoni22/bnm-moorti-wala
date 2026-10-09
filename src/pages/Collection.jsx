@@ -80,7 +80,10 @@ export default function Collection({ onRequestPrice }) {
     }
 
     // If currently selected, clicking it again toggles back to ALL
-    if (selectedSubCategories.length === 1 && selectedSubCategories[0] === subId) {
+    if (
+      selectedSubCategories.length === 1 &&
+      selectedSubCategories[0] === subId
+    ) {
       setSelectedSubCategories(["ALL"]);
       setSearchParams({ category: selectedCategory });
     } else {
@@ -143,7 +146,7 @@ export default function Collection({ onRequestPrice }) {
                   style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                 >
                   <span className="tracking-wide">{cat.name}</span>
-                  {cat.hasDropdown && (
+                  {/* {cat.hasDropdown && (
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${
                         isActive
@@ -151,7 +154,7 @@ export default function Collection({ onRequestPrice }) {
                           : "text-[#8C8275] group-hover:text-[#BD9A5D]"
                       }`}
                     />
-                  )}
+                  )} */}
                   {isActive && (
                     <span className="absolute -bottom-[14px] sm:-bottom-[16px] left-0 w-full h-[2px] bg-[#BD9A5D]" />
                   )}
