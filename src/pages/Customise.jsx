@@ -83,7 +83,7 @@ export default function Customise() {
       <div className="max-w-6xl mx-auto">
         {/* Top Header */}
         <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-20">
-          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] sm:tracking-[0.25em] text-[#9E6E2D] mb-3 sm:mb-4 font-sans">
+          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] sm:tracking-[0.25em] text-[#9E6E2D] mb-3 sm:mb-4 font-sans md:tracking-[0.15rem]">
             CUSTOMISE YOUR ORDER
           </p>
 
@@ -98,7 +98,7 @@ export default function Customise() {
         {/* Two-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
           {/* Left Column: Brand, Address & Get Directions */}
-          <div className="lg:col-span-5 flex flex-col items-center text-center pt-2 sm:pt-6">
+          <div className="lg:col-span-5 flex flex-col items-center text-center pt-2 sm:pt-6 md:pt-[8rem] mr-16">
             {/* BNM Monogram Logo */}
             <Logo
               variant="about"
@@ -107,7 +107,7 @@ export default function Customise() {
             />
 
             {/* Address */}
-            <p className="text-xs sm:text-sm text-[#4A453F] leading-relaxed max-w-xs mb-6 sm:mb-8">
+            <p className="text-xs font-semibold sm:text-sm text-[#4A453F] leading-relaxed max-w-xs mb-6 sm:mb-8">
               2002, third crossing, Khejron ka
               <br />
               rasta, chadpole bazar, Jaipur,

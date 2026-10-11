@@ -92,7 +92,7 @@ export default function ProductDetail({ onRequestPrice }) {
   };
 
   return (
-    <div className="w-full bg-[#FAF8F5] min-h-screen flex flex-col overflow-x-hidden selection:bg-[#9E6E2D] selection:text-white">
+    <div className="w-full bg-white min-h-screen flex flex-col overflow-x-hidden selection:bg-[#9E6E2D] selection:text-white">
       {/* 1. TOP CATEGORY NAVIGATION BAR (Matches collection & reference mockup) */}
       <section className="w-full border-b border-[#EFEBE3] bg-white sticky z-30 shadow-xs">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,7 +116,7 @@ export default function ProductDetail({ onRequestPrice }) {
                   >
                     {cat.name}
                   </span>
-                  {cat.hasDropdown && (
+                  {/* {cat.hasDropdown && (
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-colors ${
                         isActive
@@ -124,7 +124,7 @@ export default function ProductDetail({ onRequestPrice }) {
                           : "text-[#8E8478] group-hover:text-[#BD9A5D]"
                       }`}
                     />
-                  )}
+                  )} */}
                   {isActive && (
                     <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#BD9A5D] rounded-full" />
                   )}
@@ -136,7 +136,7 @@ export default function ProductDetail({ onRequestPrice }) {
       </section>
 
       {/* 2. PRODUCT HERO SECTION (Two-column layout matching mockup) */}
-      <section className="w-full py-8 sm:py-12 lg:py-16">
+      <section className="w-full py-8 sm:py-12 lg:py-14 bg-white">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
             {/* Left Column: Product Image */}
@@ -160,7 +160,7 @@ export default function ProductDetail({ onRequestPrice }) {
             <div className="lg:col-span-6 flex flex-col justify-center">
               {/* Dynamic Product Title */}
               <h1
-                className="text-3xl sm:text-4xl lg:text-[42px] text-[#A77620] font-normal tracking-wide leading-tight mb-6"
+                className="text-3xl sm:text-4xl lg:text-[40px] text-[#A77620] font-semibold tracking-wide leading-tight mb-6"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 {product.name}
@@ -304,35 +304,36 @@ export default function ProductDetail({ onRequestPrice }) {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* 3. TABS SECTION: Description & Product Care (Matching mockup bottom) */}
-          <div className="mt-14 sm:mt-20 pt-8 border-t border-[#EFEBE3]">
-            {/* Centered Tab Headers */}
-            <div className="flex items-center justify-center gap-10 sm:gap-14 mb-8 sm:mb-10">
-              <button
-                onClick={() => setActiveTab("description")}
-                className={`text-base sm:text-lg tracking-wide transition-colors cursor-pointer relative pb-1 ${
-                  activeTab === "description"
-                    ? "text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]"
-                    : "text-[#666666] hover:text-[#A77620] font-normal"
-                }`}
-                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-              >
-                Description
-              </button>
+      {/* 3. TABS SECTION: Description & Product Care (Full-width with background color matching reference mockup) */}
+      <section className="w-full bg-[#FAF7F4] py-12 sm:py-16 md:py-20 border-t border-[#F0EAE1]">
+        <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Centered Tab Headers */}
+          <div className="flex items-center justify-center gap-8 sm:gap-12 mb-8 sm:mb-10">
+            <button
+              onClick={() => setActiveTab("description")}
+              className={`text-sm sm:text-base md:text-[17px] tracking-wide transition-colors cursor-pointer relative pb-1 font-sans ${
+                activeTab === "description"
+                  ? "text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]"
+                  : "text-[#666666] hover:text-[#A77620] font-normal"
+              }`}
+            >
+              Description
+            </button>
 
-              <button
-                onClick={() => setActiveTab("care")}
-                className={`text-base sm:text-lg tracking-wide transition-colors cursor-pointer relative pb-1 ${
-                  activeTab === "care"
-                    ? "text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]"
-                    : "text-[#666666] hover:text-[#A77620] font-normal"
-                }`}
-                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-              >
-                Product Care
-              </button>
-            </div>
+            <button
+              onClick={() => setActiveTab("care")}
+              className={`text-sm sm:text-base md:text-[17px] tracking-wide transition-colors cursor-pointer relative pb-1 font-sans ${
+                activeTab === "care"
+                  ? "text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]"
+                  : "text-[#666666] hover:text-[#A77620] font-normal"
+              }`}
+            >
+              Product Care
+            </button>
+          </div>
 
             {/* Tab Contents */}
             <div className="max-w-3xl mx-auto px-2">
@@ -492,8 +493,7 @@ export default function ProductDetail({ onRequestPrice }) {
               )}
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
   );
 }

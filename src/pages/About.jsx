@@ -11,16 +11,16 @@ export default function About() {
   return (
     <div className="w-full bg-white overflow-hidden text-[#2D2A26]">
       {/* 1. Top Section - About Us Intro Banner */}
-      <section className="pt-10 pb-4 sm:pt-14 sm:pb-6 md:pt-16 md:pb-8 text-center px-4 sm:px-6 lg:px-8">
+      <section className="pt-10 bg-[#FAF7F4] pb-4 sm:pt-14 sm:pb-6 md:pt-16 md:pb-8 text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Subtitle Badge */}
-          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-[#9E6E2D] mb-3 sm:mb-4 font-sans">
+          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-[#9E6E2D] mb-3 sm:mb-4 font-sans">
             ABOUT US
           </p>
 
           {/* Heading */}
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl text-[#222222] font-normal leading-tight tracking-wide mb-5 sm:mb-6"
+            className="text-3xl sm:text-4xl md:text-4xl text-[#222222] font-semibold leading-tight tracking-wide mb-5 sm:mb-6"
             style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             Badrinarayan Naresh Kumar
@@ -29,40 +29,40 @@ export default function About() {
           </h1>
 
           {/* Intro Paragraph */}
-          <p className="text-xs sm:text-sm md:text-[14.5px] text-[#4A453F] leading-relaxed max-w-3xl mx-auto font-sans">
+          <p className="text-xs sm:text-sm md:text-[16.5px] text-[#4A453F] leading-relaxed max-w-3xl mx-auto font-sans md:leading-7">
             <strong className="font-semibold text-[#1A1816]">
               Badrinarayan Nareshkumar Moortiwala
             </strong>{" "}
-            has been a trusted manufacturer, wholesaler, supplier, and exporter
-            of uniquely designed statues. Based in Jaipur, Rajasthan, the
-            company carries a legacy of skilled artistry and expertise.
-            Specialising in marble statues, stone artifacts, and temple
-            craftsmanship, we blend traditional techniques with modern precision
-            to create timeless pieces of exceptional quality and artistic
-            appeal.
+            has been a trusted manufacturer, wholesaler, supplier,
+            <br /> and exporter of uniquely designed statues. Based in Jaipur,
+            Rajasthan, the company carries a <br />
+            legacy of skilled artistry and expertise. Specialising in marble
+            statues, stone artifacts, and temple <br /> craftsmanship, we blend
+            traditional techniques with modern precision to create timeless
+            pieces <br /> of exceptional quality and artistic appeal.
           </p>
         </div>
       </section>
 
       {/* 2. Middle Section - Exact Wide Panoramic Heritage Banner matching original design */}
       <section className="py-6 sm:py-8 md:py-10 bg-white px-3 sm:px-5 lg:px-8">
-        <div className="w-full max-w-[1160px] mx-auto">
-          {/* Outer Wide Rounded Card with Hawa Mahal Panorama */}
-          <div className="relative rounded-2xl sm:rounded-3xl md:rounded-[28px] overflow-hidden border border-[#DCD2C2] shadow-sm bg-[#EDE5D8] px-5 sm:px-8 md:px-12 lg:px-14 py-12 sm:py-13 md:py-15 lg:py-16 min-h-[430px] sm:min-h-[460px] md:min-h-[485px] lg:min-h-[510px] flex items-center justify-center">
-            {/* Background Hawa Mahal Panorama - object-top ensures top spires, needles and domes are never cropped from above */}
+        <div className="w-full max-w-[1140px] mx-auto">
+          {/* Outer Wide Rounded Card with Soft Sandstone Hawa Mahal Panorama */}
+          <div className="relative rounded-2xl sm:rounded-3xl md:rounded-[26px] overflow-hidden border border-[#DCD2C2] shadow-xs bg-[#EDE5DA] px-4 sm:px-6 md:px-8 lg:px-10 py-5 sm:py-6 md:py-8 lg:py-8 flex items-center justify-center">
+            {/* Background Hawa Mahal Panorama - soft warm watermark matching client design */}
             <img
               src="/images/about/hawa-mahal.webp"
               alt="Hawa Mahal Jaipur Heritage"
-              className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none opacity-95"
+              className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none opacity-20"
             />
-            {/* Soft Warm Architectural Tint Overlay - tuned so Hawa Mahal arches and details remain clearly visible */}
-            <div className="absolute inset-0 bg-[#EFE8DC]/35" />
+            {/* Subtle Warm Amber Tint Overlay */}
+            <div className="absolute inset-0 bg-[#EAE2D5]/20" />
 
             {/* Inner Floating Parchment Card with Exact Proportions */}
-            <div className="relative z-10 w-full max-w-[980px] rounded-xl sm:rounded-2xl bg-[#EDE4D8]/80 backdrop-blur-[1px] border border-white/70 shadow-sm px-5 sm:px-7 md:px-9 lg:px-11 py-8 sm:py-9 md:py-10 min-h-[350px] md:min-h-[375px] lg:min-h-[390px] flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-              {/* Left Column: Workshop Entrance Image - sized to taller 225x305 proportions */}
+            <div className="relative z-10 w-full max-w-[940px] rounded-xl sm:rounded-2xl bg-[#EBE2D4]/75 backdrop-blur-xs border shadow-xs px-5 sm:px-7 md:px-9 lg:px-10 py-6 sm:py-7 md:py-8 flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+              {/* Left Column: Workshop Entrance Image */}
               <div className="flex-shrink-0 flex items-center justify-center">
-                <div className="w-[185px] h-[250px] sm:w-[205px] sm:h-[280px] md:w-[225px] md:h-[305px] rounded-xl sm:rounded-2xl overflow-hidden shadow-md">
+                <div className="w-[180px] h-[245px] sm:w-[195px] sm:h-[265px] md:w-[215px] md:h-[285px] lg:w-[225px] lg:h-[295px] rounded-xl sm:rounded-2xl overflow-hidden shadow-md border border-black/5">
                   <img
                     src="/images/about/workshop-entrance.webp"
                     alt="Badrinarayan Nareshkumar Moorti Wala Workshop Entrance"
@@ -72,21 +72,21 @@ export default function About() {
               </div>
 
               {/* Right Column: Monogram Logo & Founder Narrative */}
-              <div className="max-w-[450px] flex flex-col items-center text-center">
+              <div className="max-w-[530px] lg:max-w-[560px] flex flex-col items-center text-center">
                 {/* Centered BNM Monogram Emblem & Brand Text */}
-                <div className="mb-3 sm:mb-3.5 md:mb-4">
+                <div className="mb-3.5 sm:mb-4 md:mb-5">
                   <img
                     src="/logo.svg"
                     alt="Badrinarayan Naresh Kumar Moorti Wala"
-                    className="h-12 sm:h-14 md:h-[58px] w-auto mx-auto object-contain"
+                    className="h-14 sm:h-16 md:h-[72px] lg:h-[78px] w-auto mx-auto object-contain"
                   />
                 </div>
 
-                {/* Story Narrative with Balanced Line Breaks */}
-                <p className="text-[11.5px] sm:text-xs md:text-[13px] text-[#332E27] leading-relaxed font-sans">
+                {/* Story Narrative with Balanced Line Breaks & Font Scale matching client design */}
+                <p className="text-xs sm:text-[13px] md:text-[13.5px] lg:text-[14px] text-[#36312B] leading-[1.7] md:leading-[1.78] font-sans">
                   Founded by the visionary Late Shri. Badri Narayan Ji in the
                   mid-1970s,{" "}
-                  <strong className="font-semibold text-[#1A1816]">
+                  <strong className="font-semibold text-[#181614]">
                     Badrinarayan Nareshkumar Moorti Wala
                   </strong>{" "}
                   began its journey in Jaipur, Rajasthan, with a passion for

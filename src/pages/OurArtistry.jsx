@@ -171,7 +171,7 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
         />
 
         {/* Dark warm overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/70 to-black/70" />
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center">
