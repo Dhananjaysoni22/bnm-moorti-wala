@@ -31,7 +31,7 @@ export default function OurStory({ onOpenCustomise }) {
 
           {/* Middle Column: Story Content */}
           <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-center w-full min-w-0 py-2 lg:py-4">
-            <p className="text-[10px] sm:text-xs font-bold uppercase text-[#9E6E2D] mb-1.5 sm:mb-2 font-montserrat">
+            <p className="text-[10px] sm:text-xs font-bold uppercase text-[#A77620] mb-1.5 sm:mb-2 font-montserrat">
               OUR STORY
             </p>
 
@@ -57,7 +57,7 @@ export default function OurStory({ onOpenCustomise }) {
                 onClick={() => {
                   navigate("/about");
                 }}
-                className="px-4 sm:px-5 py-2 rounded-lg bg-[#9E6E2D] hover:bg-[#85581F] text-white text-xs font-medium tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs transition-all cursor-pointer whitespace-nowrap"
+                className="px-4 sm:px-5 py-2 rounded-lg bg-[#A77620] hover:bg-[#85581F] text-white text-xs font-semibold tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs transition-all cursor-pointer whitespace-nowrap"
               >
                 <span>KNOW MORE</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -65,7 +65,7 @@ export default function OurStory({ onOpenCustomise }) {
 
               <button
                 onClick={onOpenCustomise}
-                className="px-3.5 sm:px-4 py-2 rounded-lg border border-[#9E6E2D] text-[#9E6E2D] hover:bg-[#9E6E2D] hover:text-white text-xs font-medium tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 transition-all cursor-pointer whitespace-nowrap"
+                className="px-3.5 sm:px-4 py-2 rounded-lg border border-[#A77620] text-[#A77620] hover:bg-[#A77620] hover:text-white text-xs font-semibold tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 transition-all cursor-pointer whitespace-nowrap"
               >
                 <span>CUSTOMISE ON CALL</span>
                 <PhoneCall className="w-3.5 h-3.5" />

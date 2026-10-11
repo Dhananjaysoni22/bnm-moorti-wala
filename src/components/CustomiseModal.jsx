@@ -63,7 +63,7 @@ export default function CustomiseModal({ isOpen, onClose }) {
         <div className="overflow-y-auto flex-1">
           {submitted ? (
             <div className="p-6 sm:p-8 text-center space-y-4">
-              <CheckCircle2 className="w-14 h-14 sm:w-16 sm:h-16 text-[#9E6E2D] mx-auto animate-bounce" />
+              <CheckCircle2 className="w-14 h-14 sm:w-16 sm:h-16 text-[#A77620] mx-auto animate-bounce" />
               <h3
                 className="text-xl sm:text-2xl font-serif text-[#222222]"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
@@ -94,7 +94,7 @@ export default function CustomiseModal({ isOpen, onClose }) {
           ) : (
             <div>
               <div className="bg-[#FAF7F2] p-4 sm:p-6 border-b border-[#EDE7DD] pr-10">
-                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#9E6E2D]">
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#A77620]">
                   Bespoke Craftsmanship
                 </span>
                 <h3
@@ -117,21 +117,21 @@ export default function CustomiseModal({ isOpen, onClose }) {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   <a
                     href="tel:+919460154291"
-                    className="flex items-center justify-center sm:justify-start gap-1.5 p-2 rounded-lg bg-white border border-[#E8E1D3] text-xs font-semibold text-[#8B5C24] hover:bg-[#9E6E2D] hover:text-white transition-colors"
+                    className="flex items-center justify-center sm:justify-start gap-1.5 p-2 rounded-lg bg-white border border-[#E8E1D3] text-xs font-semibold text-[#8B5C24] hover:bg-[#A77620] hover:text-white transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5" />
                     +91 9460154291
                   </a>
                   <a
                     href="tel:+919414240861"
-                    className="flex items-center justify-center sm:justify-start gap-1.5 p-2 rounded-lg bg-white border border-[#E8E1D3] text-xs font-semibold text-[#8B5C24] hover:bg-[#9E6E2D] hover:text-white transition-colors"
+                    className="flex items-center justify-center sm:justify-start gap-1.5 p-2 rounded-lg bg-white border border-[#E8E1D3] text-xs font-semibold text-[#8B5C24] hover:bg-[#A77620] hover:text-white transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5" />
                     +91 9414240864
                   </a>
                   <a
                     href="tel:+918529071439"
-                    className="flex items-center justify-center sm:justify-start gap-1.5 p-2 rounded-lg bg-white border border-[#E8E1D3] text-xs font-semibold text-[#8B5C24] hover:bg-[#9E6E2D] hover:text-white transition-colors"
+                    className="flex items-center justify-center sm:justify-start gap-1.5 p-2 rounded-lg bg-white border border-[#E8E1D3] text-xs font-semibold text-[#8B5C24] hover:bg-[#A77620] hover:text-white transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5" />
                     +91 8529071439
@@ -156,7 +156,7 @@ export default function CustomiseModal({ isOpen, onClose }) {
                         setFormData({ ...formData, name: e.target.value })
                       }
                       placeholder="Enter your name"
-                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                     />
                   </div>
                   <div>
@@ -171,7 +171,7 @@ export default function CustomiseModal({ isOpen, onClose }) {
                         setFormData({ ...formData, phone: e.target.value })
                       }
                       placeholder="+91 98765 43210"
-                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                     />
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export default function CustomiseModal({ isOpen, onClose }) {
                     onChange={(e) =>
                       setFormData({ ...formData, marbleType: e.target.value })
                     }
-                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                   >
                     <option value="Makrana Pure White Marble">
                       Makrana Pure White Marble
@@ -215,14 +215,14 @@ export default function CustomiseModal({ isOpen, onClose }) {
                       setFormData({ ...formData, description: e.target.value })
                     }
                     placeholder="Describe deity, pose, temple size, gold/color paint preferences..."
-                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                   />
                 </div>
 
                 <div className="pt-2 flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                   <button
                     type="submit"
-                    className="flex-1 py-2.5 rounded-lg bg-[#9E6E2D] hover:bg-[#85581F] text-white text-xs font-semibold tracking-wide flex items-center justify-center gap-2 shadow-xs transition-all"
+                    className="flex-1 py-2.5 rounded-lg bg-[#A77620] hover:bg-[#85581F] text-white text-xs font-semibold tracking-wide flex items-center justify-center gap-2 shadow-xs transition-all"
                   >
                     <Send className="w-3.5 h-3.5" />
                     Submit Custom Order

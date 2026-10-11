@@ -134,13 +134,13 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
 
                 {/* Bottom-right info badge */}
                 <div className="absolute bottom-3 right-3 sm:bottom-3.5 sm:right-3.5 max-w-[90%] bg-black/45 backdrop-blur-md rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2 text-left border border-white/10 shadow-sm pointer-events-none">
-                  <p className="text-white font-medium text-[11px] sm:text-[12.5px] leading-tight drop-shadow-sm font-sans">
+                  <p className="text-white font-medium text-[11px] sm:text-[12.5px] leading-tight drop-shadow-sm font-montserrat">
                     {item.title}
                   </p>
-                  <p className="text-[#E7E2DA] text-[10px] sm:text-[11px] leading-tight mt-0.5 font-sans">
+                  <p className="text-[#E7E2DA] text-[10px] sm:text-[11px] leading-tight mt-0.5 font-montserrat">
                     {item.material}
                   </p>
-                  <p className="text-[#F3ECE1] text-[9.5px] sm:text-[10.5px] leading-tight mt-0.5 flex items-center gap-1 font-sans">
+                  <p className="text-[#F3ECE1] text-[9.5px] sm:text-[10.5px] leading-tight mt-0.5 flex items-center gap-1 font-montserrat">
                     <span>📍</span>
                     <span>{item.location}</span>
                   </p>
@@ -151,7 +151,7 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
 
           {/* 3. Centered Divider Indicator: AND MANY MORE */}
           <div className="pt-10 sm:pt-14 text-center">
-            <p className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-[#333333] uppercase font-sans">
+            <p className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-[#333333] uppercase font-montserrat">
               AND MANY MORE
             </p>
           </div>
@@ -181,14 +181,14 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
             <span>Our Craftsmanship.</span>
           </h2>
 
-          <p className="text-white/90 text-xs sm:text-sm md:text-[15px] font-normal max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed font-sans">
+          <p className="text-white/90 text-xs sm:text-sm md:text-[15px] font-medium max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed font-montserrat">
             Creating exquisite stone masterpieces that embody beauty, tradition,
             and timeless elegance
           </p>
 
           <button
             onClick={handleStartProject}
-            className="mt-6 sm:mt-8 inline-flex items-center gap-2 bg-[#BD9A5D] hover:bg-[#A88548] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase px-6 py-2.5 sm:px-8 sm:py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer font-sans"
+            className="mt-6 sm:mt-8 inline-flex items-center gap-2 bg-[#A77620] hover:bg-[#9A6B1A] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase px-6 py-2.5 sm:px-8 sm:py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer font-montserrat"
           >
             <span>START YOUR PROJECT</span>
             <span className="text-sm sm:text-base font-bold">→</span>

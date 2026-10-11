@@ -72,7 +72,7 @@ export default function FeaturesBanner() {
               </h3>
 
               {/* Description */}
-              <p className="text-[10.5px] sm:text-[11px] md:text-[11.5px] text-[#6E6D6C] leading-[1.32] whitespace-pre-line break-words min-w-0 font-sans">
+              <p className="text-[10.5px] sm:text-[11px] md:text-[11.5px] text-[#6E6D6C] leading-[1.32] whitespace-pre-line break-words min-w-0 font-montserrat">
                 {item.description}
               </p>
             </div>

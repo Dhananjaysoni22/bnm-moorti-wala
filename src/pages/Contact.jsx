@@ -13,7 +13,7 @@ export default function Contact() {
     "https://www.google.com/maps/search/?api=1&query=Badrinarayan+Naresh+Kumar+Moorti+Wala+Chandpole+Bazar+Jaipur+Rajasthan";
 
   return (
-    <div className="w-full bg-[#FAF8F5] min-h-[calc(100vh-80px)] flex flex-col selection:bg-[#9E6E2D] selection:text-white">
+    <div className="w-full bg-[#FAF8F5] min-h-[calc(100vh-80px)] flex flex-col selection:bg-[#A77620] selection:text-white">
       {/* 1. Page Title */}
       <section className="pt-10 sm:pt-14 pb-8 sm:pb-12 text-center">
         <h1 className="text-sm sm:text-base tracking-[0.15em] text-[#A77620] font-semibold uppercase  font-montserrat">

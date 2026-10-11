@@ -48,8 +48,8 @@ export default function FeaturedProducts({ onRequestPrice }) {
         <div className="relative mb-10 sm:mb-14 md:mb-6">
           <div className="text-center">
             <p
-              style={{ fontWeight: "850" }}
-              className="text-[10px] sm:text-[10px] uppercase tracking-[0.15em] text-[#9E6E2D] mb-2 sm:mb-3  font-montserrat"
+              style={{ fontWeight: "700" }}
+              className="text-[10px] sm:text-[10px] uppercase text-[#A77620] mb-2 sm:mb-3  font-montserrat"
             >
               HANDPICKED COLLECTION
             </p>
@@ -62,7 +62,7 @@ export default function FeaturedProducts({ onRequestPrice }) {
               </div>
 
               <h2
-                className="text-2xl sm:text-3xl md:text-[21px] text-[#1b1919] font-bold tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
+                className="text-2xl sm:text-3xl md:text-[21px] text-[#1b1919] font-medium tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 Featured Products
@@ -117,7 +117,7 @@ export default function FeaturedProducts({ onRequestPrice }) {
                 <Link
                   to={`/product/${product.id}`}
                   state={{ product }}
-                  className="text-[12px] sm:text-[14px] font-medium text-[#222222] hover:text-[#9E6E2D] mb-2 sm:mb-3.5  font-montserrat font-semibold line-clamp-1 w-full transition-colors cursor-pointer"
+                  className="text-[12px] sm:text-[14px] font-medium text-[#222222] hover:text-[#A77620] mb-2 sm:mb-3.5  font-montserrat font-semibold line-clamp-1 w-full transition-colors cursor-pointer"
                 >
                   {product.name}
                 </Link>
@@ -125,7 +125,7 @@ export default function FeaturedProducts({ onRequestPrice }) {
                 {/* Pill Button: Request price -> */}
                 <button
                   onClick={() => onRequestPrice?.(product)}
-                  className="w-full sm:w-auto px-3 sm:px-6 py-1.5 sm:py-2 rounded-full bg-[#9E6E2D] hover:bg-[#86591F] text-white text-[10.5px] sm:text-xs font-medium tracking-wide inline-flex items-center justify-center gap-1 shadow-xs transition-all active:scale-95 group/btn cursor-pointer"
+                  className="w-full sm:w-auto px-3 sm:px-6 py-1.5 sm:py-2 rounded-full bg-[#A77620] hover:bg-[#86591F] text-white text-[10.5px] sm:text-xs font-medium tracking-wide inline-flex items-center justify-center gap-1 shadow-xs transition-all active:scale-95 group/btn cursor-pointer"
                 >
                   <span>Request price</span>
                   <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform flex-shrink-0" />

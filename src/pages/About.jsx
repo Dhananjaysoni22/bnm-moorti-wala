@@ -14,7 +14,7 @@ export default function About() {
       <section className="pt-10 bg-[#FAF7F4] pb-4 sm:pt-14 sm:pb-6 md:pt-16 md:pb-8 text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Subtitle Badge */}
-          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.1em] text-[#9E6E2D] mb-3 sm:mb-4  font-montserrat">
+          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.1em] text-[#A77620] mb-3 sm:mb-4  font-montserrat">
             ABOUT US
           </p>
 
@@ -104,7 +104,7 @@ export default function About() {
 
       {/* 3. Milestones & Statistics (3 Columns) */}
       <section className="pt-10 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 bg-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-16">
             {/* Stat 1: 50+ Years */}
             <div className="flex flex-col items-center text-center px-4">
@@ -120,7 +120,7 @@ export default function About() {
               >
                 Years of Legacy
               </h3>
-              <p className="text-xs sm:text-[13px] text-[#635E58] leading-relaxed max-w-xs font-montserrat">
+              <p className="text-xs sm:text-[12px] text-[#635E58] leading-relaxed max-w-s font-medium font-montserrat">
                 Established in mid-1970s,{" "}
                 <strong className="font-semibold text-[#2A2621]">
                   Badrinarayan Nareshkumar Moorti
@@ -144,7 +144,7 @@ export default function About() {
               >
                 Countries Served
               </h3>
-              <p className="text-xs sm:text-[13px] text-[#635E58] leading-relaxed max-w-xs font-montserrat">
+              <p className="text-xs sm:text-[12px] text-[#635E58] leading-relaxed max-w-s font-montserrat font-medium ">
                 Our marble statues bring India's timeless artistry and
                 craftsmanship to homes, temples, and clients across 25+
                 countries worldwide.
@@ -165,7 +165,7 @@ export default function About() {
               >
                 Skilled Artisans
               </h3>
-              <p className="text-xs sm:text-[12px] text-[#635E58] leading-relaxed max-w-xs font-montserrat">
+              <p className="text-xs sm:text-[12px] text-[#635E58] leading-relaxed max-w-s font-montserrat font-medium ">
                 Our 40+ skilled artisans combine traditional techniques, expert
                 craftsmanship, and meticulous detailing to create exceptional
                 marble statues with timeless beauty.

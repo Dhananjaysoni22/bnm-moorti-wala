@@ -120,7 +120,7 @@ export default function Header({ onOpenSearch }) {
             <button
               onClick={onOpenSearch}
               aria-label="Search idols"
-              className="p-1.5 sm:p-2 text-[#3A3530] hover:text-[#9E6E2D] transition-colors rounded-full hover:bg-[#FAF6F0]"
+              className="p-1.5 sm:p-2 text-[#3A3530] hover:text-[#A77620] transition-colors rounded-full hover:bg-[#FAF6F0]"
             >
               <Search className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.75]" />
             </button>
@@ -156,11 +156,11 @@ export default function Header({ onOpenSearch }) {
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#3E3A36] hover:text-[#9E6E2D] focus:outline-hidden transition-colors rounded-lg"
+              className="lg:hidden p-2 text-[#3E3A36] hover:text-[#A77620] focus:outline-hidden transition-colors rounded-lg"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-[#9E6E2D]" />
+                <X className="w-6 h-6 text-[#A77620]" />
               ) : (
                 <Menu className="w-6 h-6" />
               )}
@@ -188,7 +188,7 @@ export default function Header({ onOpenSearch }) {
           <div className="flex-1 overflow-y-auto px-5 py-6 space-y-5 bg-[#FAF8F5]">
             {/* Worldwide Shipping Notice */}
             <div className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-[#EBE3D5] text-[#4A453F] shadow-xs">
-              <Globe className="w-4 h-4 text-[#9E6E2D] flex-shrink-0" />
+              <Globe className="w-4 h-4 text-[#A77620] flex-shrink-0" />
               <div className="text-xs">
                 <span className="font-semibold text-gray-800">
                   Worldwide Shipping
@@ -217,7 +217,7 @@ export default function Header({ onOpenSearch }) {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`text-lg font-serif px-4 py-3 rounded-xl flex items-center justify-between transition-colors ${
                         isActive
-                          ? "bg-[#9E6E2D]/10 text-[#9E6E2D] font-bold"
+                          ? "bg-[#A77620]/10 text-[#A77620] font-bold"
                           : "text-[#333333] hover:bg-[#FAF8F5]"
                       }`}
                       style={{
@@ -264,7 +264,7 @@ export default function Header({ onOpenSearch }) {
 
               <a
                 href="tel:+919460154291"
-                className="flex items-center justify-center gap-2.5 w-full py-3 rounded-xl border border-[#9E6E2D] bg-white text-[#9E6E2D] font-medium text-sm shadow-sm hover:bg-[#9E6E2D] hover:text-white active:scale-[0.99] transition-all"
+                className="flex items-center justify-center gap-2.5 w-full py-3 rounded-xl border border-[#A77620] bg-white text-[#A77620] font-medium text-sm shadow-sm hover:bg-[#A77620] hover:text-white active:scale-[0.99] transition-all"
               >
                 <Phone className="w-4 h-4" />
                 Call Artisan Workshop

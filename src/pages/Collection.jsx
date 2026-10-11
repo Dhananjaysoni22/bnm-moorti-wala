@@ -162,12 +162,12 @@ export default function Collection({ onRequestPrice }) {
 
           <button
             onClick={() => setMobileFilterOpen(true)}
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-[#BD9A5D] bg-white text-[#9E6E2D] text-xs font-medium shadow-xs"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-[#BD9A5D] bg-white text-[#A77620] text-xs font-medium shadow-xs"
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Filters</span>
             {!selectedSubCategories.includes("ALL") && (
-              <span className="w-4 h-4 rounded-full bg-[#9E6E2D] text-white text-[10px] flex items-center justify-center font-bold">
+              <span className="w-4 h-4 rounded-full bg-[#A77620] text-white text-[10px] flex items-center justify-center font-bold">
                 {selectedSubCategories.length}
               </span>
             )}
@@ -238,7 +238,7 @@ export default function Collection({ onRequestPrice }) {
               {!selectedSubCategories.includes("ALL") && (
                 <button
                   onClick={() => handleSubCategoryToggle("ALL")}
-                  className="mt-6 w-full py-2 text-center text-xs text-[#9E6E2D] hover:text-[#7A5018] font-medium border-t border-[#F0EBE1] pt-3 transition-colors cursor-pointer"
+                  className="mt-6 w-full py-2 text-center text-xs text-[#A77620] hover:text-[#7A5018] font-medium border-t border-[#F0EBE1] pt-3 transition-colors cursor-pointer"
                 >
                   Reset all filters
                 </button>
@@ -294,7 +294,7 @@ export default function Collection({ onRequestPrice }) {
                     <div className="pt-2.5 sm:pt-4 pb-3 sm:pb-6 px-2 sm:px-4 flex flex-col items-center text-center justify-between flex-1 bg-white">
                       <Link
                         to={`/product/${product.id}`}
-                        className="font-sans font-semibold text-[12.5px] sm:text-[15px] md:text-[16px] text-[#4A453F] hover:text-[#A77620] text-center tracking-normal leading-snug line-clamp-2 sm:line-clamp-1 mb-2 sm:mb-3.5 transition-colors cursor-pointer min-h-[34px] sm:min-h-0 flex items-center justify-center"
+                        className="font-montserrat font-semibold text-[12.5px] sm:text-[15px] md:text-[16px] text-[#4A453F] hover:text-[#A77620] text-center tracking-normal leading-snug line-clamp-2 sm:line-clamp-1 mb-2 sm:mb-3.5 transition-colors cursor-pointer min-h-[34px] sm:min-h-0 flex items-center justify-center"
                         title={product.name}
                       >
                         {product.name}

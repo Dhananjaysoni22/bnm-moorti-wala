@@ -67,8 +67,8 @@ export default function Categories({ onSelectCategory }) {
         {/* Section Heading */}
         <div className="text-center mb-8 sm:mb-12 md:mb-6">
           <p
-            style={{ fontWeight: "850" }}
-            className="text-[10px] sm:text-[10px] uppercase tracking-[0.15em] text-[#9E6E2D] mb-2 sm:mb-3  font-montserrat"
+            style={{ fontWeight: "700" }}
+            className="text-[10px] sm:text-[10px] uppercase text-[#A77620] mb-2 sm:mb-3  font-montserrat"
           >
             SHOP BY CATEGORY
           </p>
@@ -81,7 +81,7 @@ export default function Categories({ onSelectCategory }) {
             </div>
 
             <h2
-              className="text-2xl sm:text-3xl md:text-[21px] text-[#1b1919] font-bold tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
+              className="text-2xl sm:text-3xl md:text-[21px] text-[#1b1919] font-medium tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Sacred Idols for Every Space

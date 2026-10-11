@@ -93,7 +93,7 @@ export default function ProductDetail({ onRequestPrice }) {
   };
 
   return (
-    <div className="w-full bg-white min-h-screen flex flex-col overflow-x-hidden selection:bg-[#9E6E2D] selection:text-white">
+    <div className="w-full bg-white min-h-screen flex flex-col overflow-x-hidden selection:bg-[#A77620] selection:text-white">
       {/* 1. TOP CATEGORY NAVIGATION BAR WITH INTERACTIVE HOVER DROPDOWNS */}
       <CategoryNav
         activeCategoryId={activeCategoryId}
@@ -289,7 +289,7 @@ export default function ProductDetail({ onRequestPrice }) {
           <div className="flex items-center justify-center gap-8 sm:gap-12 mb-8 sm:mb-10">
             <button
               onClick={() => setActiveTab("description")}
-              className={`text-sm sm:text-base md:text-[17px] tracking-wide transition-colors cursor-pointer relative pb-1 font-sans ${
+              className={`text-sm sm:text-base md:text-[17px] tracking-wide transition-colors cursor-pointer relative pb-1 font-montserrat ${
                 activeTab === "description"
                   ? "text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]"
                   : "text-[#666666] hover:text-[#A77620] font-normal"
@@ -300,7 +300,7 @@ export default function ProductDetail({ onRequestPrice }) {
 
             <button
               onClick={() => setActiveTab("care")}
-              className={`text-sm sm:text-base md:text-[17px] tracking-wide transition-colors cursor-pointer relative pb-1 font-sans ${
+              className={`text-sm sm:text-base md:text-[17px] tracking-wide transition-colors cursor-pointer relative pb-1 font-montserrat ${
                 activeTab === "care"
                   ? "text-[#A77620] font-semibold underline underline-offset-8 decoration-2 decoration-[#A77620]"
                   : "text-[#666666] hover:text-[#A77620] font-normal"

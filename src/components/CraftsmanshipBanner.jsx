@@ -37,7 +37,7 @@ export default function CraftsmanshipBanner({ onStartProject }) {
 
         <button
           onClick={onStartProject}
-          className="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-lg bg-[#9E6E2D] hover:bg-[#885A1F] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 group"
+          className="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-lg bg-[#A77620] hover:bg-[#885A1F] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 group"
         >
           <span>START YOUR PROJECT</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform flex-shrink-0" />

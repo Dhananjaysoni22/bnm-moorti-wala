@@ -146,10 +146,10 @@ export default function CategoryNav({
                     <div className="bg-white rounded-xl border border-[#EBE3D5] shadow-[0_12px_32px_rgba(40,30,15,0.14)] p-2.5 sm:p-3 min-w-[210px] ring-1 ring-black/5">
                       {/* Header label in dropdown */}
                       <div className="px-2.5 py-1 mb-1.5 border-b border-[#F4EFE6] flex items-center justify-between">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#9E6E2D] font-sans">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A77620] font-montserrat">
                           {cat.name}
                         </span>
-                        <span className="text-[10px] text-[#A69E92] font-sans">
+                        <span className="text-[10px] text-[#A69E92] font-montserrat">
                           {cat.subCategories.length - 1} varieties
                         </span>
                       </div>
@@ -177,17 +177,17 @@ export default function CategoryNav({
                               onClick={(e) =>
                                 handleSubItemClick(cat.id, sub.id, e)
                               }
-                              className={`px-3 py-1.5 rounded-lg text-left text-xs font-sans tracking-wide transition-all flex items-center justify-between cursor-pointer group/item ${
+                              className={`px-3 py-1.5 rounded-lg text-left text-xs font-montserrat tracking-wide transition-all flex items-center justify-between cursor-pointer group/item ${
                                 isSubActive
-                                  ? "bg-[#9E6E2D]/10 text-[#9E6E2D] font-semibold"
-                                  : "text-[#4A453F] hover:bg-[#FAF6F0] hover:text-[#9E6E2D]"
+                                  ? "bg-[#A77620]/10 text-[#A77620] font-semibold"
+                                  : "text-[#4A453F] hover:bg-[#FAF6F0] hover:text-[#A77620]"
                               }`}
                             >
                               <span className="truncate">
                                 {formatSubName(cat, sub)}
                               </span>
                               {isSubActive && (
-                                <Check className="w-3.5 h-3.5 text-[#9E6E2D] stroke-[2.5] flex-shrink-0 ml-1.5" />
+                                <Check className="w-3.5 h-3.5 text-[#A77620] stroke-[2.5] flex-shrink-0 ml-1.5" />
                               )}
                             </button>
                           );

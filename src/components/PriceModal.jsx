@@ -67,7 +67,7 @@ export default function PriceModal({ product, onClose }) {
         <div className="overflow-y-auto flex-1">
           {submitted ? (
             <div className="p-6 sm:p-8 text-center space-y-4">
-              <CheckCircle2 className="w-14 h-14 sm:w-16 sm:h-16 text-[#9E6E2D] mx-auto animate-bounce" />
+              <CheckCircle2 className="w-14 h-14 sm:w-16 sm:h-16 text-[#A77620] mx-auto animate-bounce" />
               <h3
                 className="text-xl sm:text-2xl font-serif text-[#222222]"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
@@ -110,7 +110,7 @@ export default function PriceModal({ product, onClose }) {
                   />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#9E6E2D]">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#A77620]">
                     Quotation Request
                   </span>
                   <h3 className="text-sm sm:text-lg font-semibold text-gray-900 leading-snug line-clamp-1">
@@ -140,7 +140,7 @@ export default function PriceModal({ product, onClose }) {
                         setFormData({ ...formData, name: e.target.value })
                       }
                       placeholder="e.g. Ramesh Sharma"
-                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                     />
                   </div>
                   <div>
@@ -155,7 +155,7 @@ export default function PriceModal({ product, onClose }) {
                         setFormData({ ...formData, phone: e.target.value })
                       }
                       placeholder="+91 98765 43210"
-                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                     />
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export default function PriceModal({ product, onClose }) {
                       onChange={(e) =>
                         setFormData({ ...formData, marbleType: e.target.value })
                       }
-                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                     >
                       <option value="Makrana Pure White Marble">
                         Makrana Pure White Marble
@@ -196,7 +196,7 @@ export default function PriceModal({ product, onClose }) {
                       onChange={(e) =>
                         setFormData({ ...formData, size: e.target.value })
                       }
-                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                      className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                     >
                       <option value="12 inches (1 Foot)">
                         12 inches (1 Foot)
@@ -241,7 +241,7 @@ export default function PriceModal({ product, onClose }) {
                       setFormData({ ...formData, city: e.target.value })
                     }
                     placeholder="e.g. Melbourne, Australia"
-                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                   />
                 </div>
 
@@ -256,14 +256,14 @@ export default function PriceModal({ product, onClose }) {
                       setFormData({ ...formData, notes: e.target.value })
                     }
                     placeholder="Specific painting, gold foil work, postures..."
-                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#A77620] focus:border-[#A77620]"
                   />
                 </div>
 
                 <div className="pt-2 flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                   <button
                     type="submit"
-                    className="flex-1 py-2.5 rounded-lg bg-[#9E6E2D] hover:bg-[#85581F] text-white text-xs font-semibold tracking-wide flex items-center justify-center gap-2 shadow-xs transition-all"
+                    className="flex-1 py-2.5 rounded-lg bg-[#A77620] hover:bg-[#85581F] text-white text-xs font-semibold tracking-wide flex items-center justify-center gap-2 shadow-xs transition-all"
                   >
                     <Send className="w-3.5 h-3.5" />
                     Submit Request

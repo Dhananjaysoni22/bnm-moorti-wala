@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
-import Home from './pages/Home';
-import Collection from './pages/Collection';
-import About from './pages/About';
-import Customise from './pages/Customise';
-import OurArtistry from './pages/OurArtistry';
-import ProductDetail from './pages/ProductDetail';
-import Contact from './pages/Contact';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsConditions from './pages/TermsConditions';
-import ReturnRefundPolicy from './pages/ReturnRefundPolicy';
-import ShippingPolicy from './pages/ShippingPolicy';
-import Faq from './pages/Faq';
-import PriceModal from './components/PriceModal';
-import SearchModal from './components/SearchModal';
-import CustomiseModal from './components/CustomiseModal';
-import { Analytics } from '@vercel/analytics/react';
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import Home from "./pages/Home";
+import Collection from "./pages/Collection";
+import About from "./pages/About";
+import Customise from "./pages/Customise";
+import OurArtistry from "./pages/OurArtistry";
+import ProductDetail from "./pages/ProductDetail";
+import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import ReturnRefundPolicy from "./pages/ReturnRefundPolicy";
+import ShippingPolicy from "./pages/ShippingPolicy";
+import Faq from "./pages/Faq";
+import PriceModal from "./components/PriceModal";
+import SearchModal from "./components/SearchModal";
+import CustomiseModal from "./components/CustomiseModal";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -40,8 +40,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      
-      <div className="min-h-screen bg-[#FAF8F5] text-[#2D2A26] flex flex-col font-sans selection:bg-[#9E6E2D] selection:text-white w-full max-w-full overflow-x-hidden relative">
+
+      <div className="min-h-screen bg-[#FAF8F5] text-[#2D2A26] flex flex-col font-montserrat selection:bg-[#A77620] selection:text-white w-full max-w-full overflow-x-hidden relative">
         {/* Common Navigation Bar across all pages */}
         <Header
           onOpenSearch={() => setIsSearchOpen(true)}
@@ -101,7 +101,10 @@ export default function App() {
             <Route path="/terms-and-conditions" element={<TermsConditions />} />
             <Route path="/terms" element={<TermsConditions />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
-            <Route path="/return-and-refund-policy" element={<ReturnRefundPolicy />} />
+            <Route
+              path="/return-and-refund-policy"
+              element={<ReturnRefundPolicy />}
+            />
             <Route path="/return-refund" element={<ReturnRefundPolicy />} />
             <Route path="/refund-policy" element={<ReturnRefundPolicy />} />
             <Route path="/shipping-policy" element={<ShippingPolicy />} />

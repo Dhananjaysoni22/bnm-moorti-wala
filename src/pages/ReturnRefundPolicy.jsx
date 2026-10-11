@@ -9,7 +9,7 @@ export default function ReturnRefundPolicy() {
   }, []);
 
   return (
-    <div className="w-full bg-[#FAF8F5] min-h-[calc(100vh-80px)] text-[#2D2A26] selection:bg-[#9E6E2D] selection:text-white">
+    <div className="w-full bg-[#FAF8F5] min-h-[calc(100vh-80px)] text-[#2D2A26] selection:bg-[#A77620] selection:text-white">
       <div className="max-w-[1060px] mx-auto px-5 sm:px-8 md:px-12 pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-24">
         {/* Page Title */}
         <h1
@@ -20,7 +20,7 @@ export default function ReturnRefundPolicy() {
         </h1>
 
         {/* First Section Bullets */}
-        <div className="space-y-6 sm:space-y-7 text-[13px] sm:text-[13.5px] md:text-[14px] text-[#2E2A27] leading-[1.65] font-sans">
+        <div className="space-y-6 sm:space-y-7 text-[13px] sm:text-[13.5px] md:text-[14px] text-[#2E2A27] leading-[1.8] font-medium font-montserrat">
           <div>
             <ul className="list-disc list-outside ml-5 sm:ml-6 space-y-2 sm:space-y-2.5 text-[#2E2A27]">
               <li>
@@ -52,7 +52,7 @@ export default function ReturnRefundPolicy() {
           </div>
 
           {/* Standalone Appreciation Paragraph */}
-          <p className="text-[13px] sm:text-[13.5px] md:text-[14px] text-[#2E2A27] leading-[1.65] font-sans">
+          <p className="text-[13px] sm:text-[13.5px] md:text-[14px] text-[#2E2A27] leading-[1.8] font-medium font-montserrat">
             We appreciate your understanding and support in preserving the
             heritage of Indian craftsmanship.
           </p>
@@ -102,7 +102,7 @@ export default function ReturnRefundPolicy() {
 
           {/* Contact Information */}
           <div className="pt-2 sm:pt-3">
-            <h3 className="font-semibold text-[13.5px] sm:text-[14px] text-[#1A1816] mb-2.5 sm:mb-3">
+            <h3 className="font-semibold  text-[16px]  font-montserrat tracking-wider  sm:text-[14px] text-[#1A1816] mb-2.5 sm:mb-3">
               Contact Information:
             </h3>
             <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] md:text-[13.5px] text-[#2E2A27]">

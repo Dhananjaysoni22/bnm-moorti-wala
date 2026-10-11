@@ -83,11 +83,11 @@ export default function Customise() {
       <div className="max-w-6xl mx-auto">
         {/* Top Header */}
         <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-20">
-          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#9E6E2D] mb-3 sm:mb-4  font-montserrat md:tracking-[0.15rem]">
+          <p className="text-[14px] sm:text-xs font-bold uppercase  text-[#A77620] mb-3 sm:mb-4  font-montserrat ">
             CUSTOMISE YOUR ORDER
           </p>
 
-          <p className="text-xs font-medium sm:text-sm md:text-base text-[#3A3530] leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xs font-medium sm:text-sm md:text-base text-[#3A3530] leading-relaxed max-w-3xl mx-auto font-montserrat">
             Create something truly unique with our custom-made marble statues.
             Choose the deity, size, posture, finish, facial features, and
             intricate detailing. Share your specifications with us and let our
@@ -120,9 +120,9 @@ export default function Customise() {
               href="https://maps.google.com/?q=2002+Third+Crossing+Khejron+ka+Rasta+Chandpole+Bazar+Jaipur"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#9E6E2D] hover:bg-[#86591F] text-white text-xs sm:text-sm font-medium transition-all shadow-xs group"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#A77620] hover:bg-[#86591F] text-white text-xs sm:text-sm font-medium transition-all shadow-xs group"
             >
-              <MapPin className="w-3.5 h-3.5 fill-current" />
+              <MapPin className="w-3.5 h-3.5 " />
               <span>Get Directions</span>
             </a>
           </div>
@@ -131,7 +131,7 @@ export default function Customise() {
           <div className="lg:col-span-7">
             {submitted ? (
               <div className="bg-[#FAF8F5] border border-[#EAE3D6] rounded-2xl p-8 sm:p-10 text-center space-y-4">
-                <CheckCircle2 className="w-16 h-16 text-[#9E6E2D] mx-auto animate-bounce" />
+                <CheckCircle2 className="w-16 h-16 text-[#A77620] mx-auto animate-bounce" />
                 <h3
                   className="text-2xl sm:text-3xl font-serif text-[#222222]"
                   style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
@@ -178,7 +178,7 @@ export default function Customise() {
                 {/* Full Name */}
                 <div>
                   <label className="block text-xs font-semibold text-[#2D2823] mb-1.5">
-                    Full Name <span className="text-[#9E6E2D]">*</span>
+                    Full Name <span className="text-[#A77620]">*</span>
                   </label>
                   <input
                     type="text"
@@ -188,7 +188,7 @@ export default function Customise() {
                       setFormData({ ...formData, fullName: e.target.value })
                     }
                     placeholder="Enter your full name"
-                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#9E6E2D] focus:ring-1 focus:ring-[#9E6E2D] bg-white transition-colors placeholder:text-gray-400"
+                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#A77620] focus:ring-1 focus:ring-[#A77620] bg-white transition-colors placeholder:text-gray-400"
                   />
                 </div>
 
@@ -198,9 +198,9 @@ export default function Customise() {
                   <div>
                     <label className="block text-xs font-semibold text-[#2D2823] mb-1.5">
                       Contact Number/Whatsapp Number{" "}
-                      <span className="text-[#9E6E2D]">*</span>
+                      <span className="text-[#A77620]">*</span>
                     </label>
-                    <div className="flex rounded-xl border border-[#DFD7CA] focus-within:border-[#9E6E2D] focus-within:ring-1 focus-within:ring-[#9E6E2D] bg-white overflow-hidden">
+                    <div className="flex rounded-xl border border-[#DFD7CA] focus-within:border-[#A77620] focus-within:ring-1 focus-within:ring-[#A77620] bg-white overflow-hidden">
                       <select
                         value={formData.countryCode}
                         onChange={(e) =>
@@ -235,7 +235,7 @@ export default function Customise() {
                   {/* Email */}
                   <div>
                     <label className="block text-xs font-semibold text-[#2D2823] mb-1.5">
-                      Email id <span className="text-[#9E6E2D]">*</span>
+                      Email id <span className="text-[#A77620]">*</span>
                     </label>
                     <input
                       type="email"
@@ -245,7 +245,7 @@ export default function Customise() {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       placeholder="Enter your email id"
-                      className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#9E6E2D] focus:ring-1 focus:ring-[#9E6E2D] bg-white transition-colors placeholder:text-gray-400"
+                      className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#A77620] focus:ring-1 focus:ring-[#A77620] bg-white transition-colors placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export default function Customise() {
                 {/* Country Dropdown */}
                 <div>
                   <label className="block text-xs font-semibold text-[#2D2823] mb-1.5">
-                    Country <span className="text-[#9E6E2D]">*</span>
+                    Country <span className="text-[#A77620]">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -262,7 +262,7 @@ export default function Customise() {
                       onChange={(e) =>
                         setFormData({ ...formData, country: e.target.value })
                       }
-                      className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#9E6E2D] focus:ring-1 focus:ring-[#9E6E2D] bg-white transition-colors text-[#4A453F] appearance-none pr-10 cursor-pointer"
+                      className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#A77620] focus:ring-1 focus:ring-[#A77620] bg-white transition-colors text-[#4A453F] appearance-none pr-10 cursor-pointer"
                     >
                       <option value="">Select your Country</option>
                       {countryList.map((c) => (
@@ -278,7 +278,7 @@ export default function Customise() {
                 {/* Product Dropdown */}
                 <div>
                   <label className="block text-xs font-semibold text-[#2D2823] mb-1.5">
-                    Product <span className="text-[#9E6E2D]">*</span>
+                    Product <span className="text-[#A77620]">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -287,7 +287,7 @@ export default function Customise() {
                       onChange={(e) =>
                         setFormData({ ...formData, product: e.target.value })
                       }
-                      className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#9E6E2D] focus:ring-1 focus:ring-[#9E6E2D] bg-white transition-colors text-[#4A453F] appearance-none pr-10 cursor-pointer"
+                      className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#A77620] focus:ring-1 focus:ring-[#A77620] bg-white transition-colors text-[#4A453F] appearance-none pr-10 cursor-pointer"
                     >
                       <option value="">
                         Select product you want to cutomise
@@ -305,7 +305,7 @@ export default function Customise() {
                 {/* Marble Preference Dropdown */}
                 <div>
                   <label className="block text-xs font-semibold text-[#2D2823] mb-1.5">
-                    Marble Preference <span className="text-[#9E6E2D]">*</span>
+                    Marble Preference <span className="text-[#A77620]">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -313,7 +313,7 @@ export default function Customise() {
                       onChange={(e) =>
                         setFormData({ ...formData, marbleType: e.target.value })
                       }
-                      className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#9E6E2D] focus:ring-1 focus:ring-[#9E6E2D] bg-white transition-colors text-[#4A453F] appearance-none pr-10 cursor-pointer"
+                      className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#A77620] focus:ring-1 focus:ring-[#A77620] bg-white transition-colors text-[#4A453F] appearance-none pr-10 cursor-pointer"
                     >
                       <option value="Makrana Pure White Marble">
                         Makrana Pure White Marble
@@ -345,7 +345,7 @@ export default function Customise() {
                       setFormData({ ...formData, notes: e.target.value })
                     }
                     placeholder="Enter your Specifications"
-                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#9E6E2D] focus:ring-1 focus:ring-[#9E6E2D] bg-white transition-colors placeholder:text-gray-400 resize-y"
+                    className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-[#DFD7CA] focus:outline-none focus:border-[#A77620] focus:ring-1 focus:ring-[#A77620] bg-white transition-colors placeholder:text-gray-400 resize-y"
                   />
                 </div>
 
@@ -353,7 +353,7 @@ export default function Customise() {
                 <div className="pt-2 flex justify-center">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-14 py-3 rounded-lg bg-[#9E6E2D] hover:bg-[#86591F] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-xs transition-all cursor-pointer active:scale-98"
+                    className="w-full sm:w-auto px-14 py-3 rounded-lg bg-[#A77620] hover:bg-[#86591F] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-xs transition-all cursor-pointer active:scale-98"
                   >
                     SUBMIT
                   </button>

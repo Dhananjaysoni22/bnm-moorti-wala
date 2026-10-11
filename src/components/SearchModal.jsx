@@ -1,39 +1,98 @@
-import React, { useState } from 'react';
-import { X, Search, ArrowRight } from 'lucide-react';
+import React, { useState } from "react";
+import { X, Search, ArrowRight } from "lucide-react";
 
 const catalog = [
-  { name: 'Marble Shiva Statue', category: 'Marble God Statues', image: '/images/prod-shiva.webp', type: 'product' },
-  { name: 'Marble Cow with Calf Statue', category: 'Marble Animals', image: '/images/prod-cow.webp', type: 'product' },
-  { name: 'Marble Buddha Statue', category: 'Marble God Statues', image: '/images/prod-buddha.webp', type: 'product' },
-  { name: 'Marble Temple Statue', category: 'Marble Temples', image: '/images/prod-temple.webp', type: 'product' },
-  { name: 'Marble Durga Statue', category: 'Marble God Statues', image: '/images/prod-durga.webp', type: 'product' },
-  { name: 'Marble God Statues', category: 'Category', image: '/images/cat-gods.webp', type: 'category' },
-  { name: 'Marble Temples', category: 'Category', image: '/images/cat-temples.webp', type: 'category' },
-  { name: 'Marble Human Bust', category: 'Category', image: '/images/cat-busts.webp', type: 'category' },
-  { name: 'Marble Animals', category: 'Category', image: '/images/cat-animals.webp', type: 'category' },
-  { name: 'Marble Roman Figures', category: 'Category', image: '/images/cat-roman.webp', type: 'category' },
-  { name: 'Marble Home Decor', category: 'Category', image: '/images/cat-decor.webp', type: 'category' },
+  {
+    name: "Marble Shiva Statue",
+    category: "Marble God Statues",
+    image: "/images/prod-shiva.webp",
+    type: "product",
+  },
+  {
+    name: "Marble Cow with Calf Statue",
+    category: "Marble Animals",
+    image: "/images/prod-cow.webp",
+    type: "product",
+  },
+  {
+    name: "Marble Buddha Statue",
+    category: "Marble God Statues",
+    image: "/images/prod-buddha.webp",
+    type: "product",
+  },
+  {
+    name: "Marble Temple Statue",
+    category: "Marble Temples",
+    image: "/images/prod-temple.webp",
+    type: "product",
+  },
+  {
+    name: "Marble Durga Statue",
+    category: "Marble God Statues",
+    image: "/images/prod-durga.webp",
+    type: "product",
+  },
+  {
+    name: "Marble God Statues",
+    category: "Category",
+    image: "/images/cat-gods.webp",
+    type: "category",
+  },
+  {
+    name: "Marble Temples",
+    category: "Category",
+    image: "/images/cat-temples.webp",
+    type: "category",
+  },
+  {
+    name: "Marble Human Bust",
+    category: "Category",
+    image: "/images/cat-busts.webp",
+    type: "category",
+  },
+  {
+    name: "Marble Animals",
+    category: "Category",
+    image: "/images/cat-animals.webp",
+    type: "category",
+  },
+  {
+    name: "Marble Roman Figures",
+    category: "Category",
+    image: "/images/cat-roman.webp",
+    type: "category",
+  },
+  {
+    name: "Marble Home Decor",
+    category: "Category",
+    image: "/images/cat-decor.webp",
+    type: "category",
+  },
 ];
 
 export default function SearchModal({ isOpen, onClose, onSelectProduct }) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   if (!isOpen) return null;
 
-  const filtered = catalog.filter((item) =>
-    item.name.toLowerCase().includes(query.toLowerCase()) ||
-    item.category.toLowerCase().includes(query.toLowerCase())
+  const filtered = catalog.filter(
+    (item) =>
+      item.name.toLowerCase().includes(query.toLowerCase()) ||
+      item.category.toLowerCase().includes(query.toLowerCase()),
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-10 sm:pt-20 px-3 sm:px-4 bg-black/50 backdrop-blur-xs animate-fade-in" onClick={onClose}>
-      <div 
+    <div
+      className="fixed inset-0 z-50 flex items-start justify-center pt-10 sm:pt-20 px-3 sm:px-4 bg-black/50 backdrop-blur-xs animate-fade-in"
+      onClick={onClose}
+    >
+      <div
         className="bg-white rounded-2xl max-w-xl w-full overflow-hidden shadow-2xl border border-[#EDE7DD] relative max-h-[85vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Bar Input */}
         <div className="p-3.5 sm:p-4 border-b border-gray-200 flex items-center gap-2.5 sm:gap-3">
-          <Search className="w-5 h-5 text-[#9E6E2D] flex-shrink-0" />
+          <Search className="w-5 h-5 text-[#A77620] flex-shrink-0" />
           <input
             type="text"
             autoFocus
@@ -59,28 +118,35 @@ export default function SearchModal({ isOpen, onClose, onSelectProduct }) {
                   key={idx}
                   onClick={() => {
                     onClose();
-                    if (item.type === 'product') {
+                    if (item.type === "product") {
                       onSelectProduct?.(item);
                     }
                   }}
                   className="flex items-center gap-3 p-2 sm:p-2.5 rounded-xl hover:bg-[#FAF7F2] cursor-pointer transition-colors group"
                 >
                   <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-white border border-gray-100 p-1 flex items-center justify-center flex-shrink-0">
-                    <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-[#9E6E2D] transition-colors truncate">
+                    <h4 className="text-xs sm:text-sm font-semibold text-gray-800 group-hover:text-[#A77620] transition-colors truncate">
                       {item.name}
                     </h4>
-                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">{item.category}</span>
+                    <span className="text-[10px] text-gray-500 uppercase tracking-wider">
+                      {item.category}
+                    </span>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#9E6E2D] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#A77620] group-hover:translate-x-1 transition-all flex-shrink-0" />
                 </div>
               ))}
             </div>
           ) : (
             <div className="p-8 text-center text-xs sm:text-sm text-gray-500">
-              No matching idols found for "{query}". Contact us directly for bespoke orders!
+              No matching idols found for "{query}". Contact us directly for
+              bespoke orders!
             </div>
           )}
         </div>

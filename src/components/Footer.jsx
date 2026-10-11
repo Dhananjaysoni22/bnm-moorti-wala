@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative bg-[#9E6E2D] text-[#F9F5EC] overflow-hidden w-full max-w-full"
+      className="relative bg-[#A77620] text-[#F9F5EC] overflow-hidden w-full max-w-full"
     >
       {/* Decorative Lotus Watermark - Left Edge Motif */}
       <div className="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2 opacity-[0.18] pointer-events-none select-none z-0">
@@ -240,7 +240,7 @@ export default function Footer() {
               <li className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                 <Instagram className="w-4 h-4 text-[#FCEBD2] flex-shrink-0" />
                 <a
-                  href="https://instagram.com/bnmmoorties"
+                  href="https://instagram.com/bnmmoorties_jaipur?cplk=MWR3b3EzZjc5dndjZw%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
