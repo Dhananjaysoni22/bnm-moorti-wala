@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
             >
               2. How We Use Your Information
             </h2>
-            <p className="mb-2 sm:mb-2.5">
+            <p className="mb-2 sm:mb-2.5 font-medium ">
               We use the collected information for purposes such as:
             </p>
             <ul className="list-disc text-[14px] list-outside ml-5 sm:ml-6 space-y-1.5 sm:space-y-2 text-[#2E2A27]  font-medium">
