@@ -33,7 +33,7 @@ export default function Testimonials() {
     <section className="py-12 sm:py-16 md:py-16 bg-[#FAF8F5] w-full overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-14">
+        <div className="text-center mb-8 sm:mb-12 md:mb-6">
           <p
             style={{ fontWeight: "1000" }}
             className="text-[10px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#9E6E2D] mb-1.5 sm:mb-2  font-montserrat"

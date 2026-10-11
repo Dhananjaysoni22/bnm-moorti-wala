@@ -14,19 +14,19 @@ export default function About() {
       <section className="pt-10 bg-[#FAF7F4] pb-4 sm:pt-14 sm:pb-6 md:pt-16 md:pb-8 text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Subtitle Badge */}
-          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-[#9E6E2D] mb-3 sm:mb-4  font-montserrat">
+          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.1em] text-[#9E6E2D] mb-3 sm:mb-4  font-montserrat">
             ABOUT US
           </p>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-4xl text-[#222222] font-semibold leading-tight tracking-wide mb-5 sm:mb-6  font-montserrat">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl text-[#4c4c4c] font-semibold leading-tight tracking-wide mb-5 sm:mb-6  font-montserrat">
             Badrinarayan Naresh Kumar
             <br />
             Moorti Wala
           </h1>
 
           {/* Intro Paragraph */}
-          <p className="text-xs sm:text-sm md:text-[16.5px] text-[#4A453F] leading-relaxed max-w-3xl mx-auto font-sans md:leading-7">
+          <p className="text-xs sm:text-sm md:text-[17px] text-[#4A453F] leading-relaxed max-w-5xl mx-auto font-montserrat md:leading-7 font-medium">
             <strong className="font-semibold text-[#1A1816]">
               Badrinarayan Nareshkumar Moortiwala
             </strong>{" "}
@@ -80,8 +80,9 @@ export default function About() {
                 </div>
 
                 {/* Story Narrative with Balanced Line Breaks & Font Scale matching client design */}
-                <p className="text-xs sm:text-[13px] md:text-[13.5px] lg:text-[14px] text-[#36312B] leading-[1.7] md:leading-[1.78] font-sans">
-                  Founded by the visionary Late Shri. Badri Narayan Ji in the
+                <p className="text-xs sm:text-[13px] md:text-[13.5px] lg:text-[14px] text-[#36312B] leading-[1.7] md:leading-[1.78] font-montserrat font-medium">
+                  Founded by the visionary Late Shri. Badri Narayan Ji in the{" "}
+                  <br />
                   mid-1970s,{" "}
                   <strong className="font-semibold text-[#181614]">
                     Badrinarayan Nareshkumar Moorti Wala
@@ -119,7 +120,7 @@ export default function About() {
               >
                 Years of Legacy
               </h3>
-              <p className="text-xs sm:text-[13px] text-[#635E58] leading-relaxed max-w-xs font-sans">
+              <p className="text-xs sm:text-[13px] text-[#635E58] leading-relaxed max-w-xs font-montserrat">
                 Established in mid-1970s,{" "}
                 <strong className="font-semibold text-[#2A2621]">
                   Badrinarayan Nareshkumar Moorti
@@ -143,7 +144,7 @@ export default function About() {
               >
                 Countries Served
               </h3>
-              <p className="text-xs sm:text-[13px] text-[#635E58] leading-relaxed max-w-xs font-sans">
+              <p className="text-xs sm:text-[13px] text-[#635E58] leading-relaxed max-w-xs font-montserrat">
                 Our marble statues bring India's timeless artistry and
                 craftsmanship to homes, temples, and clients across 25+
                 countries worldwide.
@@ -164,7 +165,7 @@ export default function About() {
               >
                 Skilled Artisans
               </h3>
-              <p className="text-xs sm:text-[13px] text-[#635E58] leading-relaxed max-w-xs font-sans">
+              <p className="text-xs sm:text-[12px] text-[#635E58] leading-relaxed max-w-xs font-montserrat">
                 Our 40+ skilled artisans combine traditional techniques, expert
                 craftsmanship, and meticulous detailing to create exceptional
                 marble statues with timeless beauty.

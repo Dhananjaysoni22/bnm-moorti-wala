@@ -48,7 +48,9 @@ export default function Header({ onOpenSearch }) {
       {/* Top micro announcement bar on small screens */}
       <div className="bg-[#F1ECE5] text-[#1a1919] py-1 px-2 text-center text-[10px] sm:text-[11px] font-medium tracking-wide sm:hidden flex items-center justify-center gap-1.5 w-full overflow-hidden">
         <Globe className="w-3 h-3 text-[#F5E1BF] flex-shrink-0" />
-        <span className="truncate">Worldwide Shipping from Jaipur, India</span>
+        <span className="truncate font-semibold">
+          Worldwide Shipping from Jaipur, India
+        </span>
       </div>
 
       <header className="sticky top-0 z-40 bg-[#F1ECE5]/95 backdrop-blur-md border-b border-[#E5DFD4] w-full">
@@ -145,7 +147,7 @@ export default function Header({ onOpenSearch }) {
             {/* Worldwide Shipping Badge (Desktop & Tablet) */}
             <div className="hidden sm:flex items-center space-x-2 text-[#4A453F]">
               <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-[#5C554E] stroke-[1.5]" />
-              <div className="text-[10px] sm:text-[11px] leading-[12px] sm:leading-[13px] font-medium tracking-tight">
+              <div className="text-[10px] sm:text-[11px] leading-[12px] sm:leading-[13px] font-bold tracking-tight">
                 <div>Worldwide Shipping</div>
                 <div className="text-[#84786B]">from India</div>
               </div>

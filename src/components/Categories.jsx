@@ -65,9 +65,9 @@ export default function Categories({ onSelectCategory }) {
     >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Heading */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-14">
+        <div className="text-center mb-8 sm:mb-12 md:mb-6">
           <p
-            style={{ fontWeight: "1000" }}
+            style={{ fontWeight: "850" }}
             className="text-[10px] sm:text-[10px] uppercase tracking-[0.15em] text-[#9E6E2D] mb-2 sm:mb-3  font-montserrat"
           >
             SHOP BY CATEGORY
@@ -81,7 +81,7 @@ export default function Categories({ onSelectCategory }) {
             </div>
 
             <h2
-              className="text-2xl sm:text-3xl md:text-[21px] text-[#222222] font-bold tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
+              className="text-2xl sm:text-3xl md:text-[21px] text-[#1b1919] font-bold tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Sacred Idols for Every Space
@@ -118,12 +118,12 @@ export default function Categories({ onSelectCategory }) {
 
               {/* Bottom Details Bar */}
               <div className=" font-montserrat py-3 px-3 sm:px-3.5 flex items-center justify-between gap-1.5 min-w-0">
-                <h3 className="text-[13px] sm:text-[14px] xl:text-[14px] font-bold text-[#8B5C24] leading-snug group-hover:text-[#6F4619] transition-colors line-clamp-1 min-w-0  font-montserrat ">
+                <h3 className="text-[13px] sm:text-[14px] xl:text-[14px] font-semibold text-[#A77620] leading-snug group-hover:text-[#A77620] transition-colors line-clamp-1 min-w-0  font-montserrat ">
                   {category.title}
                 </h3>
 
                 {/* Arrow Icon in Brown Circle */}
-                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#8B5C24] text-white flex-shrink-0 flex items-center justify-center group-hover:bg-[#6F4619] group-hover:translate-x-0.5 transition-all">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#A77620] text-white flex-shrink-0 flex items-center justify-center group-hover:bg-[#6F4619] group-hover:translate-x-0.5 transition-all">
                   <ArrowRight className="w-3 h-3 stroke-[2.5]" />
                 </div>
               </div>

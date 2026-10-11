@@ -135,14 +135,14 @@ export default function ProductDetail({ onRequestPrice }) {
             <div className="lg:col-span-6 flex flex-col justify-center">
               {/* Dynamic Product Title */}
               <h1
-                className="text-3xl sm:text-4xl lg:text-[40px] text-[#A77620] font-semibold tracking-wide leading-tight mb-6"
+                className="text-3xl sm:text-4xl lg:text-[34px] text-[#A77620] font-semibold tracking-wide leading-tight mb-6"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 {product.name}
               </h1>
 
               {/* 5 Bullet Points with bold lead-ins (Exact copy from mockup) */}
-              <ul className="space-y-4 mb-8 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed">
+              <ul className="space-y-4 mb-8 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed font-montserrat">
                 <li className="flex items-start gap-2">
                   <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
                     •
@@ -283,7 +283,7 @@ export default function ProductDetail({ onRequestPrice }) {
       </section>
 
       {/* 3. TABS SECTION: Description & Product Care (Full-width with background color matching reference mockup) */}
-      <section className="w-full bg-[#FAF7F4] py-12 sm:py-16 md:py-20 border-t border-[#F0EAE1]">
+      <section className="w-full bg-[#FAF7F4] py-12 sm:py-16 md:py-10 border-t border-[#F0EAE1]">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered Tab Headers */}
           <div className="flex items-center justify-center gap-8 sm:gap-12 mb-8 sm:mb-10">

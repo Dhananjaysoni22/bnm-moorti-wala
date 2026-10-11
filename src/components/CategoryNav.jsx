@@ -110,8 +110,8 @@ export default function CategoryNav({
                   onClick={() => handleCategoryClick(cat)}
                   className={`flex items-center gap-1.2 font-serif text-[14px] sm:text-[15px] lg:text-[14px] whitespace-nowrap transition-colors py-1 relative cursor-pointer group ${
                     isActive || isDropdownOpen
-                      ? "text-[#BD9A5D] font-medium"
-                      : "text-[#4A453F] hover:text-[#BD9A5D]"
+                      ? "text-[#BD9A5D] font-semibold"
+                      : "text-[#4A453F] hover:text-[#BD9A5D] hover:font-bold"
                   }`}
                   style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                   aria-expanded={isDropdownOpen}

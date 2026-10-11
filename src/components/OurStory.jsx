@@ -43,7 +43,7 @@ export default function OurStory({ onOpenCustomise }) {
               <br className="hidden sm:inline" /> Shaped with Love
             </h2>
 
-            <p className="text-xs sm:text-[13px] text-[#5C564E] leading-[1.6] mb-3.5 sm:mb-4 max-w-md break-words  font-montserrat">
+            <p className="text-xs sm:text-[13px] text-[#5C564E] leading-[1.6] mb-3.5 sm:mb-4 max-w-md break-words  font-montserrat font-semibold">
               At Badrinarayan Nareshkumar Moortiwala, we bring you <br /> divine
               marble statues that are not just idols, but symbols of <br />{" "}
               faith, positivity and timeless beauty. Each piece is <br />{" "}
