@@ -42,12 +42,15 @@ const products = [
 
 export default function FeaturedProducts({ onRequestPrice }) {
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-white border-t border-[#F3EEE6] w-full overflow-hidden">
+    <section className="py-14 sm:py-20 md:py-9 bg-white border-t border-[#F3EEE6] w-full overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Header with Subtitle, Title, and "View all Products" */}
         <div className="relative mb-10 sm:mb-14 md:mb-16">
           <div className="text-center">
-            <p className="text-[10px] sm:text-[10px] font-bold uppercase tracking-[0.25em] text-[#9E6E2D] mb-2 sm:mb-3 font-sans">
+            <p
+              style={{ fontWeight: "1000" }}
+              className="text-[10px] sm:text-[10px] uppercase tracking-[0.15em] text-[#9E6E2D] mb-2 sm:mb-3  font-montserrat"
+            >
               HANDPICKED COLLECTION
             </p>
 
@@ -59,7 +62,7 @@ export default function FeaturedProducts({ onRequestPrice }) {
               </div>
 
               <h2
-                className="text-2xl sm:text-3xl md:text-[21px] text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
+                className="text-2xl sm:text-3xl md:text-[21px] text-[#222222] font-bold tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 Featured Products
@@ -76,7 +79,7 @@ export default function FeaturedProducts({ onRequestPrice }) {
           <div className="mt-4 md:mt-0 md:absolute md:right-0 md:bottom-1 text-center md:text-right">
             <Link
               to="/collection"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#8B5C24] hover:text-[#6E4417] transition-colors group"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#8B5C24] hover:text-[#6E4417] transition-colors group  font-montserrat"
             >
               <span>View all Products</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -114,7 +117,7 @@ export default function FeaturedProducts({ onRequestPrice }) {
                 <Link
                   to={`/product/${product.id}`}
                   state={{ product }}
-                  className="text-[12px] sm:text-[14px] font-medium text-[#222222] hover:text-[#9E6E2D] mb-2 sm:mb-3.5 line-clamp-1 w-full transition-colors cursor-pointer"
+                  className="text-[12px] sm:text-[14px] font-medium text-[#222222] hover:text-[#9E6E2D] mb-2 sm:mb-3.5  font-montserrat font-semibold line-clamp-1 w-full transition-colors cursor-pointer"
                 >
                   {product.name}
                 </Link>

@@ -83,11 +83,11 @@ export default function Customise() {
       <div className="max-w-6xl mx-auto">
         {/* Top Header */}
         <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-20">
-          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] sm:tracking-[0.25em] text-[#9E6E2D] mb-3 sm:mb-4 font-sans md:tracking-[0.15rem]">
+          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[#9E6E2D] mb-3 sm:mb-4  font-montserrat md:tracking-[0.15rem]">
             CUSTOMISE YOUR ORDER
           </p>
 
-          <p className="text-xs sm:text-sm md:text-base text-[#3A3530] leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xs font-medium sm:text-sm md:text-base text-[#3A3530] leading-relaxed max-w-3xl mx-auto">
             Create something truly unique with our custom-made marble statues.
             Choose the deity, size, posture, finish, facial features, and
             intricate detailing. Share your specifications with us and let our

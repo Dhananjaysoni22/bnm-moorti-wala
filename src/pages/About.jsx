@@ -14,15 +14,12 @@ export default function About() {
       <section className="pt-10 bg-[#FAF7F4] pb-4 sm:pt-14 sm:pb-6 md:pt-16 md:pb-8 text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Subtitle Badge */}
-          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-[#9E6E2D] mb-3 sm:mb-4 font-sans">
+          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-[#9E6E2D] mb-3 sm:mb-4  font-montserrat">
             ABOUT US
           </p>
 
           {/* Heading */}
-          <h1
-            className="text-3xl sm:text-4xl md:text-4xl text-[#222222] font-semibold leading-tight tracking-wide mb-5 sm:mb-6"
-            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-4xl text-[#222222] font-semibold leading-tight tracking-wide mb-5 sm:mb-6  font-montserrat">
             Badrinarayan Naresh Kumar
             <br />
             Moorti Wala

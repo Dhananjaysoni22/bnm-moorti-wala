@@ -16,10 +16,7 @@ export default function Contact() {
     <div className="w-full bg-[#FAF8F5] min-h-[calc(100vh-80px)] flex flex-col selection:bg-[#9E6E2D] selection:text-white">
       {/* 1. Page Title */}
       <section className="pt-10 sm:pt-14 pb-8 sm:pb-12 text-center">
-        <h1
-          className="text-sm sm:text-base tracking-[0.25em] text-[#A77620] font-semibold uppercase"
-          style={{ letterSpacing: "0.22em" }}
-        >
+        <h1 className="text-sm sm:text-base tracking-[0.15em] text-[#A77620] font-semibold uppercase  font-montserrat">
           CONTACT US
         </h1>
       </section>
@@ -67,7 +64,7 @@ export default function Contact() {
                 <div className="flex items-center gap-2 mb-3">
                   <MapPin className="w-4 h-4 text-[#222222] stroke-[1.8]" />
                   <h2
-                    className="text-lg sm:text-xl text-[#222222] font-normal"
+                    className="text-lg sm:text-xl text-[#222222] font-semibold"
                     style={{
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                     }}
@@ -97,7 +94,7 @@ export default function Contact() {
                 <div className="flex items-center gap-2 mb-3">
                   <Phone className="w-4 h-4 text-[#222222] stroke-[1.8]" />
                   <h2
-                    className="text-lg sm:text-xl text-[#222222] font-normal"
+                    className="text-lg sm:text-xl text-[#222222] font-semibold"
                     style={{
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                     }}
@@ -138,7 +135,7 @@ export default function Contact() {
                 <div className="flex items-center gap-2 mb-3">
                   <Mail className="w-4 h-4 text-[#222222] stroke-[1.8]" />
                   <h2
-                    className="text-lg sm:text-xl text-[#222222] font-normal"
+                    className="text-lg sm:text-xl text-[#222222] font-semibold"
                     style={{
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                     }}
@@ -173,7 +170,7 @@ export default function Contact() {
                 <div className="flex items-center gap-2 mb-3">
                   <Clock className="w-4 h-4 text-[#222222] stroke-[1.8]" />
                   <h2
-                    className="text-lg sm:text-xl text-[#222222] font-normal"
+                    className="text-lg sm:text-xl text-[#222222] font-semibold"
                     style={{
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                     }}

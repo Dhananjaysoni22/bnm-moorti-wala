@@ -73,12 +73,12 @@ export default function Footer() {
             {/* Quick Links */}
             <div className="min-w-0">
               <h3
-                className="text-base sm:text-lg font-serif text-[#FFF8ED] mb-3 sm:mb-5 tracking-wide truncate"
+                className="text-base sm:text-lg font-serif text-[#FFF8ED] mb-3 sm:mb-5 tracking-wide truncate font-bold"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 Quick Links
               </h3>
-              <ul className="space-y-2 sm:space-y-2.5 text-xs text-[#EFE4D2]">
+              <ul className="space-y-2 sm:space-y-2.5  font-montserrat font-semibold text-xs text-[#EFE4D2]">
                 <li>
                   <Link
                     to="/"
@@ -125,12 +125,12 @@ export default function Footer() {
             {/* Company Links */}
             <div className="min-w-0">
               <h3
-                className="text-base sm:text-lg font-serif text-[#FFF8ED] mb-3 sm:mb-5 tracking-wide truncate"
+                className="text-base sm:text-lg font-serif text-[#FFF8ED] mb-3 sm:mb-5 tracking-wide truncate font-bold"
                 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
               >
                 Company Links
               </h3>
-              <ul className="space-y-2 sm:space-y-2.5 text-xs text-[#EFE4D2]">
+              <ul className="space-y-2 sm:space-y-2.5 text-xs  font-montserrat font-semibold text-[#EFE4D2]">
                 <li>
                   <Link
                     to="/privacy-policy"
@@ -178,13 +178,13 @@ export default function Footer() {
           {/* Column 4: Contact Info (4 cols) */}
           <div className="lg:col-span-4 min-w-0 w-full">
             <h3
-              className="text-base sm:text-lg font-serif text-[#FFF8ED] mb-3 sm:mb-5 tracking-wide"
+              className="text-base sm:text-lg font-serif font-bold text-[#FFF8ED] mb-3 sm:mb-5 tracking-wide"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Contact
             </h3>
 
-            <ul className="space-y-3 sm:space-y-4 text-xs text-[#EFE4D2]">
+            <ul className="space-y-3 sm:space-y-4  font-montserrat font-semibold text-xs text-[#EFE4D2]">
               {/* Address */}
               <li className="flex items-start gap-2.5 sm:gap-3 min-w-0">
                 <MapPin className="w-4 h-4 text-[#FCEBD2] flex-shrink-0 mt-0.5" />

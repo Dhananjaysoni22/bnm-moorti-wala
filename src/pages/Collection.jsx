@@ -9,6 +9,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { CATEGORIES, PRODUCTS } from "../data/collectionData";
+import CategoryNav from "../components/CategoryNav";
 
 export default function Collection({ onRequestPrice }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -127,43 +128,23 @@ export default function Collection({ onRequestPrice }) {
   };
 
   return (
-    <div className="w-full bg-[#FAF8F5] min-h-screen flex flex-col overflow-x-hidden">
-      {/* 1. TOP CATEGORY FILTER BAR (Matches reference screenshot) */}
-      <section className="w-full border-b border-[#EFEBE3] bg-white sticky z-30 shadow-xs">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-start md:justify-center overflow-x-auto no-scrollbar py-3.5 sm:py-4 gap-6 sm:gap-8 lg:gap-11">
-            {CATEGORIES.map((cat) => {
-              const isActive = selectedCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => handleCategorySelect(cat.id)}
-                  className={`flex items-center gap-1 font-serif text-[14px] sm:text-[15px] lg:text-[16px] whitespace-nowrap transition-colors py-1 relative cursor-pointer group ${
-                    isActive
-                      ? "text-[#BD9A5D] font-medium"
-                      : "text-[#4A453F] hover:text-[#BD9A5D]"
-                  }`}
-                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-                >
-                  <span className="tracking-wide">{cat.name}</span>
-                  {/* {cat.hasDropdown && (
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        isActive
-                          ? "text-[#BD9A5D]"
-                          : "text-[#8C8275] group-hover:text-[#BD9A5D]"
-                      }`}
-                    />
-                  )} */}
-                  {isActive && (
-                    <span className="absolute -bottom-[14px] sm:-bottom-[16px] left-0 w-full h-[2px] bg-[#BD9A5D]" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+    <div className="w-full bg-white min-h-screen flex flex-col overflow-x-hidden">
+      {/* 1. TOP CATEGORY FILTER BAR WITH INTERACTIVE HOVER DROPDOWNS */}
+      <CategoryNav
+        activeCategoryId={selectedCategory}
+        activeSubCategoryId={selectedSubCategories[0]}
+        onSelectCategory={handleCategorySelect}
+        onSelectSubCategory={(catId, subId) => {
+          setSelectedCategory(catId);
+          if (subId === "ALL") {
+            setSelectedSubCategories(["ALL"]);
+            setSearchParams({ category: catId });
+          } else {
+            setSelectedSubCategories([subId]);
+            setSearchParams({ category: catId, sub: subId });
+          }
+        }}
+      />
 
       {/* 2. MAIN CONTENT AREA: Left Sidebar Filters + Product Grid */}
       <section className="flex-1 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
@@ -198,12 +179,12 @@ export default function Collection({ onRequestPrice }) {
           <aside className="hidden lg:block lg:col-span-3 sticky top-20 self-start pr-4">
             <div className="bg-white/80 rounded-2xl p-5 border border-[#EFEBE3] shadow-xs">
               {/* Category / Subcategory Title */}
-              <h2 className="text-[13px] font-bold tracking-[0.08em] uppercase text-[#222222] mb-5 border-b border-[#F0EBE1] pb-3">
+              <h2 className="text-[13px] font-bold tracking-[0.08em] uppercase text-[#222222] mb-5 border-b border-[#F0EBE1]  font-montserrat pb-3">
                 {sidebarHeading}
               </h2>
 
               {/* Subcategories Checkbox List */}
-              <div className="space-y-3">
+              <div className="space-y-3  font-montserrat">
                 {availableSubCategories.map((sub) => {
                   const isChecked = selectedSubCategories.includes(sub.id);
                   const count = subCategoryCounts[sub.id] || 0;

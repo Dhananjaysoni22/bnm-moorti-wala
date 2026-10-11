@@ -93,18 +93,15 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
       {/* 1. Page Header & Introduction with distinct background color matching design */}
       <section className="w-full bg-[#FAF7F4] border-b border-[#F0EBE1] pt-12 sm:pt-16 md:pt-20 pb-10 sm:pb-14 md:pb-16 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1
-            className="text-3xl sm:text-4xl md:text-[44px] text-[#A77620] font-normal tracking-normal mb-4 sm:mb-5"
-            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-[38px] text-[#A77620] font-semibold tracking-normal mb-4 sm:mb-5 font-serif">
             Our Artistry
           </h1>
 
-          <p className="text-xs sm:text-sm md:text-[15px] text-[#4A453F] leading-relaxed max-w-3xl mx-auto font-sans">
+          <p className="text-xs sm:text-sm md:text-[15px] text-[#4A453F] leading-relaxed md:leading-[1.75rem] max-w-3xl mx-auto  font-montserrat font-semibold">
             A showcase of creations shaped by skilled hands and inspired by
             timeless traditions.
             <br />{" "}
-            <strong className="font-semibold text-[#1A1816] ">
+            <strong className="font-bold text-[#1A1816] ">
               Badrinarayan Nareshkumar Moortiwala has done 1000+
             </strong>{" "}
             statues delivered worldwide, our <br /> marble creations bring

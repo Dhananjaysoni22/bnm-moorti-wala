@@ -33,6 +33,7 @@ export default {
         serif: ['"Cormorant Garamond"', 'Cinzel', 'Georgia', 'serif'],
         cinzel: ['Cinzel', 'serif'],
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        montserrat: ['"Montserrat"', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 4px 20px -2px rgba(158, 110, 45, 0.08)',

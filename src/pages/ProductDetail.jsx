@@ -10,6 +10,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { CATEGORIES, PRODUCTS } from "../data/collectionData";
+import CategoryNav from "../components/CategoryNav";
 
 export default function ProductDetail({ onRequestPrice }) {
   const { id } = useParams();
@@ -93,47 +94,21 @@ export default function ProductDetail({ onRequestPrice }) {
 
   return (
     <div className="w-full bg-white min-h-screen flex flex-col overflow-x-hidden selection:bg-[#9E6E2D] selection:text-white">
-      {/* 1. TOP CATEGORY NAVIGATION BAR (Matches collection & reference mockup) */}
-      <section className="w-full border-b border-[#EFEBE3] bg-white sticky z-30 shadow-xs">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-start md:justify-center overflow-x-auto no-scrollbar py-3.5 sm:py-4 gap-6 sm:gap-8 lg:gap-11">
-            {CATEGORIES.map((cat) => {
-              const isActive = activeCategoryId === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => handleCategoryClick(cat.id)}
-                  className={`flex items-center gap-1 font-serif text-[14px] sm:text-[15px] lg:text-[16px] whitespace-nowrap transition-colors py-1 relative cursor-pointer group ${
-                    isActive
-                      ? "text-[#BD9A5D] font-medium"
-                      : "text-[#4A453F] hover:text-[#BD9A5D]"
-                  }`}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    }}
-                  >
-                    {cat.name}
-                  </span>
-                  {/* {cat.hasDropdown && (
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-colors ${
-                        isActive
-                          ? "text-[#BD9A5D]"
-                          : "text-[#8E8478] group-hover:text-[#BD9A5D]"
-                      }`}
-                    />
-                  )} */}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#BD9A5D] rounded-full" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* 1. TOP CATEGORY NAVIGATION BAR WITH INTERACTIVE HOVER DROPDOWNS */}
+      <CategoryNav
+        activeCategoryId={activeCategoryId}
+        activeSubCategoryId={product.subCategory}
+        onSelectCategory={(catId) => {
+          navigate(`/collection?category=${catId}`);
+        }}
+        onSelectSubCategory={(catId, subId) => {
+          if (subId === "ALL") {
+            navigate(`/collection?category=${catId}`);
+          } else {
+            navigate(`/collection?category=${catId}&sub=${subId}`);
+          }
+        }}
+      />
 
       {/* 2. PRODUCT HERO SECTION (Two-column layout matching mockup) */}
       <section className="w-full py-8 sm:py-12 lg:py-14 bg-white">
@@ -335,9 +310,89 @@ export default function ProductDetail({ onRequestPrice }) {
             </button>
           </div>
 
-            {/* Tab Contents */}
-            <div className="max-w-3xl mx-auto px-2">
-              {activeTab === "description" ? (
+          {/* Tab Contents */}
+          <div className="max-w-3xl mx-auto px-2">
+            {activeTab === "description" ? (
+              <ul className="space-y-4 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
+                  <span>
+                    <strong className="font-semibold text-[#222222]">
+                      Handcrafted by Skilled Artisans
+                    </strong>{" "}
+                    using traditional techniques of Murtikala passed down
+                    through generations.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-2.5">
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
+                  <span>
+                    <strong className="font-semibold text-[#222222]">
+                      Authentic & Original Craftsmanship,
+                    </strong>{" "}
+                    carefully carved to preserve the natural beauty and
+                    character of the material.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-2.5">
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
+                  <span>
+                    <strong className="font-semibold text-[#222222]">
+                      Made with Fine-Quality Marble,
+                    </strong>{" "}
+                    selected for its smooth finish, durability, and timeless
+                    appeal.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-2.5">
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
+                  <span>
+                    <strong className="font-semibold text-[#222222]">
+                      Every Murti is Unique,
+                    </strong>{" "}
+                    with subtle handmade variations that reflect its artisanal
+                    character.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-2.5">
+                  <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
+                    •
+                  </span>
+                  <span>
+                    <strong className="font-semibold text-[#222222]">
+                      Crafted with Devotion & Precision,
+                    </strong>{" "}
+                    making it a meaningful choice for temples, homes, gifting,
+                    and spiritual spaces.
+                  </span>
+                </li>
+              </ul>
+            ) : (
+              <div className="space-y-6">
+                {/* Centered Intro Paragraph */}
+                <p className="text-center text-[#4A453F] text-xs sm:text-[13.5px] max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8">
+                  Each marble idol from{" "}
+                  <strong className="font-semibold text-[#222222]">
+                    Badrinarayan Nareshkumar Moorti Wala
+                  </strong>{" "}
+                  is a reflection of traditional craftsmanship, devotion, and
+                  meticulous detailing. With proper care, your idol can retain
+                  its beauty, finish, and character for generations.
+                </p>
+
+                {/* 5 Product Care Points */}
                 <ul className="space-y-4 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed">
                   <li className="flex items-start gap-2.5">
                     <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
@@ -345,10 +400,11 @@ export default function ProductDetail({ onRequestPrice }) {
                     </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
-                        Handcrafted by Skilled Artisans
+                        Dust gently:
                       </strong>{" "}
-                      using traditional techniques of Murtikala passed down
-                      through generations.
+                      Use a soft-bristled brush or a clean, soft cloth to remove
+                      dust. Avoid vigorous rubbing, especially on painted or
+                      gilded details.
                     </span>
                   </li>
 
@@ -358,10 +414,10 @@ export default function ProductDetail({ onRequestPrice }) {
                     </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
-                        Authentic & Original Craftsmanship,
+                        Clean with care:
                       </strong>{" "}
-                      carefully carved to preserve the natural beauty and
-                      character of the material.
+                      If required, lightly wipe the surface with a soft, damp
+                      cloth and allow the idol to dry naturally.
                     </span>
                   </li>
 
@@ -371,10 +427,12 @@ export default function ProductDetail({ onRequestPrice }) {
                     </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
-                        Made with Fine-Quality Marble,
+                        Protect from stains:
                       </strong>{" "}
-                      selected for its smooth finish, durability, and timeless
-                      appeal.
+                      Puja materials such as milk, honey, kumkum, turmeric,
+                      sandalwood paste, saffron, flowers, ghee, and other
+                      offerings may leave marks on Vietnam marble. Use them
+                      carefully and clean any residue promptly.
                     </span>
                   </li>
 
@@ -384,10 +442,10 @@ export default function ProductDetail({ onRequestPrice }) {
                     </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
-                        Every Murti is Unique,
+                        Keep away from direct heat:
                       </strong>{" "}
-                      with subtle handmade variations that reflect its artisanal
-                      character.
+                      Place the idol away from diyas, incense sticks, agarbatti,
+                      dhoop
                     </span>
                   </li>
 
@@ -397,103 +455,20 @@ export default function ProductDetail({ onRequestPrice }) {
                     </span>
                     <span>
                       <strong className="font-semibold text-[#222222]">
-                        Crafted with Devotion & Precision,
+                        Handle with care:
                       </strong>{" "}
-                      making it a meaningful choice for temples, homes, gifting,
-                      and spiritual spaces.
+                      Avoid moving the idol unnecessarily. When relocating it,
+                      support the base and body securely rather than holding
+                      delicate elements such as hands, ornaments, or decorative
+                      parts.
                     </span>
                   </li>
                 </ul>
-              ) : (
-                <div className="space-y-6">
-                  {/* Centered Intro Paragraph */}
-                  <p className="text-center text-[#4A453F] text-xs sm:text-[13.5px] max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8">
-                    Each marble idol from{" "}
-                    <strong className="font-semibold text-[#222222]">
-                      Badrinarayan Nareshkumar Moorti Wala
-                    </strong>{" "}
-                    is a reflection of traditional craftsmanship, devotion, and
-                    meticulous detailing. With proper care, your idol can retain
-                    its beauty, finish, and character for generations.
-                  </p>
-
-                  {/* 5 Product Care Points */}
-                  <ul className="space-y-4 text-[#4A453F] text-xs sm:text-[13.5px] leading-relaxed">
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
-                        •
-                      </span>
-                      <span>
-                        <strong className="font-semibold text-[#222222]">
-                          Dust gently:
-                        </strong>{" "}
-                        Use a soft-bristled brush or a clean, soft cloth to
-                        remove dust. Avoid vigorous rubbing, especially on
-                        painted or gilded details.
-                      </span>
-                    </li>
-
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
-                        •
-                      </span>
-                      <span>
-                        <strong className="font-semibold text-[#222222]">
-                          Clean with care:
-                        </strong>{" "}
-                        If required, lightly wipe the surface with a soft, damp
-                        cloth and allow the idol to dry naturally.
-                      </span>
-                    </li>
-
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
-                        •
-                      </span>
-                      <span>
-                        <strong className="font-semibold text-[#222222]">
-                          Protect from stains:
-                        </strong>{" "}
-                        Puja materials such as milk, honey, kumkum, turmeric,
-                        sandalwood paste, saffron, flowers, ghee, and other
-                        offerings may leave marks on Vietnam marble. Use them
-                        carefully and clean any residue promptly.
-                      </span>
-                    </li>
-
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
-                        •
-                      </span>
-                      <span>
-                        <strong className="font-semibold text-[#222222]">
-                          Keep away from direct heat:
-                        </strong>{" "}
-                        Place the idol away from diyas, incense sticks,
-                        agarbatti, dhoop
-                      </span>
-                    </li>
-
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-[#4A453F] mt-[2px] font-bold text-sm leading-none">
-                        •
-                      </span>
-                      <span>
-                        <strong className="font-semibold text-[#222222]">
-                          Handle with care:
-                        </strong>{" "}
-                        Avoid moving the idol unnecessarily. When relocating it,
-                        support the base and body securely rather than holding
-                        delicate elements such as hands, ornaments, or
-                        decorative parts.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
   );
 }

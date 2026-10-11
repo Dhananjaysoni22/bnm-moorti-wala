@@ -61,12 +61,15 @@ export default function Categories({ onSelectCategory }) {
   return (
     <section
       id="collection"
-      className="py-12 sm:py-16 md:py-20 bg-white w-full overflow-hidden"
+      className="py-12 sm:py-16 md:py-9 bg-[#FFFCF9] w-full overflow-hidden"
     >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Heading */}
         <div className="text-center mb-8 sm:mb-12 md:mb-14">
-          <p className="text-[10px] sm:text-[10px] font-bold uppercase tracking-[0.25em] text-[#9E6E2D] mb-2 sm:mb-3 font-sans">
+          <p
+            style={{ fontWeight: "1000" }}
+            className="text-[10px] sm:text-[10px] uppercase tracking-[0.15em] text-[#9E6E2D] mb-2 sm:mb-3  font-montserrat"
+          >
             SHOP BY CATEGORY
           </p>
 
@@ -78,7 +81,7 @@ export default function Categories({ onSelectCategory }) {
             </div>
 
             <h2
-              className="text-2xl sm:text-3xl md:text-[21px] text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
+              className="text-2xl sm:text-3xl md:text-[21px] text-[#222222] font-bold tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Sacred Idols for Every Space
@@ -114,8 +117,8 @@ export default function Categories({ onSelectCategory }) {
               </div>
 
               {/* Bottom Details Bar */}
-              <div className="py-3 px-3 sm:px-3.5 flex items-center justify-between gap-1.5 min-w-0">
-                <h3 className="text-[13px] sm:text-[14px] xl:text-[16px] font-bold text-[#8B5C24] leading-snug group-hover:text-[#6F4619] transition-colors line-clamp-1 min-w-0 ">
+              <div className=" font-montserrat py-3 px-3 sm:px-3.5 flex items-center justify-between gap-1.5 min-w-0">
+                <h3 className="text-[13px] sm:text-[14px] xl:text-[14px] font-bold text-[#8B5C24] leading-snug group-hover:text-[#6F4619] transition-colors line-clamp-1 min-w-0  font-montserrat ">
                   {category.title}
                 </h3>
 

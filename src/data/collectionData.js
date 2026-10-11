@@ -61,7 +61,7 @@ export const CATEGORIES = [
   {
     id: 'home-decor',
     name: 'Marble Home Decor',
-    hasDropdown: false,
+    hasDropdown: true,
     subCategories: [
       { id: 'ALL', name: 'ALL' },
       { id: 'TULSI POT', name: 'TULSI POT' },
