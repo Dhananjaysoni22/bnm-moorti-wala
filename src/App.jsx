@@ -18,6 +18,7 @@ import Faq from './pages/Faq';
 import PriceModal from './components/PriceModal';
 import SearchModal from './components/SearchModal';
 import CustomiseModal from './components/CustomiseModal';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -129,6 +130,9 @@ export default function App() {
           isOpen={isCustomiseOpen}
           onClose={() => setIsCustomiseOpen(false)}
         />
+
+        {/* Vercel Web Analytics */}
+        <Analytics />
       </div>
     </BrowserRouter>
   );
