@@ -13,11 +13,12 @@ export const CATEGORIES = [
       { id: 'GANESH', name: 'GANESH' },
       { id: 'RADHA KRISHNA', name: 'RADHA KRISHNA' },
       { id: 'DURGA', name: 'DURGA' },
+      { id: 'SARASWATI', name: 'SARASWATI' },
       { id: 'HANUMAN', name: 'HANUMAN' },
       { id: 'VISHNU LAXMI', name: 'VISHNU LAXMI' },
       { id: 'SHIVA', name: 'SHIVA' },
       { id: 'RAM DARBAR', name: 'RAM DARBAR' },
-      { id: 'BUDDHA', name: 'BUDDHA' },
+      { id: 'BRAHMA', name: 'BRAHMA' },
       { id: 'SAI BABA', name: 'SAI BABA' },
     ]
   },
@@ -45,6 +46,8 @@ export const CATEGORIES = [
       { id: 'ALL', name: 'ALL' },
       { id: 'LION', name: 'LION' },
       { id: 'ELEPHANT', name: 'ELEPHANT' },
+      { id: 'COW', name: 'COW' },
+      { id: 'MONKEY', name: 'MONKEY' },
     ]
   },
   {
@@ -63,7 +66,7 @@ export const CATEGORIES = [
       { id: 'ALL', name: 'ALL' },
       { id: 'TULSI POT', name: 'TULSI POT' },
       { id: 'MARBLE PLATE', name: 'MARBLE PLATE' },
-      { id: 'DECORATIVE ARTIFACTS', name: 'DECORATIVE ARTIFACTS' },
+      { id: 'DECORATIVE ARTIFACTS STATUE', name: 'DECORATIVE ARTIFACTS STATUE' },
     ]
   }
 ];
@@ -71,6 +74,22 @@ export const CATEGORIES = [
 export const PRODUCTS = [
   // --- GOD STATUES (28 items) ---
   // Top Featured Row (Matches Reference Card Showcase)
+  {
+    id: 'marble-shiva',
+    name: 'Marble Shiva Statue',
+    category: 'god-statues',
+    subCategory: 'SHIVA',
+    image: '/images/prod-shiva.webp',
+    imageWebp: '/images/prod-shiva.webp',
+  },
+  {
+    id: 'marble-durga',
+    name: 'Marble Durga Statue',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/prod-durga.webp',
+    imageWebp: '/images/prod-durga.webp',
+  },
   {
     id: 'god-durga-ji',
     name: 'Marble Durga Statue',
@@ -268,32 +287,6 @@ export const PRODUCTS = [
     imageWebp: '/images/collection/god-statues/ram-darbar.webp',
   },
 
-  // Buddha
-  {
-    id: 'god-buddha-1',
-    name: 'White Marble Buddha Statue',
-    category: 'god-statues',
-    subCategory: 'BUDDHA',
-    image: '/images/collection/god-statues/buddha.webp',
-    imageWebp: '/images/collection/god-statues/buddha.webp',
-  },
-  {
-    id: 'god-buddha-2',
-    name: 'Marble Meditating Buddha',
-    category: 'god-statues',
-    subCategory: 'BUDDHA',
-    image: '/images/collection/god-statues/buddha-2.webp',
-    imageWebp: '/images/collection/god-statues/buddha-2.webp',
-  },
-  {
-    id: 'god-buddha-meditating',
-    name: 'Peaceful Marble Buddha Idol',
-    category: 'god-statues',
-    subCategory: 'BUDDHA',
-    image: '/images/collection/god-statues/meditating-buddha.webp',
-    imageWebp: '/images/collection/god-statues/meditating-buddha.webp',
-  },
-
   // Sai Baba
   {
     id: 'god-sai-baba',
@@ -304,7 +297,135 @@ export const PRODUCTS = [
     imageWebp: '/images/collection/god-statues/sai-baba.webp',
   },
 
+  // Lord Brahma Ji
+  {
+    id: 'god-brahma-ji',
+    name: 'Marble Brahma Ji Statue',
+    category: 'god-statues',
+    subCategory: 'BRAHMA',
+    image: '/images/collection/god-statues/brahma-ji.webp',
+    imageWebp: '/images/collection/god-statues/brahma-ji.webp',
+  },
+
+  // Durga & Devi Statues
+  {
+    id: 'god-durga-sherawali',
+    name: 'Marble Sherawali Durga Mata Statue',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/collection/god-statues/durga-ji-lion.webp',
+    imageWebp: '/images/collection/god-statues/durga-ji-lion.webp',
+  },
+  {
+    id: 'god-kali-mata',
+    name: 'White Marble Kali Mata Statue',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/collection/god-statues/kali-mata.webp',
+    imageWebp: '/images/collection/god-statues/kali-mata.webp',
+  },
+  {
+    id: 'god-kali-mata-2',
+    name: 'Handcrafted Marble Kali Mata Statue',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/collection/god-statues/kali-mata-2.webp',
+    imageWebp: '/images/collection/god-statues/kali-mata-2.webp',
+  },
+  {
+    id: 'god-khodiyar-mata',
+    name: 'Marble Khodiyar Mata Statue',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/collection/god-statues/khodiyar-mata.webp',
+    imageWebp: '/images/collection/god-statues/khodiyar-mata.webp',
+  },
+  {
+    id: 'god-mahishasur-mardini',
+    name: 'Marble Mahishasur Mardini Durga Statue',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/collection/god-statues/mahishasur-mardini.webp',
+    imageWebp: '/images/collection/god-statues/mahishasur-mardini.webp',
+  },
+  {
+    id: 'god-nav-durga-1',
+    name: 'Marble Nav Durga Mata Idol',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/collection/god-statues/nav-durga-1.webp',
+    imageWebp: '/images/collection/god-statues/nav-durga-1.webp',
+  },
+  {
+    id: 'god-nav-durga-2',
+    name: 'Handcrafted Nav Durga Marble Statue',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/collection/god-statues/nav-durga-2.webp',
+    imageWebp: '/images/collection/god-statues/nav-durga-2.webp',
+  },
+  {
+    id: 'god-nav-durga-3',
+    name: 'Divine Nav Durga Marble Sculpture',
+    category: 'god-statues',
+    subCategory: 'DURGA',
+    image: '/images/collection/god-statues/nav-durga-3.webp',
+    imageWebp: '/images/collection/god-statues/nav-durga-3.webp',
+  },
+
+  // Saraswati Devi Statues
+  {
+    id: 'god-marble-saraswati',
+    name: 'White Marble Saraswati Mata Statue',
+    category: 'god-statues',
+    subCategory: 'SARASWATI',
+    image: '/images/collection/god-statues/marble-saraswati.webp',
+    imageWebp: '/images/collection/god-statues/marble-saraswati.webp',
+  },
+  {
+    id: 'god-saraswati-detailed',
+    name: 'Handcrafted Marble Saraswati Statue',
+    category: 'god-statues',
+    subCategory: 'SARASWATI',
+    image: '/images/collection/god-statues/saraswati-detailed.webp',
+    imageWebp: '/images/collection/god-statues/saraswati-detailed.webp',
+  },
+  {
+    id: 'god-saraswati-veena',
+    name: 'Marble Saraswati Devi with Veena',
+    category: 'god-statues',
+    subCategory: 'SARASWATI',
+    image: '/images/collection/god-statues/saraswati-veena.webp',
+    imageWebp: '/images/collection/god-statues/saraswati-veena.webp',
+  },
+  {
+    id: 'god-saraswati-makrana',
+    name: 'Makrana Marble Saraswati Idol',
+    category: 'god-statues',
+    subCategory: 'SARASWATI',
+    image: '/images/collection/god-statues/saraswati-makrana.webp',
+    imageWebp: '/images/collection/god-statues/saraswati-makrana.webp',
+  },
+
+  // Lord Shiva
+  {
+    id: 'god-marble-shiva',
+    name: 'Pure White Marble Shiva Statue',
+    category: 'god-statues',
+    subCategory: 'SHIVA',
+    image: '/images/collection/god-statues/marble-shiva.webp',
+    imageWebp: '/images/collection/god-statues/marble-shiva.webp',
+  },
+
   // --- TEMPLES (4 items) ---
+  {
+    id: 'marble-temple',
+    name: 'Marble Temple Statue',
+    category: 'temples',
+    subCategory: 'ALL',
+    image: '/images/prod-temple.webp',
+    imageWebp: '/images/prod-temple.webp',
+  },
   {
     id: 'temple-1',
     name: 'Carved Marble Home Mandir',
@@ -374,6 +495,14 @@ export const PRODUCTS = [
 
   // --- ANIMALS (3 items) ---
   {
+    id: 'marble-cow-calf',
+    name: 'Marble Cow with Calf Statue',
+    category: 'animals',
+    subCategory: 'COW',
+    image: '/images/prod-cow.webp',
+    imageWebp: '/images/prod-cow.webp',
+  },
+  {
     id: 'animal-elephant-1',
     name: 'Handcrafted Marble Elephant',
     category: 'animals',
@@ -397,6 +526,14 @@ export const PRODUCTS = [
     image: '/images/collection/animals/lion-2.webp',
     imageWebp: '/images/collection/animals/lion-2.webp',
   },
+  {
+    id: 'animal-marble-monkey',
+    name: 'Handcrafted Marble Monkey Statue',
+    category: 'animals',
+    subCategory: 'MONKEY',
+    image: '/images/collection/animals/marble-monkey.webp',
+    imageWebp: '/images/collection/animals/marble-monkey.webp',
+  },
 
   // --- ROMAN FIGURES (1+ items) ---
   {
@@ -409,6 +546,14 @@ export const PRODUCTS = [
   },
 
   // --- HOME DECOR (7 items) ---
+  {
+    id: 'marble-buddha',
+    name: 'Marble Buddha Statue',
+    category: 'home-decor',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
+    image: '/images/prod-buddha.webp',
+    imageWebp: '/images/prod-buddha.webp',
+  },
   {
     id: 'decor-tulsi-pot',
     name: 'Carved Marble Tulsi Kyara Pot',
@@ -426,10 +571,58 @@ export const PRODUCTS = [
     imageWebp: '/images/collection/home-decor/marble-plate.webp',
   },
   {
+    id: 'decor-buddha-1',
+    name: 'White Marble Buddha Statue',
+    category: 'home-decor',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
+    image: '/images/collection/home-decor/buddha.webp',
+    imageWebp: '/images/collection/home-decor/buddha.webp',
+  },
+  {
+    id: 'decor-buddha-2',
+    name: 'Marble Meditating Buddha Figurine',
+    category: 'home-decor',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
+    image: '/images/collection/home-decor/buddha-2.webp',
+    imageWebp: '/images/collection/home-decor/buddha-2.webp',
+  },
+  {
+    id: 'decor-buddha-meditating',
+    name: 'Peaceful Marble Buddha Idol',
+    category: 'home-decor',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
+    image: '/images/collection/home-decor/meditating-buddha.webp',
+    imageWebp: '/images/collection/home-decor/meditating-buddha.webp',
+  },
+  {
+    id: 'decor-buddha-statue',
+    name: 'Handcrafted Marble Buddha Statue',
+    category: 'home-decor',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
+    image: '/images/collection/home-decor/buddha-statue.webp',
+    imageWebp: '/images/collection/home-decor/buddha-statue.webp',
+  },
+  {
+    id: 'decor-sandstone-buddha',
+    name: 'Handcrafted Sandstone Buddha Statue',
+    category: 'home-decor',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
+    image: '/images/collection/home-decor/sandstone-buddha.webp',
+    imageWebp: '/images/collection/home-decor/sandstone-buddha.webp',
+  },
+  {
+    id: 'decor-yellow-stone-buddha',
+    name: 'Yellow Stone Carved Buddha Statue',
+    category: 'home-decor',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
+    image: '/images/collection/home-decor/yellow-stone-buddha.webp',
+    imageWebp: '/images/collection/home-decor/yellow-stone-buddha.webp',
+  },
+  {
     id: 'decor-elephant-pair',
     name: 'Carved Marble Elephant Pair Decor',
     category: 'home-decor',
-    subCategory: 'DECORATIVE ARTIFACTS',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
     image: '/images/collection/home-decor/elephant-pair.webp',
     imageWebp: '/images/collection/home-decor/elephant-pair.webp',
   },
@@ -437,31 +630,15 @@ export const PRODUCTS = [
     id: 'decor-elephant-2',
     name: 'Ornate Marble Elephant Showpiece',
     category: 'home-decor',
-    subCategory: 'DECORATIVE ARTIFACTS',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
     image: '/images/collection/home-decor/elephant-2.webp',
     imageWebp: '/images/collection/home-decor/elephant-2.webp',
-  },
-  {
-    id: 'decor-buddha',
-    name: 'Marble Buddha Head Artifact',
-    category: 'home-decor',
-    subCategory: 'DECORATIVE ARTIFACTS',
-    image: '/images/collection/home-decor/buddha.webp',
-    imageWebp: '/images/collection/home-decor/buddha.webp',
-  },
-  {
-    id: 'decor-buddha-2',
-    name: 'Marble Meditating Figurine Decor',
-    category: 'home-decor',
-    subCategory: 'DECORATIVE ARTIFACTS',
-    image: '/images/collection/home-decor/buddha-2.webp',
-    imageWebp: '/images/collection/home-decor/buddha-2.webp',
   },
   {
     id: 'decor-natraj',
     name: 'Marble Nataraja Home Showpiece',
     category: 'home-decor',
-    subCategory: 'DECORATIVE ARTIFACTS',
+    subCategory: 'DECORATIVE ARTIFACTS STATUE',
     image: '/images/collection/home-decor/natraj.webp',
     imageWebp: '/images/collection/home-decor/natraj.webp',
   },

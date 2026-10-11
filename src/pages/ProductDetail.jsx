@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
 import {
   ChevronDown,
   Share2,
@@ -13,12 +13,18 @@ import { CATEGORIES, PRODUCTS } from "../data/collectionData";
 
 export default function ProductDetail({ onRequestPrice }) {
   const { id } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("description");
   const [copied, setCopied] = useState(false);
 
-  // Dynamic product lookup with fuzzy fallback
+  // Dynamic product lookup with state support and fuzzy fallback
   const product = useMemo(() => {
+    // If router state has product matching current id, prioritize it
+    if (location.state?.product && (!id || location.state.product.id === id)) {
+      return location.state.product;
+    }
+
     if (!id) return PRODUCTS[0];
     const normalized = id.toLowerCase().trim();
     const exact = PRODUCTS.find((p) => p.id.toLowerCase() === normalized);
@@ -32,7 +38,7 @@ export default function ProductDetail({ onRequestPrice }) {
         p.name.toLowerCase().includes(normalized.replace(/-/g, " ")),
     );
     return match || PRODUCTS[0];
-  }, [id]);
+  }, [id, location.state]);
 
   // Active category for top bar highlight
   const activeCategoryId = product.category || "god-statues";

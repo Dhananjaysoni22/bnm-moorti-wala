@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import { X, Send, CheckCircle2, MessageCircle } from 'lucide-react';
+import React, { useState } from "react";
+import { X, Send, CheckCircle2, MessageCircle } from "lucide-react";
 
 export default function PriceModal({ product, onClose }) {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    city: '',
-    size: '24 inches',
-    notes: '',
+    name: "",
+    phone: "",
+    marbleType: "Makrana Pure White Marble",
+    city: "",
+    size: "24 inches",
+    notes: "",
   });
 
   if (!product) return null;
@@ -18,10 +19,11 @@ export default function PriceModal({ product, onClose }) {
       `*Price & Quotation Request* - Badrinarayan Naresh Kumar Moorti Wala`,
       ``,
       `🛕 *Product:* ${product.name}`,
-      `👤 *Customer Name:* ${formData.name.trim() || 'Devotee'}`,
-      `📞 *Phone / WhatsApp:* ${formData.phone.trim() || 'N/A'}`,
+      `👤 *Customer Name:* ${formData.name.trim() || "Devotee"}`,
+      `📞 *Phone / WhatsApp:* ${formData.phone.trim() || "N/A"}`,
+      `🏛️ *Marble Preference:* ${formData.marbleType}`,
       `📏 *Preferred Size:* ${formData.size}`,
-      `📍 *Delivery City / Country:* ${formData.city.trim() || 'Not specified'}`,
+      `📍 *Delivery City / Country:* ${formData.city.trim() || "Not specified"}`,
     ];
     if (formData.notes && formData.notes.trim()) {
       lines.push(`📝 *Customization Requirements:* ${formData.notes.trim()}`);
@@ -29,7 +31,7 @@ export default function PriceModal({ product, onClose }) {
     lines.push(``);
     lines.push(`Sent via Website Price Request`);
 
-    return `https://wa.me/919460154291?text=${encodeURIComponent(lines.join('\n'))}`;
+    return `https://wa.me/919460154291?text=${encodeURIComponent(lines.join("\n"))}`;
   };
 
   const handleSubmit = (e) => {
@@ -37,17 +39,20 @@ export default function PriceModal({ product, onClose }) {
     setSubmitted(true);
     // Automatic WhatsApp redirect with all details forward-filled
     const url = getWhatsAppUrl();
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   };
 
   const handleWhatsApp = () => {
     const url = getWhatsAppUrl();
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-fade-in overflow-y-auto" onClick={onClose}>
-      <div 
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-fade-in overflow-y-auto"
+      onClick={onClose}
+    >
+      <div
         className="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-[#E5DFD4] relative my-auto max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
@@ -63,11 +68,19 @@ export default function PriceModal({ product, onClose }) {
           {submitted ? (
             <div className="p-6 sm:p-8 text-center space-y-4">
               <CheckCircle2 className="w-14 h-14 sm:w-16 sm:h-16 text-[#9E6E2D] mx-auto animate-bounce" />
-              <h3 className="text-xl sm:text-2xl font-serif text-[#222222]" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+              <h3
+                className="text-xl sm:text-2xl font-serif text-[#222222]"
+                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+              >
                 Inquiry Received!
               </h3>
               <p className="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto leading-relaxed">
-                Thank you for your interest in the <span className="font-semibold text-gray-800">{product.name}</span>. Our master artisans and team will contact you shortly with the quotation and dimension catalog.
+                Thank you for your interest in the{" "}
+                <span className="font-semibold text-gray-800">
+                  {product.name}
+                </span>
+                . Our master artisans and team will contact you shortly with the
+                quotation and dimension catalog.
               </p>
               <div className="pt-3 flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center">
                 <button
@@ -90,36 +103,57 @@ export default function PriceModal({ product, onClose }) {
               {/* Header banner */}
               <div className="bg-[#FAF7F2] p-4 sm:p-5 border-b border-[#EDE7DD] flex items-center gap-3 sm:gap-4 pr-10">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-white p-1 border border-gray-200 overflow-hidden flex-shrink-0 flex items-center justify-center">
-                  <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#9E6E2D]">Quotation Request</span>
-                  <h3 className="text-sm sm:text-lg font-semibold text-gray-900 leading-snug line-clamp-1">{product.name}</h3>
-                  <p className="text-xs text-gray-500">Jaipur Pure White Marble</p>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#9E6E2D]">
+                    Quotation Request
+                  </span>
+                  <h3 className="text-sm sm:text-lg font-semibold text-gray-900 leading-snug line-clamp-1">
+                    {product.name}
+                  </h3>
+                  <p className="text-xs text-gray-500">
+                    Jaipur Pure White Marble
+                  </p>
                 </div>
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-3.5 sm:space-y-4">
+              <form
+                onSubmit={handleSubmit}
+                className="p-4 sm:p-6 space-y-3.5 sm:space-y-4"
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1">Your Full Name *</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">
+                      Your Full Name *
+                    </label>
                     <input
                       type="text"
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       placeholder="e.g. Ramesh Sharma"
                       className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1">Phone / WhatsApp *</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">
+                      Phone / WhatsApp *
+                    </label>
                     <input
                       type="tel"
                       required
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
                       placeholder="+91 98765 43210"
                       className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
                     />
@@ -128,38 +162,99 @@ export default function PriceModal({ product, onClose }) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1">Desired Height / Size</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">
+                      Marble Preference
+                    </label>
                     <select
-                      value={formData.size}
-                      onChange={(e) => setFormData({ ...formData, size: e.target.value })}
+                      value={formData.marbleType}
+                      onChange={(e) =>
+                        setFormData({ ...formData, marbleType: e.target.value })
+                      }
                       className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
                     >
-                      <option value="12 inches (1 Foot)">12 inches (1 Foot)</option>
-                      <option value="18 inches (1.5 Feet)">18 inches (1.5 Feet)</option>
-                      <option value="24 inches (2 Feet)">24 inches (2 Feet)</option>
-                      <option value="36 inches (3 Feet)">36 inches (3 Feet)</option>
-                      <option value="48 inches (4 Feet)">48 inches (4 Feet)</option>
-                      <option value="60+ inches (Temple Grand Scale)">60+ inches (Grand Scale)</option>
+                      <option value="Makrana Pure White Marble">
+                        Makrana Pure White Marble
+                      </option>
+                      <option value="Vietnamese Super White Marble">
+                        Vietnamese Super White Marble
+                      </option>
+                      <option value="Black Marble (Bhainslana)">
+                        Black Marble (Bhainslana)
+                      </option>
+                      <option value="Ambaji Marble">Ambaji Marble</option>{" "}
+                      <option value="Sandstone / Red Stone">
+                        Sandstone / Red Stone
+                      </option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1">Delivery City / Country</label>
-                    <input
-                      type="text"
-                      value={formData.city}
-                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      placeholder="e.g. Melbourne, Australia"
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">
+                      Desired Height / Size
+                    </label>
+                    <select
+                      value={formData.size}
+                      onChange={(e) =>
+                        setFormData({ ...formData, size: e.target.value })
+                      }
                       className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
-                    />
+                    >
+                      <option value="12 inches (1 Foot)">
+                        12 inches (1 Foot)
+                      </option>
+                      <option value="18 inches (1.5 Feet)">
+                        18 inches (1.5 Feet)
+                      </option>
+                      <option value="24 inches (2 Feet)">
+                        24 inches (2 Feet)
+                      </option>
+                      <option value="30 inches (2.5 Feet)">
+                        30 inches (2.5 Feet)
+                      </option>
+                      <option value="36 inches (3 Feet)">
+                        36 inches (3 Feet)
+                      </option>
+                      <option value="42 inches (3.5 Feet)">
+                        42 inches (3.5 Feet)
+                      </option>
+                      <option value="48 inches (4 Feet)">
+                        48 inches (4 Feet)
+                      </option>{" "}
+                      <option value="54 inches (4.5 Feet)">
+                        54 inches (4.5 Feet)
+                      </option>
+                      <option value="60 inches (5 Feet)">
+                        60 inches (5 Feet)
+                      </option>
+                      <option value="Above 5 Feet">Above 5 Feet</option>
+                    </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 mb-1">Customization Requirements (Optional)</label>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                    Delivery City / Country
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.city}
+                    onChange={(e) =>
+                      setFormData({ ...formData, city: e.target.value })
+                    }
+                    placeholder="e.g. Melbourne, Australia"
+                    className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                    Customization Requirements (Optional)
+                  </label>
                   <textarea
                     rows="2"
                     value={formData.notes}
-                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, notes: e.target.value })
+                    }
                     placeholder="Specific painting, gold foil work, postures..."
                     className="w-full text-sm sm:text-xs px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#9E6E2D] focus:border-[#9E6E2D]"
                   />

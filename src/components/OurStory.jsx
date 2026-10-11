@@ -1,13 +1,17 @@
-import React from 'react';
-import { ArrowRight, PhoneCall } from 'lucide-react';
-import Logo from './Logo';
+import React from "react";
+import { ArrowRight, PhoneCall } from "lucide-react";
+import Logo from "./Logo";
+import { useNavigate } from "react-router-dom";
 
 export default function OurStory({ onOpenCustomise }) {
+  const navigate = useNavigate();
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-24 bg-white w-full overflow-hidden">
+    <section
+      id="about"
+      className="py-12 sm:py-16 md:py-24 bg-white w-full overflow-hidden"
+    >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
-          
           {/* Left Column: Artisan Image (5 cols) */}
           <div className="lg:col-span-5 flex justify-center w-full">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none rounded-xl sm:rounded-2xl overflow-hidden shadow-card group">
@@ -25,28 +29,35 @@ export default function OurStory({ onOpenCustomise }) {
             </div>
           </div>
 
-          {/* Middle Column: Story Content (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-center w-full min-w-0">
+          {/* Middle Column: Story Content */}
+          <div className="lg:col-span-5 xl:col-span-4 flex flex-col justify-center w-full min-w-0">
             <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] sm:tracking-[0.25em] text-[#9E6E2D] mb-2 sm:mb-3 font-sans">
               OUR STORY
             </p>
 
-            <h2 
+            <h2
               className="text-2xl sm:text-3xl lg:text-[40px] text-[#222222] font-normal leading-tight tracking-wide mb-3 sm:mb-5"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
-              Born from Devotion,<br className="hidden sm:inline" /> Shaped with Love
+              Born from Devotion,
+              <br className="hidden sm:inline" /> Shaped with Love
             </h2>
 
             <p className="text-xs sm:text-sm text-[#5C564E] leading-relaxed mb-6 sm:mb-8 max-w-xl break-words">
-              At Badrinarayan Nareshkumar Moortiwala, we bring you divine marble statues that are not just idols, but symbols of faith, positivity and timeless beauty. Each piece is handcrafted by skilled artisans in Jaipur using the finest marble, blending tradition with unmatched craftsmanship.
+              At Badrinarayan Nareshkumar Moortiwala, we bring you <br /> divine
+              marble statues that are not just idols, but symbols of <br />
+              faith, positivity and timeless beauty. Each piece is <br />
+              handcrafted by skilled artisans in Jaipur using the finest <br />
+              marble, blending tradition with <br /> unmatched craftsmanship.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 w-full">
               <a
-                href="#collection"
-                className="px-5 sm:px-6 py-2.5 rounded-lg bg-[#9E6E2D] hover:bg-[#85581F] text-white text-xs sm:text-sm font-medium tracking-wide flex items-center justify-center gap-2 shadow-xs transition-all"
+                onClick={() => {
+                  navigate("/about");
+                }}
+                className="px-5 sm:px-6 py-2.5 rounded-lg bg-[#9E6E2D] hover:bg-[#85581F] text-white text-xs sm:text-sm font-medium tracking-wide flex items-center justify-center gap-2 shadow-xs transition-all cursor-pointer"
               >
                 <span>KNOW MORE</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -62,11 +73,13 @@ export default function OurStory({ onOpenCustomise }) {
             </div>
           </div>
 
-          {/* Right Column: BNM Logo Watermark / Accent (2 cols) */}
-          <div className="hidden lg:flex lg:col-span-2 items-center justify-center opacity-85">
-            <Logo variant="watermark" className="w-32 xl:w-40 h-auto" />
+          {/* Right Column: BNM Logo Watermark / Accent */}
+          <div className="hidden lg:flex lg:col-span-2 xl:col-span-3 items-center justify-center">
+            <Logo
+              variant="watermark"
+              className="w-52 sm:w-60 lg:w-56 xl:w-64 2xl:w-72 max-w-full h-auto"
+            />
           </div>
-
         </div>
       </div>
     </section>

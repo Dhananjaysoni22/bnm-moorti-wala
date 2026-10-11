@@ -82,6 +82,7 @@ export default function Header({ onOpenSearch }) {
                     }`}
                     style={{
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      fontWeight: "550",
                     }}
                   >
                     {item.name}

@@ -10,6 +10,11 @@ import Customise from './pages/Customise';
 import OurArtistry from './pages/OurArtistry';
 import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import ReturnRefundPolicy from './pages/ReturnRefundPolicy';
+import ShippingPolicy from './pages/ShippingPolicy';
+import Faq from './pages/Faq';
 import PriceModal from './components/PriceModal';
 import SearchModal from './components/SearchModal';
 import CustomiseModal from './components/CustomiseModal';
@@ -90,6 +95,18 @@ export default function App() {
             />
             <Route path="/contact" element={<Contact />} />
             <Route path="/contact-us" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsConditions />} />
+            <Route path="/terms" element={<TermsConditions />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/return-and-refund-policy" element={<ReturnRefundPolicy />} />
+            <Route path="/return-refund" element={<ReturnRefundPolicy />} />
+            <Route path="/refund-policy" element={<ReturnRefundPolicy />} />
+            <Route path="/shipping-policy" element={<ShippingPolicy />} />
+            <Route path="/shipping" element={<ShippingPolicy />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/faqs" element={<Faq />} />
           </Routes>
         </main>
 

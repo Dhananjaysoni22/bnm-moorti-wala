@@ -1,43 +1,43 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const categories = [
   {
-    id: 'god-statues',
-    title: 'Marble God Statues',
-    image: '/images/cat-gods.webp',
-    fallback: '/images/cat-gods.webp',
+    id: "god-statues",
+    title: "Marble God Statues",
+    image: "/images/cat-gods.webp",
+    fallback: "/images/cat-gods.webp",
   },
   {
-    id: 'temples',
-    title: 'Marble Temples',
-    image: '/images/cat-temples.webp',
-    fallback: '/images/cat-temples.webp',
+    id: "temples",
+    title: "Marble Temples",
+    image: "/images/cat-temples.webp",
+    fallback: "/images/cat-temples.webp",
   },
   {
-    id: 'human-bust',
-    title: 'Marble Human Bust',
-    image: '/images/cat-busts.webp',
-    fallback: '/images/cat-busts.webp',
+    id: "human-bust",
+    title: "Marble Human Bust",
+    image: "/images/cat-busts.webp",
+    fallback: "/images/cat-busts.webp",
   },
   {
-    id: 'animals',
-    title: 'Marble Animals',
-    image: '/images/cat-animals.webp',
-    fallback: '/images/cat-animals.webp',
+    id: "animals",
+    title: "Marble Animals",
+    image: "/images/cat-animals.webp",
+    fallback: "/images/cat-animals.webp",
   },
   {
-    id: 'roman-figures',
-    title: 'Marble Roman Figures',
-    image: '/images/cat-roman.webp',
-    fallback: '/images/cat-roman.webp',
+    id: "roman-figures",
+    title: "Marble Roman Figures",
+    image: "/images/cat-roman.webp",
+    fallback: "/images/cat-roman.webp",
   },
   {
-    id: 'home-decor',
-    title: 'Marble Home Decor',
-    image: '/images/cat-decor.webp',
-    fallback: '/images/cat-decor.webp',
+    id: "home-decor",
+    title: "Marble Home Decor",
+    image: "/images/cat-decor.webp",
+    fallback: "/images/cat-decor.webp",
   },
 ];
 
@@ -45,12 +45,12 @@ export default function Categories({ onSelectCategory }) {
   const navigate = useNavigate();
 
   const categoryMap = {
-    'god-statues': 'god-statues',
-    'temples': 'temples',
-    'human-bust': 'bust',
-    'animals': 'animals',
-    'roman-figures': 'roman',
-    'home-decor': 'home-decor',
+    "god-statues": "god-statues",
+    temples: "temples",
+    "human-bust": "bust",
+    animals: "animals",
+    "roman-figures": "roman",
+    "home-decor": "home-decor",
   };
 
   const handleCardClick = (category) => {
@@ -59,15 +59,17 @@ export default function Categories({ onSelectCategory }) {
   };
 
   return (
-    <section id="collection" className="py-12 sm:py-16 md:py-20 bg-white w-full overflow-hidden">
+    <section
+      id="collection"
+      className="py-12 sm:py-16 md:py-20 bg-white w-full overflow-hidden"
+    >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        
         {/* Section Heading */}
         <div className="text-center mb-8 sm:mb-12 md:mb-14">
-          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#9E6E2D] mb-2 sm:mb-3 font-sans">
+          <p className="text-[10px] sm:text-[10px] font-bold uppercase tracking-[0.25em] text-[#9E6E2D] mb-2 sm:mb-3 font-sans">
             SHOP BY CATEGORY
           </p>
-          
+
           {/* Ornamental Divider with Diamond */}
           <div className="flex items-center justify-center gap-3 sm:gap-5 max-w-2xl mx-auto px-2">
             <div className="flex items-center flex-1 max-w-[140px] sm:max-w-[180px]">
@@ -75,8 +77,8 @@ export default function Categories({ onSelectCategory }) {
               <div className="w-1.5 h-1.5 rotate-45 bg-[#B88E44] flex-shrink-0" />
             </div>
 
-            <h2 
-              className="text-2xl sm:text-3xl md:text-[34px] text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
+            <h2
+              className="text-2xl sm:text-3xl md:text-[21px] text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center whitespace-nowrap"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Sacred Idols for Every Space
@@ -113,13 +115,10 @@ export default function Categories({ onSelectCategory }) {
 
               {/* Bottom Details Bar */}
               <div className="py-3 px-3 sm:px-3.5 flex items-center justify-between gap-1.5 min-w-0">
-                <h3 
-                  className="text-[13px] sm:text-[14px] xl:text-[14px] font-semibold text-[#8B5C24] leading-snug group-hover:text-[#6F4619] transition-colors line-clamp-1 min-w-0"
-                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-                >
+                <h3 className="text-[13px] sm:text-[14px] xl:text-[16px] font-bold text-[#8B5C24] leading-snug group-hover:text-[#6F4619] transition-colors line-clamp-1 min-w-0 ">
                   {category.title}
                 </h3>
-                
+
                 {/* Arrow Icon in Brown Circle */}
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#8B5C24] text-white flex-shrink-0 flex items-center justify-center group-hover:bg-[#6F4619] group-hover:translate-x-0.5 transition-all">
                   <ArrowRight className="w-3 h-3 stroke-[2.5]" />
@@ -128,7 +127,6 @@ export default function Categories({ onSelectCategory }) {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

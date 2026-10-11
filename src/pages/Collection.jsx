@@ -286,18 +286,18 @@ export default function Collection({ onRequestPrice }) {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
                 {filteredProducts.map((product) => (
                   <div
                     key={product.id}
-                    className="bg-white rounded-2xl overflow-hidden border border-[#ECE7DE] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col group"
+                    className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-[#ECE7DE] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col group"
                   >
                     {/* Top Image Container: Edge-to-Edge with Card Rounded Corners */}
                     <Link
                       to={`/product/${product.id}`}
-                      className="relative aspect-square w-full overflow-hidden rounded-t-2xl bg-[#F6F1E9] block cursor-pointer"
+                      className="relative aspect-square w-full overflow-hidden rounded-t-xl sm:rounded-t-2xl bg-[#F6F1E9] block cursor-pointer"
                     >
-                      <picture className="w-full h-full block overflow-hidden rounded-t-2xl">
+                      <picture className="w-full h-full block overflow-hidden rounded-t-xl sm:rounded-t-2xl">
                         <source srcSet={product.imageWebp} type="image/webp" />
                         <img
                           src={product.image}
@@ -310,10 +310,10 @@ export default function Collection({ onRequestPrice }) {
                     </Link>
 
                     {/* Bottom Card Content: Title & Request Price Button */}
-                    <div className="pt-4 pb-6 px-4 flex flex-col items-center text-center justify-between flex-1 bg-white">
+                    <div className="pt-2.5 sm:pt-4 pb-3 sm:pb-6 px-2 sm:px-4 flex flex-col items-center text-center justify-between flex-1 bg-white">
                       <Link
                         to={`/product/${product.id}`}
-                        className="font-sans font-semibold text-[15px] sm:text-[16px] text-[#4A453F] hover:text-[#A77620] text-center tracking-normal leading-snug line-clamp-1 mb-3.5 transition-colors cursor-pointer"
+                        className="font-sans font-semibold text-[12.5px] sm:text-[15px] md:text-[16px] text-[#4A453F] hover:text-[#A77620] text-center tracking-normal leading-snug line-clamp-2 sm:line-clamp-1 mb-2 sm:mb-3.5 transition-colors cursor-pointer min-h-[34px] sm:min-h-0 flex items-center justify-center"
                         title={product.name}
                       >
                         {product.name}
@@ -325,7 +325,7 @@ export default function Collection({ onRequestPrice }) {
                             ? onRequestPrice(product)
                             : handleWhatsAppInquiry(product)
                         }
-                        className="w-auto px-8 sm:px-9 py-2.5 rounded-lg bg-[#A77620] hover:bg-[#8F641B] text-white text-xs sm:text-[13px] font-medium tracking-normal transition-all duration-200 active:scale-[0.98] cursor-pointer inline-flex items-center justify-center shadow-none"
+                        className="w-full sm:w-auto px-3 sm:px-8 py-2 sm:py-2.5 rounded-lg bg-[#A77620] hover:bg-[#8F641B] text-white text-[11px] sm:text-xs md:text-[13px] font-medium tracking-normal transition-all duration-200 active:scale-[0.98] cursor-pointer inline-flex items-center justify-center shadow-none"
                       >
                         Request price
                       </button>

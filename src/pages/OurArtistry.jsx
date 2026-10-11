@@ -1,62 +1,62 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ARTISTRY_ITEMS = [
   {
-    id: 'buddha-5ft',
-    title: 'Marble Buddha Statue - 5ft',
-    material: 'Bhaislana Marble',
-    location: 'Dubai',
-    image: '/images/artistry/buddha-5ft.webp',
+    id: "buddha-5ft",
+    title: "Marble Buddha Statue - 5ft",
+    material: "Bhaislana Marble",
+    location: "Dubai",
+    image: "/images/artistry/buddha-5ft.webp",
   },
   {
-    id: 'ganesh-3ft',
-    title: 'Marble Ganesh - 3ft',
-    material: 'Vietnam Marble',
-    location: 'Little Rock, USA',
-    image: '/images/artistry/ganesh-3ft.webp',
+    id: "ganesh-3ft",
+    title: "Marble Ganesh - 3ft",
+    material: "Vietnam Marble",
+    location: "Little Rock, USA",
+    image: "/images/artistry/ganesh-3ft.webp",
   },
   {
-    id: 'hanuman-4ft',
-    title: 'Marble Hanuman - 4ft',
-    material: 'Vietnam Marble',
-    location: 'Singapore',
-    image: '/images/artistry/hanuman-4ft.webp',
+    id: "hanuman-4ft",
+    title: "Marble Hanuman - 4ft",
+    material: "Vietnam Marble",
+    location: "Singapore",
+    image: "/images/artistry/hanuman-4ft.webp",
   },
   {
-    id: 'temple-radha-krishna-5ft',
-    title: 'Marble Temple & Radha Krishna - 5ft',
-    material: 'Vietnam Marble',
-    location: 'U.S.A',
-    image: '/images/artistry/temple-radha-krishna-5ft.webp',
+    id: "temple-radha-krishna-5ft",
+    title: "Marble Temple & Radha Krishna - 5ft",
+    material: "Vietnam Marble",
+    location: "U.S.A",
+    image: "/images/artistry/temple-radha-krishna-5ft.webp",
   },
   {
-    id: 'elephant-pair-3.5ft',
-    title: 'Elephant Pair - 3.5ft',
-    material: 'Sandstone Marble',
-    location: 'Udaipur',
-    image: '/images/artistry/elephant-pair-3.5ft.webp',
+    id: "elephant-pair-3.5ft",
+    title: "Elephant Pair - 3.5ft",
+    material: "Sandstone Marble",
+    location: "Udaipur",
+    image: "/images/artistry/elephant-pair-3.5ft.webp",
   },
   {
-    id: 'shiva-9ft',
-    title: 'Marble Shiva - 09ft',
-    material: 'Bhaislana Marble',
-    location: 'Surat',
-    image: '/images/artistry/shiva-9ft.webp',
+    id: "shiva-9ft",
+    title: "Marble Shiva - 09ft",
+    material: "Bhaislana Marble",
+    location: "Surat",
+    image: "/images/artistry/shiva-9ft.webp",
   },
   {
-    id: 'temple-ram-statue',
-    title: 'Marble Temple - 15ft & Ram Statue - 5ft',
-    material: 'Makrana Marble & Bhaislana Marble',
-    location: 'Surat',
-    image: '/images/artistry/temple-ram-statue.webp',
+    id: "temple-ram-statue",
+    title: "Marble Temple - 15ft & Ram Statue - 5ft",
+    material: "Makrana Marble & Bhaislana Marble",
+    location: "Surat",
+    image: "/images/artistry/temple-ram-statue.webp",
   },
   {
-    id: 'roman-figure-6ft',
-    title: 'Marble Roman Figure - 6ft',
-    material: 'Vietnam Marble',
-    location: 'Surat',
-    image: '/images/artistry/roman-figure-6ft.webp',
+    id: "roman-figure-6ft",
+    title: "Marble Roman Figure - 6ft",
+    material: "Vietnam Marble",
+    location: "Surat",
+    image: "/images/artistry/roman-figure-6ft.webp",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
     if (onOpenCustomise) {
       onOpenCustomise();
     } else {
-      navigate('/customise');
+      navigate("/customise");
     }
   };
 
@@ -93,7 +93,7 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
       {/* 1. Page Header & Introduction with distinct background color matching design */}
       <section className="w-full bg-[#FAF7F4] border-b border-[#F0EBE1] pt-12 sm:pt-16 md:pt-20 pb-10 sm:pb-14 md:pb-16 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 
+          <h1
             className="text-3xl sm:text-4xl md:text-[44px] text-[#A77620] font-normal tracking-normal mb-4 sm:mb-5"
             style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
@@ -101,14 +101,18 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
           </h1>
 
           <p className="text-xs sm:text-sm md:text-[15px] text-[#4A453F] leading-relaxed max-w-3xl mx-auto font-sans">
-            A showcase of creations shaped by skilled hands and inspired by timeless traditions.{' '}
-            <strong className="font-semibold text-[#1A1816]">
+            A showcase of creations shaped by skilled hands and inspired by
+            timeless traditions.
+            <br />{" "}
+            <strong className="font-semibold text-[#1A1816] ">
               Badrinarayan Nareshkumar Moortiwala has done 1000+
-            </strong>{' '}
-            statues delivered worldwide, our marble creations bring Indian artistry, devotion, and
-            craftsmanship to homes, temples, and spaces across the globe. Every piece reflects our
-            passion for stone, attention to detail, and commitment to creating timeless works that
-            last.
+            </strong>{" "}
+            statues delivered worldwide, our <br /> marble creations bring
+            Indian artistry, devotion, and craftsmanship to homes, temples, and{" "}
+            <br />
+            spaces across the globe. Every piece reflects our passion for stone,
+            attention to detail, and <br /> commitment to creating timeless
+            works that last.
           </p>
         </div>
       </section>
@@ -167,7 +171,7 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
         />
 
         {/* Dark warm overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50" />
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center">
@@ -181,8 +185,8 @@ export default function OurArtistry({ onRequestPrice, onOpenCustomise }) {
           </h2>
 
           <p className="text-white/90 text-xs sm:text-sm md:text-[15px] font-normal max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed font-sans">
-            Creating exquisite stone masterpieces that embody beauty, tradition, and timeless
-            elegance
+            Creating exquisite stone masterpieces that embody beauty, tradition,
+            and timeless elegance
           </p>
 
           <button

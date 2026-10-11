@@ -32,14 +32,14 @@ export default function Logo({
   } else if (isCustomise) {
     variantStyles = 'h-20 sm:h-24 md:h-28 w-auto object-contain mx-auto';
   } else if (isWatermark) {
-    variantStyles = 'w-48 sm:w-56 lg:w-64 xl:w-72 h-auto object-contain opacity-85 select-none pointer-events-none';
+    variantStyles = 'w-full h-auto object-contain opacity-90 select-none pointer-events-none';
   }
 
   const logoImg = (
     <img
       src="/logo.svg"
       alt="Badrinarayan Naresh Kumar Moorti Wala"
-      className={`${variantStyles} ${className}`}
+      className={isWatermark ? variantStyles : `${variantStyles} ${className}`}
       loading="eager"
       decoding="async"
     />

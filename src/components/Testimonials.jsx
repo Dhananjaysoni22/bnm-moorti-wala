@@ -34,13 +34,13 @@ export default function Testimonials() {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] sm:tracking-[0.25em] text-[#9E6E2D] mb-1.5 sm:mb-2 font-sans">
+          <p className="text-[10px] sm:text-[10px] font-bold uppercase tracking-[0.22em] sm:tracking-[0.25em] text-[#9E6E2D] mb-1.5 sm:mb-2 font-sans">
             WHAT OUR CUSTOMERS SAY
           </p>
           <div className="flex items-center justify-center gap-2 sm:gap-4 max-w-2xl mx-auto px-2">
             <div className="hidden sm:block h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#C4A163] to-[#B88E44]" />
             <h2
-              className="text-xl sm:text-3xl md:text-4xl text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center"
+              className="text-xl sm:text-3xl md:text-[21px] text-[#222222] font-normal tracking-wide px-1 sm:px-2 text-center"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               Loved by Devotees Worldwide
