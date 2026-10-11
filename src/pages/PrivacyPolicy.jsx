@@ -20,9 +20,9 @@ export default function PrivacyPolicy() {
 
         {/* Intro Paragraph */}
         <p className="text-[13px] sm:text-[13.5px] md:text-[14px] text-[#2E2A27] leading-[1.8] mb-6 sm:mb-7 font-montserrat font-semibold">
-          At span Badrinarayan Nareshkumar Moorti Wala, we respect your privacy
-          and are committed to protecting your personal information. This
-          Privacy Policy explains how we collect, use, store, and safeguard your
+          At Badrinarayan Nareshkumar Moorti Wala, we respect your privacy and
+          are committed to protecting your personal information. This Privacy
+          Policy explains how we collect, use, store, and safeguard your
           information when you visit our website, explore our products, submit
           an inquiry, or make a purchase.
         </p>
