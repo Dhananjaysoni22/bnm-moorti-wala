@@ -197,6 +197,19 @@ export default function Header({ onOpenSearch }) {
               </div>
             </div>
 
+            {/* Quick Search Button in Mobile Menu */}
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenSearch?.();
+              }}
+              className="w-full flex items-center gap-3 p-3 rounded-xl bg-white border border-[#EBE3D5] text-[#7A7165] hover:text-[#9E6E2D] hover:border-[#9E6E2D] shadow-xs transition-all cursor-pointer text-left"
+            >
+              <Search className="w-4 h-4 text-[#9E6E2D] flex-shrink-0" />
+              <span className="text-xs font-sans">Search idols, temples, god statues...</span>
+            </button>
+
             {/* Navigation Links */}
             <nav className="flex flex-col space-y-1 bg-white rounded-2xl border border-[#EBE3D5] p-2 shadow-xs">
               {navItems.map((item) => {

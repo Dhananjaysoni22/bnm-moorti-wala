@@ -127,6 +127,7 @@ export default function App() {
           isOpen={isSearchOpen}
           onClose={() => setIsSearchOpen(false)}
           onSelectProduct={(item) => setSelectedProduct(item)}
+          onRequestPrice={handleRequestPrice}
         />
 
         <CustomiseModal

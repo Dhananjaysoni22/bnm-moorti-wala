@@ -7,6 +7,7 @@ import {
   X,
   SlidersHorizontal,
   MessageCircle,
+  Search,
 } from "lucide-react";
 import { CATEGORIES, PRODUCTS } from "../data/collectionData";
 import CategoryNav from "../components/CategoryNav";
@@ -14,9 +15,10 @@ import CategoryNav from "../components/CategoryNav";
 export default function Collection({ onRequestPrice }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Read category and subcategory from query params if present
+  // Read category, subcategory and search from query params if present
   const paramCategory = searchParams.get("category");
   const paramSub = searchParams.get("sub");
+  const paramSearch = searchParams.get("search");
 
   const [selectedCategory, setSelectedCategory] = useState(
     paramCategory || "god-statues",
@@ -94,8 +96,18 @@ export default function Collection({ onRequestPrice }) {
     }
   };
 
-  // Filtered products to display
+  // Filtered products to display (supports category, subcategory and search)
   const filteredProducts = useMemo(() => {
+    if (paramSearch && paramSearch.trim()) {
+      const q = paramSearch.toLowerCase().trim();
+      return PRODUCTS.filter((p) => {
+        const name = p.name.toLowerCase();
+        const cat = (p.category || "").toLowerCase();
+        const sub = (p.subCategory || "").toLowerCase();
+        return name.includes(q) || cat.includes(q) || sub.includes(q);
+      });
+    }
+
     if (
       selectedSubCategories.includes("ALL") ||
       selectedSubCategories.length === 0
@@ -105,10 +117,13 @@ export default function Collection({ onRequestPrice }) {
     return categoryProducts.filter((p) =>
       selectedSubCategories.includes(p.subCategory),
     );
-  }, [categoryProducts, selectedSubCategories]);
+  }, [categoryProducts, selectedSubCategories, paramSearch]);
 
   // Dynamic sidebar heading
   const sidebarHeading = useMemo(() => {
+    if (paramSearch && paramSearch.trim()) {
+      return `SEARCH: "${paramSearch.toUpperCase()}"`;
+    }
     if (
       selectedSubCategories.length === 1 &&
       selectedSubCategories[0] !== "ALL"
@@ -116,7 +131,7 @@ export default function Collection({ onRequestPrice }) {
       return `MARBLE ${selectedSubCategories[0]} STATUE`;
     }
     return currentCategoryObj.name.toUpperCase();
-  }, [selectedSubCategories, currentCategoryObj]);
+  }, [selectedSubCategories, currentCategoryObj, paramSearch]);
 
   // WhatsApp inquiry fallback
   const handleWhatsAppInquiry = (product) => {
@@ -248,6 +263,28 @@ export default function Collection({ onRequestPrice }) {
 
           {/* PRODUCT CARDS GRID (Right 9 columns on desktop) */}
           <main className="lg:col-span-9 w-full min-w-0">
+            {/* Search Query Banner */}
+            {paramSearch && (
+              <div className="mb-6 p-3.5 sm:p-4 rounded-xl bg-[#FAF6F0] border border-[#EBE3D5] flex items-center justify-between shadow-xs">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-full bg-[#9E6E2D]/10 flex items-center justify-center text-[#9E6E2D] flex-shrink-0">
+                    <Search className="w-3.5 h-3.5" />
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#4A453F]">
+                    Showing <strong className="text-[#222222]">{filteredProducts.length}</strong> results for{" "}
+                    <strong className="text-[#9E6E2D]">"{paramSearch}"</strong>
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSearchParams({ category: selectedCategory })}
+                  className="text-xs text-[#9E6E2D] hover:text-[#7A5018] font-medium underline cursor-pointer ml-3 flex-shrink-0"
+                >
+                  Clear Search
+                </button>
+              </div>
+            )}
+
             {filteredProducts.length === 0 ? (
               <div className="bg-white rounded-2xl border border-[#EFEBE3] p-12 text-center my-8">
                 <p
@@ -257,13 +294,21 @@ export default function Collection({ onRequestPrice }) {
                   No Statues Found
                 </p>
                 <p className="text-xs text-[#7A7165] mb-6">
-                  No products matched your selected filters in this category.
+                  {paramSearch
+                    ? `No marble statues matched your search for "${paramSearch}".`
+                    : "No products matched your selected filters in this category."}
                 </p>
                 <button
-                  onClick={() => handleSubCategoryToggle("ALL")}
-                  className="px-6 py-2.5 rounded-lg bg-[#A87B32] text-white text-xs font-medium hover:bg-[#8F6626] transition-colors"
+                  onClick={() => {
+                    if (paramSearch) {
+                      setSearchParams({ category: selectedCategory });
+                    } else {
+                      handleSubCategoryToggle("ALL");
+                    }
+                  }}
+                  className="px-6 py-2.5 rounded-lg bg-[#A87B32] text-white text-xs font-medium hover:bg-[#8F6626] transition-colors cursor-pointer"
                 >
-                  Show All {currentCategoryObj.name}
+                  {paramSearch ? "Browse All Products" : `Show All ${currentCategoryObj.name}`}
                 </button>
               </div>
             ) : (
